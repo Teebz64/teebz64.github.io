@@ -1,0 +1,28 @@
+body {
+    background: {
+        color: $col-bg;
+        image: url('/images/decoration/wave.svg');
+        size: 100% auto;
+        repeat: no-repeat;
+    }
+    color: $col-white;
+    padding: 40px;
+}
+
+.contact-me {
+    width: 160px;
+    height: 160px;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    mix-blend-mode: difference;
+
+    & > img {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

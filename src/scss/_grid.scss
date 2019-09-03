@@ -1,0 +1,39 @@
+.grid {
+    align-items: stretch;
+    display: flex;
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    right: 40px;
+    justify-content: space-between;
+    z-index: 0;
+
+    & > li {
+        animation: {
+            name: drawIn;
+            duration: 1.2s;
+            fill-mode: forwards;
+        };
+        background-color: $col-grid-color;
+        width: 1px;
+        transform: scaleY(0);
+        transform-origin: 50% 0%;
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+                animation-delay: $i * .2s;
+            }
+        }
+    }
+}
+
+@keyframes drawIn {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}

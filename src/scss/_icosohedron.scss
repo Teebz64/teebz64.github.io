@@ -1,0 +1,12 @@
+.icosohedron {
+    pointer-events: none;
+
+    &__canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        //transition: transform .1s;
+        will-change: transform;
+        transform: translateY(var(--icosohedron-ty));
+    }
+}
