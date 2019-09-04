@@ -1,6 +1,7 @@
 import React from "react"
 import ContactButton from '../components/ContactButton'
 import Grid from '../components/Grid'
+import TransitionGrid from '../components/TransitionGrid'
 import Icosohedron from '../components/Icosohedron'
 import PageTransition from '../components/PageTransition'
 
@@ -14,6 +15,7 @@ const Layout = ({children, location}) => (
         <PageTransition location={location}>
             {children}
         </PageTransition>
+        <TransitionGrid />
     </React.Fragment>
 )
 

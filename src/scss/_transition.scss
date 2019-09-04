@@ -1,0 +1,43 @@
+.transition {
+    &--entering {
+        position: absolute;
+        opacity: 0;
+    }
+
+    &--entered {
+        opacity: 1;
+    }
+
+    &--exiting {
+        //opacity: 0;
+    }
+
+    &--exited {
+        opacity: 0;
+    }
+
+    &__grid {
+        align-items: stretch;
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        justify-content: space-between;
+        pointer-events: none;
+
+        li {
+            background-color: $col-purple--dark;
+            flex: 1 0;
+            transform-origin: 50% 0%;
+            transform: scaleY(0);
+
+            &:first-child,
+            &:last-child {
+                flex: 0 0 $site-padding;
+            }
+        }
+    }
+}

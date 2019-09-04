@@ -1,22 +1,44 @@
 import React from "react"
-
+import classNames from "classnames"
+import anime from 'animejs/lib/anime.es.js'
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group"
 
-const getTransitionStyles = {
-    entering: {
-//      position: 'absolute',
-        width: '100%',
-        opacity: 0,
-    },
-    entered: {
-        opacity: 1,
-    },
-    exited: {
-        opacity: 0,
-    },
-}
-
 class PageTransition extends React.PureComponent {
+
+    componentDidMount = () => {
+        this.tl = anime.timeline({
+            easing: 'easeOutExpo',
+            duration: 850,
+            autoplay: false
+        })
+
+        this.tl
+            .add({
+                targets: '.transition__grid li',
+                duration: 1,
+                transformOrigin: '50% 0%'
+            })
+            .add({
+                targets: '.transition__grid li',
+                scaleY: [0, 1.3],
+                delay: anime.stagger(100)
+            })
+            .add({
+                targets: '.transition__grid li',
+                duration: 1,
+                transformOrigin: '50% 100%'
+            }, '-=400')
+            .add({
+                targets: '.transition__grid li',
+                scaleY: [1, 0],
+                delay: anime.stagger(100),
+            }, '-=400')
+    }
+
+    onExit = () => {
+        this.tl.play()
+    }
+
     render() {
         const { children, location } = this.props
 
@@ -25,25 +47,18 @@ class PageTransition extends React.PureComponent {
                 <ReactTransition
                     key={location.pathname}
                     timeout={{
-                        enter: 2000,
-                        exit: 2000,
+                        enter: 500,
+                        exit: 500,
                     }}
-                    onExit={node => {
-                        node.style.position = 'fixed'
-                        node.style.top = `${-1 * window.scrollY}px`
-                        console.log(node.style.position, `${-1 * window.scrollY}px`)
-                    }}
-                    unmountOnExit={true}
+                    onExit={this.onExit}
                 >
-                    {status => (
-                        <div
-                            // style={{
-                            //     ...getTransitionStyles[status],
-                            // }}
-                        >
-                            {children}
-                        </div>
-                    )}
+                    {status => {
+                        return (
+                            <div className={`transition transition--${status}`}>
+                                {children}
+                            </div>
+                        )
+                    }}
                 </ReactTransition>
             </TransitionGroup>
         )

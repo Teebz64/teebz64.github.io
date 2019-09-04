@@ -1,8 +1,9 @@
 import React from "react"
 import * as THREE from 'three'
-import { ReactBasicScroll } from "react-basic-scroll"
+import * as basicScroll from 'basicscroll'
 
 class Icosohedron extends React.PureComponent {
+
     scrollConfig = {
         from: '0px',
         to: '800px',
@@ -12,14 +13,12 @@ class Icosohedron extends React.PureComponent {
                 from: '0px',
                 to: '200px'
             }
-        },
+        }
     }
 
     container = React.createRef()
 
     componentDidMount() {
-        console.log("ico mount")
-        if (typeof window !== 'undefined') {
             this.scene = new THREE.Scene()
             this.camera = new THREE.PerspectiveCamera(
                 75,
@@ -40,11 +39,10 @@ class Icosohedron extends React.PureComponent {
             )
 
             this.renderer.domElement.className = `icosohedron__canvas`
-        }
 
-        this.init()
-        this.buildScene()
-        this.animate()
+            this.init()
+            this.buildScene()
+            this.animate()
     }
 
     init = () => {
@@ -69,8 +67,6 @@ class Icosohedron extends React.PureComponent {
             envMap: this.textureCube,
             // wireframe: true
         })
-
-        //window.addEventListener('click', this.debugThing)
     }
 
     buildScene = () => {
@@ -81,7 +77,14 @@ class Icosohedron extends React.PureComponent {
     }
 
     afterBuild = () => {
+        this.basicScroll = basicScroll.create({
+            elem: document.querySelector('.icosohedron__canvas'),
+            ...this.scrollConfig
+        })
 
+        this.basicScroll.start()
+
+        console.log(document.querySelector('.icosohedron__canvas'), this.basicScroll)
     }
 
     buildSmallIcosahedron = () => {
@@ -130,11 +133,7 @@ class Icosohedron extends React.PureComponent {
 
     render() {
         return (
-            <ReactBasicScroll config={this.scrollConfig}>
-                <div>
-                    <div ref={this.container} className="icosohedron" />
-                </div>
-            </ReactBasicScroll>
+            <div ref={this.container} className="icosohedron" />
         )
     }
 }
