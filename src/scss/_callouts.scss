@@ -1,0 +1,64 @@
+.callouts {
+    display: flex;
+    flex-direction: column;
+    max-width: 25%;
+    //letter-spacing: .1em;
+    font-size: 18px;
+    padding: {
+        left: 24px;
+        right: 24px;
+    };
+    letter-spacing: .06em;
+
+    & > li {
+        //width: 25%;
+        margin-bottom: 40px;
+    }
+
+    &__heading {
+        color: $col-pale;
+        margin-bottom: 16px;
+        //text-transform: uppercase;
+        position: relative;
+        //font-weight: bold;
+    }
+
+    &__text {
+        color: $col-white;
+    }
+
+    &--caption {
+        margin: {
+            top: 40px;
+            bottom: 80px;
+        };
+    }
+
+    &--x-margin-bottom {
+        margin-bottom: 80px;
+    }
+
+    &__heading-fill {
+        background-color: $col-pale;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: -24px;
+        mix-blend-mode: difference;
+        opacity: 0;
+        //transform: scaleX(0);
+        will-change: transform, opacity;
+    }
+
+    &__heading-accent {
+        background-color: $col-pale;
+        position: absolute;
+        width: 4px;
+        top: 0;
+        left: -24px;
+        bottom: 0;
+        // opacity: 0;
+        will-change: transform, opacity;
+    }
+}

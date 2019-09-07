@@ -31,7 +31,6 @@ const IndexPage = () => (
             <div className="section__indicator section__indicator--x-margin-bottom">
                 01
             </div>
-
             <Masthead />
         </section>
         <section className="section">

@@ -1,10 +1,16 @@
 $col-black: #000;
 $col-white: #FFF;
-$col-accent: #8EECA3;
+$col-grey: #969696;
+$col-pale: #BDBF95;
+$col-green: #8EECA3;
 $col-purple: #140916;
 $col-purple--dark: #0B030D;
 
+$col-accent: $col-green;
+
 $col-bg: $col-purple;
 $col-grid-color: rgba($col-white, .1);
+
+$col-bodycopy: $col-pale;
 
 $site-padding: 40px;

@@ -9,13 +9,19 @@ body {
     padding: 40px;
 }
 
+main {
+    position: relative;
+    z-index: 5;
+}
+
 .contact-me {
     width: 160px;
     height: 160px;
     position: fixed;
     top: 40px;
     right: 40px;
-    mix-blend-mode: difference;
+    //mix-blend-mode: difference;
+    z-index: 100;
 
     & > img {
         display: block;
@@ -25,4 +31,8 @@ body {
         top: 0;
         left: 0;
     }
+}
+
+* {
+    box-sizing: border-box;
 }

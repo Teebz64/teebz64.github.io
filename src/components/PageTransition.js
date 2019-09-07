@@ -21,7 +21,7 @@ class PageTransition extends React.PureComponent {
             .add({
                 targets: '.transition__grid li',
                 scaleY: [0, 1.3],
-                delay: anime.stagger(100)
+                delay: anime.stagger(50)
             })
             .add({
                 targets: '.transition__grid li',
@@ -31,7 +31,7 @@ class PageTransition extends React.PureComponent {
             .add({
                 targets: '.transition__grid li',
                 scaleY: [1, 0],
-                delay: anime.stagger(100),
+                delay: anime.stagger(50),
             }, '-=400')
     }
 
@@ -51,6 +51,7 @@ class PageTransition extends React.PureComponent {
                         exit: 500,
                     }}
                     onExit={this.onExit}
+                    unmountOnExit={true}
                 >
                     {status => {
                         return (

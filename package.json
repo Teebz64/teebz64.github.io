@@ -25,11 +25,14 @@
     "react-basic-scroll": "^1.0.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-icons": "^3.7.0",
     "react-transition-group": "^4.2.2",
     "reset-css": "^4.0.1",
+    "scramble-text": "0.0.8",
     "three": "^0.108.0"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "prettier": "^1.18.2"
   },
   "keywords": [

@@ -83,8 +83,6 @@ class Icosohedron extends React.PureComponent {
         })
 
         this.basicScroll.start()
-
-        console.log(document.querySelector('.icosohedron__canvas'), this.basicScroll)
     }
 
     buildSmallIcosahedron = () => {

@@ -1,8 +1,9 @@
+//Base
 @import '~reset-css/sass/_reset';
 @import 'functions';
 @import 'variables';
 
-// @import 'animations';
+//Components
 @import 'scanlines';
 @import 'typography';
 @import 'base';
@@ -11,10 +12,15 @@
 @import 'reticle';
 @import 'overlay';
 @import 'buttons';
+@import 'revealer';
 @import 'work';
 @import 'icosohedron';
 @import 'transition';
+@import 'masthead';
+@import 'layout';
+@import 'callouts';
 
 //Pages
-@import 'home';
 @import 'transcend';
+
+// @import 'animations';

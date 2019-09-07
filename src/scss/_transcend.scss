@@ -1,3 +1,51 @@
 .transcend {
-    min-height: 300vh;
+    h1 {
+        margin-bottom: 24px;
+    }
+
+    .masthead {
+        margin-bottom: 80px;
+    }
+
+    &__figure {
+        &--first {
+            align-items: center;
+            display: flex;
+            height: 520px;
+            justify-content: center;
+        }
+
+        &--second {
+            align-items: center;
+            display: flex;
+            height: 300px;
+            width: 50%;
+            margin-left: 50%;
+        }
+
+        &--third {
+            align-items: center;
+            display: flex;
+            height: 520px;
+            justify-content: center;
+        }
+    }
+
+    &__figure-fill {
+        &--first {
+            background-color: #BDBF95;
+        }
+
+        &--second {
+            background-color: #ECDFD5;
+        }
+
+        &--third {
+            background-color: #ECDFD5;
+        }
+    }
+}
+
+.case-study {
+
 }

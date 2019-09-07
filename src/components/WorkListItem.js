@@ -1,12 +1,11 @@
 import React from "react"
 import { ReactBasicScroll } from "react-basic-scroll"
 import { Link } from "gatsby"
-import anime from 'animejs/lib/anime.es.js'
+import Revealer from '../components/Revealer'
 
-class WorkListItem extends React.Component {
+class WorkListItem extends React.PureComponent {
+
     state = { hasEntered: false }
-    figure = React.createRef()
-    figureFill = React.createRef()
 
     titleScrollConfig = {
         from: 'top-bottom',
@@ -49,28 +48,13 @@ class WorkListItem extends React.Component {
 
     onEnter = () => {
         if (this.state.hasEntered) { return }
-
-        anime({
-            easing: 'easeOutExpo',
-            targets: this.figure.current,
-            scaleX: [0, 1],
-            opacity: .99,
-            duration: 750
-        })
-
-        anime({
-            easing: 'easeInOutExpo',
-            targets: this.figureFill.current,
-            scaleX: [0, 1],
-            duration: 750,
-            delay: 0
-        })
-
         this.setState({ hasEntered: true })
     }
 
     render() {
         const { slug, thumbnail, categories, title, subtitle } = this.props
+        const { hasEntered } = this.state
+
         return (
             <ReactBasicScroll config={this.figureScrollConfig}>
                 <li data-trigger={slug}>
@@ -78,12 +62,12 @@ class WorkListItem extends React.Component {
                         className="work__main"
                         to={`/${slug}/`}
                     >
-                            <figure className="work__figure" ref={this.figure}>
-                                <div className="work__figure-fill" ref={this.figureFill}></div>
-                                <div className="work__thumbnail">
-                                    <img src={thumbnail} alt={title} width="500" height="500" />
-                                </div>
-                            </figure>
+                        <Revealer
+                            image={thumbnail}
+                            alt={title}
+                            enter={hasEntered}
+                            styleBlock='work'
+                        />
                         <div className="work__text">
                             <div className="work__category">
                                 {categories.map((category, i) => i + 1 === categories.length
@@ -93,7 +77,7 @@ class WorkListItem extends React.Component {
                             </div>
                             <ReactBasicScroll config={this.titleScrollConfig}>
                                 <button className="work__title">
-                                    {title}
+                                    { title }
                                     { subtitle && <em>{subtitle}</em> }
                                 </button>
                             </ReactBasicScroll>

@@ -1,12 +1,28 @@
-$font-sans: 'Bandeins Sans Variable';
+// Bandeins Sans Variable
+
+$font-sans: 'Styrene B LC';
 $font-serif: 'Ogg';
+
+// $font-sans: 'GT Cinetype';
 
 body {
     font-family: $font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1;
 }
 
 h1 {
     font-size: 170px;
+    font-family: $font-serif;
 }
 
 h2 {
@@ -15,4 +31,12 @@ h2 {
 
 em {
     font-style: italic;
+}
+
+p {
+    line-height: 2;
+}
+
+a {
+    color: $col-accent;
 }
