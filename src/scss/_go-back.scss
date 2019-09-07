@@ -1,0 +1,20 @@
+.go-back {
+    background-color: $col-purple--dark;
+    position: fixed;
+    bottom: 24px;
+    right: 0px;
+    width: 120px;
+    z-index: 100;
+    padding: 8px;
+    border-radius: 999px 0 0 999px;
+
+    &__icon-container {
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid $col-accent;
+        display: flex;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+    }
+}

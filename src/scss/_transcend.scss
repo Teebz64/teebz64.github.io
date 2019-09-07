@@ -33,7 +33,7 @@
 
     &__figure-fill {
         &--first {
-            background-color: #BDBF95;
+            background-color: #D1A27D;
         }
 
         &--second {
@@ -43,6 +43,16 @@
         &--third {
             background-color: #ECDFD5;
         }
+    }
+
+    &__floating-seal {
+        display: block;
+        position: absolute;
+        width: 25%;
+        height: auto;
+        left: 12.5%;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }
 

@@ -2,6 +2,7 @@ import React from "react"
 import anime from 'animejs/lib/anime.es.js'
 import TextScramble from './TextScrambler'
 import { ReactBasicScroll } from "react-basic-scroll"
+import classNames from "classnames"
 
 class Caption extends React.PureComponent {
 
@@ -17,6 +18,16 @@ class Caption extends React.PureComponent {
         direct: true,
         inside: () => this.onEnter(),
         outside: () => this.onExit(),
+        // props: {
+        //     [`--heading-opacity`]: {
+        //         from: 0,
+        //         to: .99
+        //     },
+        //     [`--accent-ty`]: {
+        //         from: '-24px',
+        //         to: '0px'
+        //     },
+        // }
     }
 
     heading = React.createRef()
@@ -24,7 +35,7 @@ class Caption extends React.PureComponent {
     accent = React.createRef()
 
     componentDidMount = () => {
-        this.scramble = new TextScramble(this.heading.current)
+        //this.scramble = new TextScramble(this.heading.current)
     }
 
     onEnter = () => {
@@ -32,22 +43,27 @@ class Caption extends React.PureComponent {
         let hasEntered = false
 
         if (!this.state.enter) {
-            this.scramble.play()
+            //this.scramble.play()
+
+            anime({
+                easing: 'easeOutExpo',
+                targets: this.accent.current,
+                translateY: [-24, 0],
+                opacity: [0, .99],
+                duration: 750
+            })
+
+            // anime({
+            //     easing: 'easeOutExpo',
+            //     targets: this.fill.current,
+            //     scaleX: [0, 1],
+            //     opacity: [0, .99],
+            //     duration: 750
+            // })
+
             enter = true
         } else {
             return
-        }
-
-        if (!this.state.hasEntered) {
-            console.log(this.fill.current)
-            anime({
-                easing: 'easeOutExpo',
-                targets: this.fill.current,
-                scaleX: [0, 1],
-                opacity: .99,
-                duration: 750
-            })
-            hasEntered = true
         }
 
         this.setState({ enter, hasEntered })
@@ -55,7 +71,24 @@ class Caption extends React.PureComponent {
 
     onExit = () => {
         if (!this.state.enter) { return }
-        this.scramble.play()
+        //this.scramble.play()
+
+        anime({
+            easing: 'easeOutExpo',
+            targets: this.accent.current,
+            translateY: [0, 24],
+            opacity: [.99, 0],
+            duration: 750
+        })
+
+        // anime({
+        //     easing: 'easeOutExpo',
+        //     targets: this.fill.current,
+        //     scaleX: [1, 0],
+        //     opacity: [.99, 0],
+        //     duration: 750
+        // })
+
         this.setState({ enter: false })
     }
 
@@ -72,16 +105,23 @@ class Caption extends React.PureComponent {
         const { heading, text } = this.props
 
         return (
-            <ReactBasicScroll config={this.scrollConfig}>
-                <li>
+            <li
+                className={classNames({
+                    [`shift-${this.props.shift}`]: this.props.shift
+                })}
+            >
+                <div class="callouts__heading-container">
                     <h6 className="callouts__heading" ref={this.heading}>
                         { heading }
-                        <div className="callouts__heading-fill" ref={this.fill} />
-                        <div className="callouts__heading-accent" ref={this.accent} />
                     </h6>
-                    <p className="callouts__text">{ text }</p>
-                </li>
-            </ReactBasicScroll>
+                    <div className="callouts__heading-fill" ref={this.fill} />
+                    <div className="callouts__heading-accent" ref={this.accent} />
+                    <ReactBasicScroll config={this.scrollConfig}>
+                        <div className="callouts__heading-anchor" />
+                    </ReactBasicScroll>
+                </div>
+                <p className="callouts__text">{ text }</p>
+            </li>
         )
     }
 }
