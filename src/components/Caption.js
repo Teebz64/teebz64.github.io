@@ -35,7 +35,7 @@ class Caption extends React.PureComponent {
     accent = React.createRef()
 
     componentDidMount = () => {
-        //this.scramble = new TextScramble(this.heading.current)
+        this.scramble = new TextScramble(this.heading.current)
     }
 
     onEnter = () => {
@@ -43,7 +43,7 @@ class Caption extends React.PureComponent {
         let hasEntered = false
 
         if (!this.state.enter) {
-            //this.scramble.play()
+            this.scramble.play()
 
             anime({
                 easing: 'easeOutExpo',
@@ -53,13 +53,13 @@ class Caption extends React.PureComponent {
                 duration: 750
             })
 
-            // anime({
-            //     easing: 'easeOutExpo',
-            //     targets: this.fill.current,
-            //     scaleX: [0, 1],
-            //     opacity: [0, .99],
-            //     duration: 750
-            // })
+            anime({
+                easing: 'easeOutExpo',
+                targets: this.fill.current,
+                scaleX: [0, 1],
+                opacity: [0, .99],
+                duration: 750
+            })
 
             enter = true
         } else {
@@ -71,7 +71,7 @@ class Caption extends React.PureComponent {
 
     onExit = () => {
         if (!this.state.enter) { return }
-        //this.scramble.play()
+        this.scramble.play()
 
         anime({
             easing: 'easeOutExpo',
@@ -81,13 +81,13 @@ class Caption extends React.PureComponent {
             duration: 750
         })
 
-        // anime({
-        //     easing: 'easeOutExpo',
-        //     targets: this.fill.current,
-        //     scaleX: [1, 0],
-        //     opacity: [.99, 0],
-        //     duration: 750
-        // })
+        anime({
+            easing: 'easeOutExpo',
+            targets: this.fill.current,
+            scaleX: [1, 0],
+            opacity: [.99, 0],
+            duration: 750
+        })
 
         this.setState({ enter: false })
     }

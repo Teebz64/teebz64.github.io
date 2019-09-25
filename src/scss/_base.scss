@@ -14,25 +14,6 @@ main {
     z-index: 5;
 }
 
-.contact-me {
-    width: 160px;
-    height: 160px;
-    position: fixed;
-    top: 40px;
-    right: 40px;
-    //mix-blend-mode: difference;
-    z-index: 100;
-
-    & > img {
-        display: block;
-        width: 100%;
-        height: auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-}
-
 * {
     box-sizing: border-box;
 }

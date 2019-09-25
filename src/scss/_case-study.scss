@@ -2,4 +2,14 @@
     &__row {
         position: relative;
     }
+
+    &__sub-heading {
+        font: {
+            style: italic;
+            family: $font-serif;
+            size: 48px;
+        }
+        margin-bottom: 80px;
+
+    }
 }

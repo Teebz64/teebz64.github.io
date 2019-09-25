@@ -1,11 +1,11 @@
 import React from "react"
 import { ReactBasicScroll } from "react-basic-scroll"
 import { Link } from "gatsby"
-import { IoMdArrowBack } from "react-icons/io"
 import Revealer from '../components/Revealer'
 import Tracker from '../components/Tracker'
 import Caption from '../components/Caption'
 import GoBackButton from '../components/GoBackButton'
+import Masthead from '../components/Masthead'
 
 const scrollConfig = {
     from: '0px',
@@ -26,8 +26,6 @@ const scrollConfig = {
 
 class Transcend extends React.PureComponent {
 
-    state = { hasEntered: false }
-
     sealConfig = {
         from: 'top-bottom',
         to: 'bottom-top',
@@ -39,11 +37,6 @@ class Transcend extends React.PureComponent {
                 to: '-20%'
             }
         }
-    }
-
-    onEnter = () => {
-        if (this.state.hasEntered) { return }
-        this.setState({ hasEntered: true })
     }
 
     render() {
@@ -64,6 +57,11 @@ class Transcend extends React.PureComponent {
                             </div>
                         </header>
                     </ReactBasicScroll>
+                    <Masthead
+                        heading='Transcend'
+                        pill='Design • Branding'
+                        block='case-study'
+                    />
                     <ul className="callouts callouts--x-margin-bottom callouts--inline">
                         <Caption
                             heading="about"
@@ -82,7 +80,7 @@ class Transcend extends React.PureComponent {
                     <div className="case-study__row">
                         <Tracker>
                             <Revealer
-                                image='/images/transcend/logo--recolor.svg'
+                                image='/images/transcend/logo.svg'
                                 alt='Logo Recolor'
                                 styleBlock='transcend'
                                 modifier='first'

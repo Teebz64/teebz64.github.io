@@ -5,6 +5,7 @@ class Revealer extends React.PureComponent {
 
     figure = React.createRef()
     figureFill = React.createRef()
+    image = React.createRef()
 
     onEnter = () => {
         anime({
@@ -20,7 +21,15 @@ class Revealer extends React.PureComponent {
             targets: this.figureFill.current,
             scaleX: [0, 1],
             duration: 750,
-            delay: 0
+            delay: 0,
+            complete: () => {
+                anime({
+                    easing: 'easeInOutExpo',
+                    targets: this.image,
+                    opacity: [0, 1],
+                    duration: 500
+                })
+            }
         })
     }
 
@@ -66,6 +75,7 @@ class Revealer extends React.PureComponent {
                     `}
                 >
                     <img
+                        ref={this.image}
                         src={image}
                         alt={alt}
                         className={`
