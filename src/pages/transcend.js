@@ -47,20 +47,9 @@ class Transcend extends React.PureComponent {
                     <div className="section__indicator section__indicator--x-margin-bottom">
                         01
                     </div>
-                    <ReactBasicScroll config={scrollConfig}>
-                        <header className="case-study__header masthead">
-                            <h1 className="case-study__heading">Transcend</h1>
-                            <div className="masthead__bottom">
-                                <div className="masthead__pill">
-                                    Design • Branding
-                                </div>
-                            </div>
-                        </header>
-                    </ReactBasicScroll>
                     <Masthead
                         heading='Transcend'
                         pill='Design • Branding'
-                        block='case-study'
                     />
                     <ul className="callouts callouts--x-margin-bottom callouts--inline">
                         <Caption

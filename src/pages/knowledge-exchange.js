@@ -1,6 +1,7 @@
 import React from "react"
 import { ReactBasicScroll } from "react-basic-scroll"
 import { Link } from "gatsby"
+import Masthead from '../components/Masthead'
 import Revealer from '../components/Revealer'
 import Tracker from '../components/Tracker'
 import Caption from '../components/Caption'
@@ -33,25 +34,19 @@ class KnowledgeExchange extends React.PureComponent {
                     <div className="section__indicator section__indicator--x-margin-bottom">
                         01
                     </div>
-                    <ReactBasicScroll config={scrollConfig}>
-                        <header className="case-study__header masthead">
-                            <h1 className="case-study__heading">Humana</h1>
-                            <h2 className="case-study__sub-heading">Knowledge Exchange</h2>
-                            <div className="masthead__bottom">
-                                <div className="masthead__pill">
-                                    Architecture • Design • Direction
-                                </div>
-                            </div>
-                        </header>
-                    </ReactBasicScroll>
+                    <Masthead
+                        heading='Humana'
+                        subheading='Knowledge Exchange'
+                        pill='Architecture • Design • Direction'
+                    />
                     <ul className="callouts callouts--x-margin-bottom callouts--inline">
                         <Caption
                             heading="about"
-                            text="Transcend is a meditation specialist and motivational speaker. My goal in branding was to design a mark to reflect spiritual and mental wellness."
+                            text="Two Bards Brewery is a bar and brewery located in Bardstown, KY 🙄"
                         />
                         <Caption
                             heading="role"
-                            text="Application Architect & Design Lead"
+                            text="Designer"
                         />
                     </ul>
                 </section>

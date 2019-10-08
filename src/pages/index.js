@@ -12,16 +12,16 @@ const work = [
     },
     {
         slug: 'knowledge-exchange',
-        thumbnail: '/images/logos/transcend-logo.svg',
+        thumbnail: '/images/knowledge-exchange/feed-in-laptop.png',
         categories: ['Architecture', 'Design'],
         title: 'Humana:',
         subtitle: 'Knowledge Exchange'
     },
     {
-        slug: 'transcend',
-        thumbnail: '/images/logos/transcend-logo.svg',
+        slug: 'two-bards',
+        thumbnail: '/images/two-bards/two-bards-seal--purple.svg',
         categories: ['logo design', 'branding'],
-        title: 'Transcend',
+        title: 'Two Bards',
     }
 ]
 
@@ -40,7 +40,7 @@ const IndexPage = () => (
                 }
                 heading={
                     <React.Fragment>
-                        `St<em>e</em>v<em>e</em>n D<em>a</em>n<em>a</em>`
+                        St<em>e</em>v<em>e</em>n D<em>a</em>n<em>a</em>
                     </React.Fragment>
                 }
                 text={
@@ -56,7 +56,13 @@ const IndexPage = () => (
                 02
             </div>
             <ul className="work">
-                {work.map((item, i) => <WorkListItem {...item} key={i} />)}
+                {work.map((item, i) =>
+                    <WorkListItem
+                        {...item}
+                        upNext={work[i > 0 ? i - 1 : work.length - 1]}
+                        key={i}
+                    />
+                )}
             </ul>
         </section>
     </React.Fragment>

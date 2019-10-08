@@ -72,6 +72,11 @@
         opacity: .6;
         transform: translateY(var(--thumbnail-ty));
         will-change: transform;
+
+        .work li:nth-child(even) & {
+            right: auto;
+            left: 10%;
+        }
     }
 
     &__main {

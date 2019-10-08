@@ -19,11 +19,14 @@ const scrollConfig = {
     }
 }
 
-const Masthead = ({ heading, pill, text, block }) => (
+const Masthead = ({ heading, pill, text, block, subheading }) => (
     <ReactBasicScroll config={scrollConfig}>
         <header className="masthead">
             <div>
                 <h1 className="masthead__heading">{heading}</h1>
+                {subheading &&
+                    <h2 className="masthead__sub-heading">{subheading}</h2>
+                }
             </div>
             <div className="masthead__bottom">
                 {pill &&
