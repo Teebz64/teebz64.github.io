@@ -13,7 +13,7 @@ class ContactButton extends React.PureComponent {
             },
             '--outer-rot': {
                 from: '0deg',
-                to: '-80deg',
+                to: '-60deg',
             }
         }
     }
@@ -26,6 +26,8 @@ class ContactButton extends React.PureComponent {
         })
 
         this.basicScroll.start()
+
+        document.body.addEventListener('navigate', this.basicScroll.calculate)
     }
 
     render() {

@@ -5,6 +5,7 @@
  */
 
 const transitionDelay = 500
+const navigationEvent = new Event('navigate')
 
 exports.shouldUpdateScroll = ({
     routerProps: { location },
@@ -18,6 +19,8 @@ exports.shouldUpdateScroll = ({
             () => window.scrollTo(...(savedPosition || [0, 0])),
             transitionDelay
         )
-  }
-  return false
+    }
+    document.body.dispatchEvent(navigationEvent)
+
+    return false
 }

@@ -3,32 +3,16 @@ import { ReactBasicScroll } from "react-basic-scroll"
 import { Link } from "gatsby"
 import Masthead from '../components/Masthead'
 import Revealer from '../components/Revealer'
+import RevealerWithoutAnimation from '../components/RevealerWithoutAnimation'
 import Tracker from '../components/Tracker'
 import Caption from '../components/Caption'
 import GoBackButton from '../components/GoBackButton'
 
-const scrollConfig = {
-    from: '0px',
-    to: '300px',
-    timing: 'expoIn',
-    direct: true,
-    props: {
-        '--masthead-opacity': {
-            from: .99,
-            to: 0
-        },
-        '--masthead-ty': {
-            from: '0%',
-            to: '20%'
-        }
-    }
-}
-
-class KnowledgeExchange extends React.PureComponent {
+class TwoBards extends React.PureComponent {
 
     render() {
         return (
-            <main className="knowledge-exchange">
+            <main className="two-bards">
                 <GoBackButton />
                 <section className="section section--hero">
                     <div className="section__indicator section__indicator--x-margin-bottom">
@@ -55,18 +39,16 @@ class KnowledgeExchange extends React.PureComponent {
                         02
                     </div>
                     <div className="case-study__row">
-                        <Tracker>
-                            <Revealer
-                                image='/images/two-bards/two-bards-seal--red.svg'
-                                alt='Pattern from Logo'
-                                styleBlock='two-bards'
-                                modifier='first'
-                                span="4"
-                            />
-                        </Tracker>
+                        <RevealerWithoutAnimation
+                            image='/images/two-bards/two-bards-seal--red.svg'
+                            alt='Pattern from Logo'
+                            styleBlock='two-bards'
+                            modifier='first'
+                            span="4"
+                        />
                         <ul className="callouts callouts--caption">
                             <Caption
-                                heading="seal"
+                                heading="Seal"
                                 text="I chose to personify the bards literally, aiming for them to evolve their own personalities; perhaps even representing light and dark beers as the brand evolves."
                             />
                         </ul>
@@ -80,7 +62,7 @@ class KnowledgeExchange extends React.PureComponent {
                                 muted=""
                                 width="480"
                                 height="265"
-                                src="/images/two-bards/logo-sketch.mp4"
+                                src={"/images/two-bards/logo-sketch.mp4"}
                             />
                         </div>
                         <ul className="callouts callouts--caption">
@@ -117,4 +99,4 @@ class KnowledgeExchange extends React.PureComponent {
     }
 }
 
-export default KnowledgeExchange
+export default TwoBards

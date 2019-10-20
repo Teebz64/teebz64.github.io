@@ -1,5 +1,7 @@
 .case-study {
     &__row {
-        position: relative;
+        &--relative {
+            position: relative;
+        }
     }
 }

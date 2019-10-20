@@ -1,3 +1,93 @@
 .knowledge-exchange {
     min-height: 4000px;
+
+    &__figure {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        &--first {
+            padding: 0 80px;
+            margin-top: -80px;
+
+            .knowledge-exchange__image {
+                max-width: 1140px;
+                margin: 0 auto;
+            }
+        }
+
+        &--margin-bottom {
+            margin-bottom: 64px;
+        }
+    }
+
+    &__row {
+        &--second {
+            margin-bottom: -440px;
+        }
+    }
+
+    &__flex-row {
+
+        &--styles {
+            align-items: flex-end;
+            display: flex;
+            margin-bottom: 174px;
+
+            .flex-left {
+                flex: 0 0 50%;
+            }
+
+            .flex-right {
+                flex: 0 0 50%;
+            }
+
+            .callouts {
+                margin-bottom: 0;
+
+                & > li {
+                    width: 50%;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.stacked-tiles {
+    //padding: 0 64px;
+
+    li {
+        cursor: grabbing;
+        width: 80%;
+        margin-bottom: -56%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:nth-child(2) {
+            margin-left: 10%;
+        }
+
+        &:nth-child(3) {
+            margin-left: 20%;
+        }
+
+        &:hover {
+            position: relative;
+            z-index: 15;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+.work__image--knowledge-exchange {
+    position: relative;
+    top: 180px;
 }

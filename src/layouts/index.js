@@ -4,6 +4,7 @@ import Grid from '../components/Grid'
 import TransitionGrid from '../components/TransitionGrid'
 import Icosohedron from '../components/Icosohedron'
 import PageTransition from '../components/PageTransition'
+import Footer from '../components/Footer'
 
 import("../scss/index.scss")
 
@@ -14,6 +15,7 @@ const Layout = ({children, location}) => (
         <Icosohedron />
         <PageTransition location={location}>
             {children}
+            <Footer />
         </PageTransition>
         <TransitionGrid />
     </React.Fragment>

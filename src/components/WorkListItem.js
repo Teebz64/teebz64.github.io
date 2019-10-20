@@ -52,7 +52,7 @@ class WorkListItem extends React.PureComponent {
     }
 
     render() {
-        const { slug, thumbnail, categories, title, subtitle } = this.props
+        const { slug, thumbnail, video, categories, title, subtitle } = this.props
         const { hasEntered } = this.state
 
         return (
@@ -62,12 +62,28 @@ class WorkListItem extends React.PureComponent {
                         className="work__main"
                         to={`/${slug}/`}
                     >
-                        <Revealer
-                            image={thumbnail}
-                            alt={title}
-                            enter={hasEntered}
-                            styleBlock='work'
-                        />
+                        { thumbnail &&
+                            <Revealer
+                                image={thumbnail}
+                                alt={title}
+                                enter={hasEntered}
+                                styleBlock='work'
+                                modifier={slug}
+                            />
+                        }
+                        { (video && !thumbnail) &&
+                            <div className="video work__video">
+                                <video
+                                    className="video__video"
+                                    autoplay="true"
+                                    loop
+                                    muted=""
+                                    width="1176" 
+                                    height=" 650"
+                                    src={video}
+                                />
+                            </div>
+                        }
                         <div className="work__text">
                             <div className="work__category">
                                 {categories.map((category, i) => i + 1 === categories.length

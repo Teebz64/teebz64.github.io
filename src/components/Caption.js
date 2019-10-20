@@ -110,10 +110,12 @@ class Caption extends React.PureComponent {
                     [`shift-${this.props.shift}`]: this.props.shift
                 })}
             >
-                <div class="callouts__heading-container">
-                    <h6 className="callouts__heading" ref={this.heading}>
-                        { heading }
-                    </h6>
+                <div className="callouts__heading-container">
+                    { heading &&
+                        <h6 className="callouts__heading" ref={this.heading}>
+                            { heading }
+                        </h6>
+                    }
                     <div className="callouts__heading-fill" ref={this.fill} />
                     <div className="callouts__heading-accent" ref={this.accent} />
                     {/*<ReactBasicScroll config={this.scrollConfig}>*/}

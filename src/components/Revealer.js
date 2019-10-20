@@ -1,5 +1,6 @@
 import React from "react"
 import anime from 'animejs/lib/anime.es.js'
+import classNames from 'classnames'
 
 class Revealer extends React.PureComponent {
 
@@ -47,16 +48,23 @@ class Revealer extends React.PureComponent {
             image,
             alt,
             styleBlock,
-            modifier
+            modifier,
+            span
         } = this.props
 
         return (
             <figure
-                className={`
-                    ${styleBlock}__figure
-                    ${styleBlock}__figure--${modifier}
-                    revealer__figure
-                `}
+                className={
+                    classNames(
+                        `
+                            ${styleBlock}__figure
+                            ${styleBlock}__figure--${modifier}
+                            revealer__figure
+                        `, {
+                            [`revealer__figure--span-${span}`]: span
+                        }
+                    )
+                }
                 ref={this.figure}
             >
                 <div

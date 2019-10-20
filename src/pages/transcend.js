@@ -2,6 +2,7 @@ import React from "react"
 import { ReactBasicScroll } from "react-basic-scroll"
 import { Link } from "gatsby"
 import Revealer from '../components/Revealer'
+import RevealerWithoutAnimation from '../components/RevealerWithoutAnimation'
 import Tracker from '../components/Tracker'
 import Caption from '../components/Caption'
 import GoBackButton from '../components/GoBackButton'
@@ -67,14 +68,12 @@ class Transcend extends React.PureComponent {
                         02
                     </div>
                     <div className="case-study__row">
-                        <Tracker>
-                            <Revealer
-                                image='/images/transcend/logo.svg'
-                                alt='Logo Recolor'
-                                styleBlock='transcend'
-                                modifier='first'
-                            />
-                        </Tracker>
+                        <RevealerWithoutAnimation
+                            image='/images/transcend/logo.svg'
+                            alt='Logo Recolor'
+                            styleBlock='transcend'
+                            modifier='first'
+                        />
                         <ul className="callouts callouts--caption callouts--inline">
                             <Caption
                                 heading="Lotus Mark"
@@ -86,15 +85,13 @@ class Transcend extends React.PureComponent {
                             />
                         </ul>
                     </div>
-                    <div className="case-study__row">
-                        <Tracker>
-                            <Revealer
-                                image='/images/transcend/pattern.svg'
-                                alt='Pattern from Logo'
-                                styleBlock='transcend'
-                                modifier='second'
-                            />
-                        </Tracker>
+                    <div className="case-study__row case-study__row--relative">
+                        <RevealerWithoutAnimation
+                            image='/images/transcend/pattern.svg'
+                            alt='Pattern from Logo'
+                            styleBlock='transcend'
+                            modifier='second'
+                        />
                         <ul className="callouts callouts--caption">
                             <Caption
                                 heading="Lotus Pattern"
@@ -107,14 +104,12 @@ class Transcend extends React.PureComponent {
                         </ReactBasicScroll>
                     </div>
                     <div className="case-study__row">
-                        <Tracker>
-                            <Revealer
-                                image='/images/transcend/alt-mark.svg'
-                                alt='Alternate Mark'
-                                styleBlock='transcend'
-                                modifier='third'
-                            />
-                        </Tracker>
+                        <RevealerWithoutAnimation
+                            image='/images/transcend/alt-mark.svg'
+                            alt='Alternate Mark'
+                            styleBlock='transcend'
+                            modifier='third'
+                        />
                         <ul className="callouts callouts--caption">
                             <Caption
                                 heading="Unused Mark"

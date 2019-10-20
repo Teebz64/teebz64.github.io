@@ -1,0 +1,104 @@
+.ois-focus-stroke {
+    fill: none;
+    stroke: $col-green;
+    stroke-miterlimit: 10;
+    transition: background-color .3s;
+}
+
+.ois-supporting-stroke {
+    fill: none;
+    stroke: $col-pale;
+    stroke-miterlimit: 10;
+    transition: stroke .3s;
+
+    .ois-light & {
+        stroke: $col-purple--light;
+    }
+
+    .-white & {
+        stroke: #fff;
+    }
+}
+
+.ois-tertiary-stroke {
+    fill: none;
+    stroke: $col-purple--light;
+    stroke-miterlimit: 10;
+    transition: stroke .3s;
+
+    .ois-light & {
+        stroke: darken($col-pale, 10%);
+    }
+}
+
+.ois-focus-shape {
+    fill: $col-green;
+    transition: fill .3s;
+}
+
+.ois-supporting-shape {
+    fill: $col-purple--light;
+    transition: fill .3s;
+
+    .ois-light & {
+        fill: darken($col-pale, 10%);
+    }
+
+    .-yellow-bg & {
+        fill: palette(light-yellow);
+    }
+}
+
+.ois-tertiary-shape {
+    fill: $col-pale;
+    transition: fill .3s;
+
+    .ois-light & {
+        fill: $col-purple--light;
+    }
+}
+
+.ois-translucent {
+    opacity: .5;
+}
+
+[ois-opacity-in],
+.ois-transparent {
+    opacity: 0;
+}
+
+[ois-no-draw] {
+    stroke-dasharray: 99999;
+    stroke-dashoffset: 99999;
+}
+
+.ois-light-opacity {
+    opacity: .3;
+}
+
+.ois-morph-frame, .ois-hide {
+    display: none;
+    opacity: 0;
+    fill: none;
+}
+
+.ois-low-miter {
+    stroke-miterlimit: 1;
+}
+
+[data-ois] {
+    //opacity: 0;
+}
+
+.ois-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > li {
+        flex: 0 0 16.6666%;
+        padding: 48px 48px;
+    }
+}
+
+.eye-candy-mask-1{clip-path:url(#SVGID_2_);}
+.eye-candy-mask-2{clip-path:url(#SVGID_4_);}

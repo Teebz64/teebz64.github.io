@@ -3,6 +3,13 @@
 }
 
 .work {
+
+    &__video {
+        height: 400px;
+        overflow: hidden;
+        opacity: .4;
+    }
+
     li {
         margin-bottom: 40px;
 

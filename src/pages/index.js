@@ -22,6 +22,20 @@ const work = [
         thumbnail: '/images/two-bards/two-bards-seal--purple.svg',
         categories: ['logo design', 'branding'],
         title: 'Two Bards',
+    },
+    {
+        slug: 'ooh-icon-system',
+        video: '/images/ooh-icon-system/output.export.mp4',
+        categories: ['Development', 'Animation'],
+        title: 'Oohology',
+        subtitle: 'Icon System'
+    },
+    {
+        slug: 'champion-windows',
+        thumbnail: '/images/champion-windows/slider.png',
+        categories: ['Development', 'Animation'],
+        title: 'Champion',
+        subtitle: 'Windows'
     }
 ]
 
