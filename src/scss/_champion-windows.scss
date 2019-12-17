@@ -4,3 +4,56 @@
     top: 140px;
     position: relative;
 }
+
+.champ {
+    &__laptop {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    &__row {
+        margin-bottom: 120px;
+    }
+
+    &__desktop-styles {
+        width: 75%;
+    }
+
+    &__mobile-styles {
+        width: 25%;
+        margin: {
+            top: -32%;
+            left: 62.5%;
+        }
+    }
+
+    &__roi,
+    &__frame-diagram {
+        width: 56.25%;
+    }
+
+    &__roi {
+        margin-left: 38.75%;
+    }
+
+    &__frame-diagram {
+        margin: {
+            left: 5%;
+            top: -15%;
+        }
+    }
+
+    &__options-desktop {
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    &__options-mobile {
+        width: 25%;
+        margin: {
+            top: -57%;
+            left: 12.5%;
+            bottom: calc(9.5% + 120px);
+        }
+    }
+}

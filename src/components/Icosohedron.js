@@ -1,6 +1,7 @@
 import React from "react"
 import * as THREE from 'three'
 import * as basicScroll from 'basicscroll'
+import debounce from 'lodash/debounce'
 
 class Icosohedron extends React.PureComponent {
 
@@ -43,6 +44,7 @@ class Icosohedron extends React.PureComponent {
             this.init()
             this.buildScene()
             this.animate()
+            this.bindEvents()
     }
 
     init = () => {
@@ -127,6 +129,17 @@ class Icosohedron extends React.PureComponent {
             this.scene,
             this.camera
         )
+    }
+
+    bindEvents = () => {
+        window.onresize = debounce(this.resizeCanvas, 150)
+    }
+
+    resizeCanvas = () => {
+        console.log('resizeCanvas')
+        this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize( window.innerWidth, window.innerHeight )
     }
 
     render() {

@@ -75,9 +75,9 @@ class WorkListItem extends React.PureComponent {
                             <div className="video work__video">
                                 <video
                                     className="video__video"
-                                    autoplay="true"
+                                    autoPlay={true}
                                     loop
-                                    muted=""
+                                    muted={true}
                                     width="1176" 
                                     height=" 650"
                                     src={video}
