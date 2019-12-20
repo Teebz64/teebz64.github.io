@@ -40,8 +40,12 @@ class WorkListItem extends React.PureComponent {
         direct: true,
         props: {
             [`--thumbnail-ty`]: {
-                from: '150px',
-                to: '-150px'
+                from: '60px',
+                to: '-60px'
+            },
+            [`--image-opacity`]: {
+                from: 0,
+                to: .99
             },
         }
     }

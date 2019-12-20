@@ -15,6 +15,7 @@
             animation: {
                 name: drawInX;
                 duration: .5s;
+                fill-mode: forwards;
             };
             background-color: $col-white;
             display: block;
@@ -23,6 +24,12 @@
             width: 140px;
             margin-left: 4px;
             transform-origin: 0% 50%;
+            opacity: 0;
+            transform: scaleX(0);
+
+            .section:nth-child(2) & {
+                animation-delay: .18s
+            }
         }
 
         &--x-margin-bottom {

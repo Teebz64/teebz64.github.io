@@ -22,16 +22,18 @@ class Revealer extends React.PureComponent {
             targets: this.figureFill.current,
             scaleX: [0, 1],
             duration: 750,
-            delay: 0,
-            complete: () => {
-                anime({
-                    easing: 'easeInOutExpo',
-                    targets: this.image,
-                    opacity: [0, 1],
-                    duration: 500
-                })
-            }
+            delay: 250,
         })
+
+        anime({
+            easing: 'easeInOutExpo',
+            targets: this.image,
+            opacity: [0, 0],
+            duration: 500,
+            delay: 1250
+        })
+
+        console.log(this.image)
     }
 
     componentDidUpdate(prevProps) {
@@ -76,6 +78,7 @@ class Revealer extends React.PureComponent {
                     ref={this.figureFill}
                 />
                 <div
+                    ref={this.image}
                     className={`
                         ${styleBlock}__thumbnail
                         ${styleBlock}__thumbnail--${modifier}
@@ -83,7 +86,6 @@ class Revealer extends React.PureComponent {
                     `}
                 >
                     <img
-                        ref={this.image}
                         src={image}
                         alt={alt}
                         className={`
