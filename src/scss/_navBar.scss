@@ -1,0 +1,17 @@
+.navBar {
+    justify-content: center;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    padding: 0px 40px;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        padding: 16px;
+    }
+}

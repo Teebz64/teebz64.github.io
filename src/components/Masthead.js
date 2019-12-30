@@ -1,6 +1,8 @@
 import React from "react"
 import { ReactBasicScroll } from "react-basic-scroll"
 import classNames from 'classnames'
+import { IoMdArrowBack } from "react-icons/io"
+import { Link } from "gatsby"
 
 const scrollConfig = {
     from: '0px',
@@ -19,9 +21,14 @@ const scrollConfig = {
     }
 }
 
-const Masthead = ({ heading, pill, text, block, subheading }) => (
+const Masthead = ({ heading, pill, text, block, subheading, hasBackButton = true }) => (
     <ReactBasicScroll config={scrollConfig}>
         <header className="masthead">
+            { hasBackButton &&
+                <Link to='/' className="masthead__back">
+                    <IoMdArrowBack /> Back To All Projects
+                </Link>
+            }
             <div>
                 <h1 className="masthead__heading">{heading}</h1>
                 {subheading &&

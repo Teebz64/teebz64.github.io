@@ -1,5 +1,4 @@
 import React from "react"
-
 import WorkListItem from '../components/WorkListItem'
 import Masthead from '../components/Masthead'
 
@@ -7,7 +6,7 @@ const work = [
     {
         slug: 'transcend',
         thumbnail: '/images/logos/transcend-logo.svg',
-        categories: ['logo design', 'branding'],
+        categories: ['Logo design', 'Branding'],
         title: 'Transcend',
     },
     {
@@ -20,7 +19,7 @@ const work = [
     {
         slug: 'two-bards',
         thumbnail: '/images/two-bards/two-bards-seal--purple.svg',
-        categories: ['logo design', 'branding'],
+        categories: ['Logo design', 'Branding'],
         title: 'Two Bards',
     },
     {
@@ -33,7 +32,7 @@ const work = [
     {
         slug: 'champion-windows',
         thumbnail: '/images/champion-windows/slider.png',
-        categories: ['Development', 'Animation'],
+        categories: ['Design'],
         title: 'Champion',
         subtitle: 'Windows'
     }
@@ -63,6 +62,7 @@ const IndexPage = () => (
                         <div className="masthead__textline masthead__textline--medium">Selected Work</div>
                     </React.Fragment>
                 }
+                hasBackButton={false}
             />
         </section>
         <section className="section">

@@ -3,9 +3,11 @@ import { ReactBasicScroll } from "react-basic-scroll"
 import { Link } from "gatsby"
 import Masthead from '../components/Masthead'
 import GoBackButton from '../components/GoBackButton'
+import NavBar from '../components/NavBar'
 
 const CaseStudyLayout = ({children, location, slug, tags, heading, subheading, deck}) => (
     <main className={slug}>
+        <NavBar />
         <GoBackButton />
         <section className="section section--hero">
             <div className="section__indicator section__indicator--x-margin-bottom">

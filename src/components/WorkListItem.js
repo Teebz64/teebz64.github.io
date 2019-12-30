@@ -2,10 +2,13 @@ import React from "react"
 import { ReactBasicScroll } from "react-basic-scroll"
 import { Link } from "gatsby"
 import Revealer from '../components/Revealer'
+import anime from 'animejs/lib/anime.es.js'
 
 class WorkListItem extends React.PureComponent {
 
     state = { hasEntered: false }
+    shutters = React.createRef()
+    listItem = React.createRef()
 
     titleScrollConfig = {
         from: 'top-bottom',
@@ -39,20 +42,36 @@ class WorkListItem extends React.PureComponent {
         timing: 'expoOut',
         direct: true,
         props: {
-            [`--thumbnail-ty`]: {
-                from: '60px',
-                to: '-60px'
-            },
             [`--image-opacity`]: {
                 from: 0,
                 to: .99
             },
+            [`--thumbnail-ty`]: {
+                from: '60px',
+                to: '-60px'
+            }
         }
     }
 
     onEnter = () => {
         if (this.state.hasEntered) { return }
         this.setState({ hasEntered: true })
+
+        anime({
+            easing: 'easeOutExpo',
+            targets: this.shutters.current.children,
+            scaleY: [1, 0],
+            duration: 750,
+            delay: anime.stagger(100)
+        })
+
+        anime({
+            easing: 'easeOutExpo',
+            targets: this.listItem.current,
+            opacity: [0.1, 1],
+            duration: 0,
+        })
+
     }
 
     render() {
@@ -66,28 +85,38 @@ class WorkListItem extends React.PureComponent {
                         className="work__main"
                         to={`/${slug}/`}
                     >
-                        { thumbnail &&
-                            <Revealer
-                                image={thumbnail}
-                                alt={title}
-                                enter={hasEntered}
-                                styleBlock='work'
-                                modifier={slug}
-                            />
-                        }
-                        { (video && !thumbnail) &&
-                            <div className="video work__video">
-                                <video
-                                    className="video__video"
-                                    autoPlay={true}
-                                    loop
-                                    muted={true}
-                                    width="1176" 
-                                    height=" 650"
-                                    src={video}
+                        <div className="work__thumbnail-container" ref={this.listItem}>
+                            <div className="work__gradient"></div>
+                            <ul className="work__shutters" ref={this.shutters}>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            { thumbnail &&
+                                <img
+                                    className={`
+                                        work__thumbnail
+                                        work__thumbnail--${slug}
+                                    `}
+                                    src={thumbnail}
+                                    alt={title}
                                 />
-                            </div>
-                        }
+                            }
+                            { (video && !thumbnail) &&
+                                <div className="video work__video">
+                                    <video
+                                        className="video__video"
+                                        autoPlay={true}
+                                        loop
+                                        muted={true}
+                                        width="1176" 
+                                        height=" 650"
+                                        src={video}
+                                    />
+                                </div>
+                            }
+                        </div>
                         <div className="work__text">
                             <div className="work__category">
                                 {categories.map((category, i) => i + 1 === categories.length

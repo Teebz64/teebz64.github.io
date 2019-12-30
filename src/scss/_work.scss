@@ -4,20 +4,71 @@
 
 .work {
 
-    &__video {
-        height: 400px;
-        overflow: hidden;
-        opacity: .4;
-    }
-
-    li {
+    & > li {
         margin-bottom: 40px;
     }
 
+    &__main {
+        text-decoration: none;
+    }
+
+    &__thumbnail {
+        max-width: 600px;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform:
+            translateY(
+                calc(-50% + var(--thumbnail-ty))
+            )
+            translateX(-50%)
+        ;
+        z-index: 5;
+        backface-visibility: hidden;
+        will-change: transform;
+
+        &--knowledge-exchange,
+        &--champion-windows {
+            max-width: 1200px;
+            transform:
+                translateY(
+                    calc(-30% + var(--thumbnail-ty))
+                )
+                translateX(-50%)
+            ;
+
+        }
+    }
+
+    &__thumbnail-container {
+        background-color: $col-purple--dark;
+        overflow: hidden;
+        height: 400px;
+        display: block;
+        position: relative;
+        opacity: 0.1;
+    }
+
+    &__gradient {
+        background: linear-gradient(to right,
+            rgba($col-purple--dark, 1),
+            rgba($col-purple--dark, .4)
+        );
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 6;
+    }
+
     &__category {
+        color: $col-white;
         margin-bottom: 8px;
         position: relative;
         z-index: 5;
+        opacity: var(--image-opacity);
     }
 
     &__text {
@@ -25,6 +76,8 @@
             top: -88px;
             left: 40px;
         }
+        position: relative;
+        z-index: 10;
     }
 
     &__title {
@@ -62,52 +115,21 @@
         }
     }
 
-    &__figure {
-        height: 400px;
-        position: relative;
-        opacity: var(--image-opacity);
-
-        &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to left, rgba($col-purple--dark, 0), $col-purple--dark);
-            z-index: 6;
-        };
-    }
-
-    &__thumbnail {
+    &__shutters {
+        display: flex;
         position: absolute;
-        z-index: 5;
-        right: 10%;
-        opacity: .6;
-        transform: translateY(var(--thumbnail-ty));
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 8;
         will-change: transform;
+        backface-visibility: hidden;
 
-        &--two-bards {
-            width: calc(100% - 40px);
-            max-width: 500px;
-            height: auto;
-            opacity: .4;
+        li {
+            background-color: $col-purple;
+            flex: 0 0 25%;
+            transform-origin: 0% 100%;
         }
     }
-
-    &__main {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    &__image {
-        &--champion-windows,
-        &--knowledge-exchange {
-            max-width: 980px;
-            margin-left: 15%;
-            top: 140px;
-            position: relative;
-        }
-    }
-
 }
