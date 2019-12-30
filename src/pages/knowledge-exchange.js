@@ -100,8 +100,8 @@ class KnowledgeExchange extends React.PureComponent {
                                 { ['linkedin', 'twitter', 'facebook'].map((item, i) =>
                                     <li key={i} data-content={item}>
                                         <picture>
-                                            <source srcset={`/images/knowledge-exchange/${item}-style.webp`} type="image/webp" />
-                                            <source srcset={`/images/knowledge-exchange/${item}-style.png`} type="image/png" />
+                                            <source srcSet={`/images/knowledge-exchange/${item}-style.webp`} type="image/webp" />
+                                            <source srcSet={`/images/knowledge-exchange/${item}-style.png`} type="image/png" />
                                             <img src={`/images/knowledge-exchange/${item}-style.png`} alt={`${item} style`} />
                                         </picture>
                                     </li>
@@ -136,15 +136,15 @@ class KnowledgeExchange extends React.PureComponent {
                         <ul className="span-2 knowledge-exchange__suggestion-tiles">
                             <li>
                                 <picture>
-                                    <source srcset={`/images/knowledge-exchange/suggested-articles.webp`} type="image/webp" />
-                                    <source srcset={`/images/knowledge-exchange/suggested-articles.png`} type="image/png" />
+                                    <source srcSet={`/images/knowledge-exchange/suggested-articles.webp`} type="image/webp" />
+                                    <source srcSet={`/images/knowledge-exchange/suggested-articles.png`} type="image/png" />
                                     <img src={`/images/knowledge-exchange/suggested-articles.png`} alt={`Suggested articles component`} />
                                 </picture>
                             </li>
                             <li>
                                 <picture>
-                                    <source srcset={`/images/knowledge-exchange/suggested-experts.webp`} type="image/webp" />
-                                    <source srcset={`/images/knowledge-exchange/suggested-experts.png`} type="image/png" />
+                                    <source srcSet={`/images/knowledge-exchange/suggested-experts.webp`} type="image/webp" />
+                                    <source srcSet={`/images/knowledge-exchange/suggested-experts.png`} type="image/png" />
                                     <img src={`/images/knowledge-exchange/suggested-experts.png`} alt={`Suggested experts component`} />
                                 </picture>
                             </li>

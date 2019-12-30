@@ -16,11 +16,13 @@ exports.shouldUpdateScroll = ({
     } else {
         const savedPosition = getSavedScrollPosition(location)
         window.setTimeout(
-            () => window.scrollTo(...(savedPosition || [0, 0])),
+            () => {
+                window.scrollTo(...(savedPosition || [0, 0]))
+                document.body.dispatchEvent(navigationEvent)
+            },
             transitionDelay
         )
     }
-    document.body.dispatchEvent(navigationEvent)
 
     return false
 }

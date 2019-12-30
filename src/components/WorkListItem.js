@@ -1,7 +1,6 @@
 import React from "react"
 import { ReactBasicScroll } from "react-basic-scroll"
 import { Link } from "gatsby"
-import Revealer from '../components/Revealer'
 import anime from 'animejs/lib/anime.es.js'
 
 class WorkListItem extends React.PureComponent {

@@ -42,8 +42,8 @@ class Revealer extends React.PureComponent {
                         />
                 }
                 <picture>
-                    {webp && <source srcset={webp} type="image/webp" />}
-                    <source srcset={image} />
+                    {webp && <source srcSet={webp} type="image/webp" />}
+                    <source srcSet={image} />
                     <img
                         src={image}
                         alt={alt}

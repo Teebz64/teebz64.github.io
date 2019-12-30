@@ -1,7 +1,6 @@
 import React from "react"
 import anime from 'animejs/lib/anime.es.js'
 import TextScramble from './TextScrambler'
-import { ReactBasicScroll } from "react-basic-scroll"
 import classNames from "classnames"
 
 class Caption extends React.PureComponent {

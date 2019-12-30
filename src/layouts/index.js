@@ -5,13 +5,9 @@ import TransitionGrid from '../components/TransitionGrid'
 import Icosohedron from '../components/Icosohedron'
 import PageTransition from '../components/PageTransition'
 import Footer from '../components/Footer'
-// import NavBar from '../components/NavBar'
+import "../scss/index.scss"
 
-import("../scss/index.scss")
-
-// { location.pathname !== '/' && <NavBar /> }
-
-const Layout = ({children, location}) => {
+export default function Layout({children, location}) {
     return (
         <React.Fragment>
             <Grid />
@@ -25,5 +21,3 @@ const Layout = ({children, location}) => {
         </React.Fragment>
     )
 }
-
-export default Layout

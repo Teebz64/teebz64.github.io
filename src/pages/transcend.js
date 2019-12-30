@@ -1,7 +1,6 @@
 import React from "react"
 import { ReactBasicScroll } from "react-basic-scroll"
 import { Link } from "gatsby"
-import Revealer from '../components/Revealer'
 import RevealerWithoutAnimation from '../components/RevealerWithoutAnimation'
 import Tracker from '../components/Tracker'
 import Caption from '../components/Caption'
