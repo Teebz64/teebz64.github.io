@@ -1,7 +1,7 @@
 import React from 'react'
 
-const WebIcon = props => (
-  <svg viewBox="0 0 32 32" data-ois="web" {...props}>
+const WebIcon = () => (
+  <svg viewBox="0 0 32 32" data-ois="web">
     <rect
       x="4.3"
       y="7.5"

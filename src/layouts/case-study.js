@@ -35,4 +35,12 @@ const CaseStudyLayout = ({children, location, slug, tags, heading, subheading, d
     )
 }
 
+// const CaseStudyLayout = ({children, location, slug, tags, heading, subheading, deck}) => {
+//     return (
+//         <main className={slug}>
+//             { children }
+//         </main>
+//     )
+// }
+
 export default CaseStudyLayout

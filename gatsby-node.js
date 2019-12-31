@@ -7,7 +7,7 @@
 // You can delete this file if you're not using it
 
 
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins }) => {
   if (stage === "build-html") {
     actions.setWebpackConfig({
       module: {
@@ -17,11 +17,31 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             use: loaders.null(),
           },
           {
+            test: /basicscroll/,
+            use: loaders.null(),
+          },
+          {
             test: /DrawSVGPlugin/,
             use: loaders.null(),
           },
           {
-            test: /bad-module/,
+            test: /vendor\/gsap/,
+            use: loaders.null(),
+          },
+          {
+            test: /gsap/,
+            use: loaders.null(),
+          },
+          {
+            test: /anime/,
+            use: loaders.null(),
+          },
+          {
+            test: /components\/ooh-icon-system/,
+            use: loaders.null(),
+          },
+          {
+            test: /scripts\/ooh-icon-system/,
             use: loaders.null(),
           },
         ],

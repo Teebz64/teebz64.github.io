@@ -1,8 +1,6 @@
 import React from "react"
 import CaseStudyLayout from '../layouts/case-study'
-import Caption from '../components/Caption'
 import Picture from '../components/Picture'
-import RevealerWithoutAnimation from '../components/RevealerWithoutAnimation'
 
 class ChampionWindows extends React.PureComponent {
 

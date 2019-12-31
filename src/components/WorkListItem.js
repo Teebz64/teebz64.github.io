@@ -1,13 +1,15 @@
 import React from "react"
-import { ReactBasicScroll } from "react-basic-scroll"
 import { Link } from "gatsby"
 import anime from 'animejs/lib/anime.es.js'
+import * as basicScroll from 'basicscroll'
 
 class WorkListItem extends React.PureComponent {
 
     state = { hasEntered: false }
     shutters = React.createRef()
     thumbnail = React.createRef()
+    figure = React.createRef()
+    title = React.createRef()
     listItem = React.createRef()
 
     titleScrollConfig = {
@@ -36,7 +38,7 @@ class WorkListItem extends React.PureComponent {
         }
     }
 
-    figureScrollConfig = {
+    listItemScrollConfig = {
         from: 'top-bottom',
         to: 'bottom-top',
         timing: 'expoOut',
@@ -53,13 +55,28 @@ class WorkListItem extends React.PureComponent {
         }
     }
 
+    componentDidMount() {
+        this.titleScroll = basicScroll.create({
+            elem: this.title.current,
+            ...this.titleScrollConfig
+        })
+
+        this.listItemScroll = basicScroll.create({
+            elem: this.listItem.current,
+            ...this.listItemScrollConfig
+        })
+
+        this.titleScroll.start()
+        this.listItemScroll.start()
+    }
+
     onEnter = () => {
         if (this.state.hasEntered) { return }
         this.setState({ hasEntered: true })
 
         anime({
             easing: 'easeOutExpo',
-            targets: this.listItem.current,
+            targets: this.figure.current,
             translateY: [100, 0],
             duration: 2500,
         })
@@ -85,62 +102,58 @@ class WorkListItem extends React.PureComponent {
         const { hasEntered } = this.state
 
         return (
-            <ReactBasicScroll config={this.figureScrollConfig}>
-                <li data-trigger={slug}>
-                    <Link
-                        className="work__main"
-                        to={`/${slug}/`}
-                        ref={this.listItem}
-                    >
-                        <div className="work__thumbnail-container" ref={this.thumbnail}>
-                            <div className="work__gradient"></div>
-                            <ul className="work__shutters" ref={this.shutters}>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                            { thumbnail &&
-                                <img
-                                    className={`
-                                        work__thumbnail
-                                        work__thumbnail--${slug}
-                                    `}
-                                    src={thumbnail}
-                                    alt={title}
+            <li data-trigger={slug} ref={this.listItem}>
+                <Link
+                    className="work__main"
+                    to={`/${slug}/`}
+                    ref={this.figure}
+                >
+                    <div className="work__thumbnail-container" ref={this.thumbnail}>
+                        <div className="work__gradient"></div>
+                        <ul className="work__shutters" ref={this.shutters}>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        { thumbnail &&
+                            <img
+                                className={`
+                                    work__thumbnail
+                                    work__thumbnail--${slug}
+                                `}
+                                src={thumbnail}
+                                alt={title}
+                            />
+                        }
+                        { (video && !thumbnail) &&
+                            <div className="video work__video">
+                                <video
+                                    className="video__video"
+                                    autoPlay={true}
+                                    loop
+                                    muted={true}
+                                    width="1176" 
+                                    height=" 650"
+                                    src={video}
                                 />
-                            }
-                            { (video && !thumbnail) &&
-                                <div className="video work__video">
-                                    <video
-                                        className="video__video"
-                                        autoPlay={true}
-                                        loop
-                                        muted={true}
-                                        width="1176" 
-                                        height=" 650"
-                                        src={video}
-                                    />
-                                </div>
-                            }
-                        </div>
-                        <div className="work__text">
-                            <div className="work__category">
-                                {categories.map((category, i) => i + 1 === categories.length
-                                    ? category
-                                    : `${category} • `
-                                )}
                             </div>
-                            <ReactBasicScroll config={this.titleScrollConfig}>
-                                <button className="work__title">
-                                    { title }
-                                    { subtitle && <em>{subtitle}</em> }
-                                </button>
-                            </ReactBasicScroll>
+                        }
+                    </div>
+                    <div className="work__text">
+                        <div className="work__category">
+                            {categories.map((category, i) => i + 1 === categories.length
+                                ? category
+                                : `${category} • `
+                            )}
                         </div>
-                    </Link>
-                </li>
-            </ReactBasicScroll>
+                        <button className="work__title" ref={this.title}>
+                            { title }
+                            { subtitle && <em>{subtitle}</em> }
+                        </button>
+                    </div>
+                </Link>
+            </li>
         )
     }
 }

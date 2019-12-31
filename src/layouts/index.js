@@ -23,3 +23,11 @@ export default function Layout({children, location}) {
         </React.Fragment>
     )
 }
+
+// export default function Layout({children, location}) {
+//     return (
+//         <React.Fragment>
+//             {children}
+//         </React.Fragment>
+//     )
+// }
