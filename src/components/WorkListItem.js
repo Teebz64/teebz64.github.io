@@ -7,6 +7,7 @@ class WorkListItem extends React.PureComponent {
 
     state = { hasEntered: false }
     shutters = React.createRef()
+    thumbnail = React.createRef()
     listItem = React.createRef()
 
     titleScrollConfig = {
@@ -58,6 +59,13 @@ class WorkListItem extends React.PureComponent {
 
         anime({
             easing: 'easeOutExpo',
+            targets: this.listItem.current,
+            translateY: [100, 0],
+            duration: 2500,
+        })
+
+        anime({
+            easing: 'easeOutExpo',
             targets: this.shutters.current.children,
             scaleY: [1, 0],
             duration: 750,
@@ -66,11 +74,10 @@ class WorkListItem extends React.PureComponent {
 
         anime({
             easing: 'easeOutExpo',
-            targets: this.listItem.current,
+            targets: this.thumbnail.current,
             opacity: [0.1, 1],
             duration: 0,
         })
-
     }
 
     render() {
@@ -83,8 +90,9 @@ class WorkListItem extends React.PureComponent {
                     <Link
                         className="work__main"
                         to={`/${slug}/`}
+                        ref={this.listItem}
                     >
-                        <div className="work__thumbnail-container" ref={this.listItem}>
+                        <div className="work__thumbnail-container" ref={this.thumbnail}>
                             <div className="work__gradient"></div>
                             <ul className="work__shutters" ref={this.shutters}>
                                 <li></li>

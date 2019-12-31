@@ -23,16 +23,6 @@ class TwoBards extends React.PureComponent {
                         heading='Two Bards'
                         subheading='Brewery'
                     />
-                    <ul className="callouts callouts--x-margin-bottom callouts--inline">
-                        <Caption
-                            heading="about"
-                            text="Two Bards Brewery is a bar and brewery located in Bardstown, KY 🙄"
-                        />
-                        <Caption
-                            heading="role"
-                            text="Designer"
-                        />
-                    </ul>
                 </section>
                 <section className="section">
                     <div className="section__indicator section__indicator--x-margin-bottom">
@@ -46,15 +36,9 @@ class TwoBards extends React.PureComponent {
                             modifier='first'
                             span="4"
                         />
-                        <ul className="callouts callouts--caption">
-                            <Caption
-                                heading="Seal"
-                                text="I chose to personify the bards literally, aiming for them to evolve their own personalities; perhaps even representing light and dark beers as the brand evolves."
-                            />
-                        </ul>
                     </div>
                     <div className="case-study__row">
-                        <div className="two-bards__video two-bards__sketch-video video">
+                        <div className="two-bards__video two-bards__sketch-video video shift-half">
                             <video
                                 className="video__video"
                                 autoPlay={true}
@@ -65,16 +49,9 @@ class TwoBards extends React.PureComponent {
                                 src={"/images/two-bards/logo-sketch.mp4"}
                             />
                         </div>
-                        <ul className="callouts callouts--caption">
-                            <Caption
-                                heading="Concepting Sketch"
-                                text="I used the symmetry feature of procreate to help get my ideas down quickly."
-                                shift="1"
-                            />
-                        </ul>
                     </div>
                     <div className="case-study__row">
-                        <div className="two-bards__video two-bards__refinement-video video shift-1">
+                        <div className="two-bards__video two-bards__refinement-video video shift-1-half">
                             <video
                                 autoPlay={true}
                                 loop
@@ -85,13 +62,6 @@ class TwoBards extends React.PureComponent {
                                 className="video__video"
                             />
                         </div>
-                        <ul className="callouts callouts--caption">
-                            <Caption
-                                heading="Refining"
-                                text="Each line of the face was agonized over, this was by far the most difficult and deliberate part of the process."
-                                shift="1"
-                            />
-                        </ul>
                     </div>
                 </section>
             </main>

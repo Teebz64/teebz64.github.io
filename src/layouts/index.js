@@ -14,7 +14,9 @@ export default function Layout({children, location}) {
             <ContactButton />
             <Icosohedron />
             <PageTransition location={location}>
-                {children}
+                <div className="container">
+                    {children}
+                </div>
                 <Footer />
             </PageTransition>
             <TransitionGrid />
