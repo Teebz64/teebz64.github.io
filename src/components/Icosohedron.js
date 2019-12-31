@@ -120,7 +120,6 @@ class Icosohedron extends React.PureComponent {
 
     animate = () => {
         requestAnimationFrame( this.animate )
-        this.shaderTime += 0.1;
 
         this.largeIcosahedron.rotation.y += .001
         this.smallIcosahedron.rotation.z += .003
@@ -136,7 +135,6 @@ class Icosohedron extends React.PureComponent {
     }
 
     resizeCanvas = () => {
-        console.log('resizeCanvas')
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize( window.innerWidth, window.innerHeight )

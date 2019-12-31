@@ -29,7 +29,9 @@ class ContactButton extends React.PureComponent {
 
         setTimeout(this.basicScroll.calculate, 1000)
 
-        document.body.addEventListener('navigate', this.basicScroll.calculate)
+        document.body.addEventListener('navigate', () => {
+            setTimeout(this.basicScroll.calculate, 1000)
+        })
     }
 
     render() {

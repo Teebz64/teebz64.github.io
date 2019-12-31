@@ -6,7 +6,7 @@ const work = [
     {
         slug: 'transcend',
         thumbnail: '/images/logos/transcend-logo.svg',
-        categories: ['Logo design', 'Branding'],
+        categories: ['Logo Design', 'Branding'],
         title: 'Transcend',
     },
     {
@@ -19,7 +19,7 @@ const work = [
     {
         slug: 'two-bards',
         thumbnail: '/images/two-bards/two-bards-seal--purple.svg',
-        categories: ['Logo design', 'Branding'],
+        categories: ['Logo Design', 'Branding'],
         title: 'Two Bards',
     },
     {

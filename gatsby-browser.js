@@ -12,7 +12,13 @@ exports.shouldUpdateScroll = ({
     getSavedScrollPosition,
 }) => {
     if (location.action === 'PUSH') {
-        window.setTimeout(() => window.scrollTo(0, 0), transitionDelay)
+        window.setTimeout(
+            () => {
+                window.scrollTo(0, 0)
+                document.body.dispatchEvent(navigationEvent)
+            },
+            transitionDelay
+        )
     } else {
         const savedPosition = getSavedScrollPosition(location)
         window.setTimeout(
