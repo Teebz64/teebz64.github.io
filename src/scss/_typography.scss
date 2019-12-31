@@ -1,12 +1,22 @@
-// Bandeins Sans Variable
-
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@font-face {
+    font-family: 'Ogg';
+    src: url('/fonts/Ogg-Roman.eot');
+    src: url('/fonts/Ogg-Roman.woff2') format('woff2'),
+         url('/fonts/Ogg-Roman.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Ogg';
+    font-style: italic;
+    src: url('/fonts/Ogg-Italic.eot');
+    src: url('/fonts/Ogg-Italic.woff2') format('woff2'),
+         url('/fonts/Ogg-Italic.woff') format('woff');
+}
 
 $font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
 $font-sans: 'Styrene B LC';
 $font-serif: 'Ogg';
-
 $font-sans: 'Muli';
 //$font-sans: $font-system;
 

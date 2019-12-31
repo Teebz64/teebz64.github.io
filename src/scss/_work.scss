@@ -10,6 +10,9 @@
 
     &__main {
         text-decoration: none;
+        // transform: translateY(calc(
+        //     var(--thumbnail-ty) * 2
+        // ));
     }
 
     &__thumbnail {

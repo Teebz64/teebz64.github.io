@@ -1,6 +1,6 @@
 import React from "react"
-import anime from 'animejs/lib/anime.es.js'
-import TextScramble from './TextScrambler'
+// import anime from 'animejs/lib/anime.es.js'
+// import TextScramble from './TextScrambler'
 import classNames from "classnames"
 
 class Caption extends React.PureComponent {

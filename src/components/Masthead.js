@@ -1,6 +1,6 @@
 import React from "react"
 import { ReactBasicScroll } from "react-basic-scroll"
-import classNames from 'classnames'
+// import classNames from 'classnames'
 import { IoMdArrowBack } from "react-icons/io"
 import { Link } from "gatsby"
 
