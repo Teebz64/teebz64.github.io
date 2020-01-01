@@ -37,8 +37,6 @@ class OohIconSystem extends React.PureComponent {
         <UxIcon />
     ]
 
-    // getComponents = () => []
-
     render() {
         return (
             <CaseStudyLayout

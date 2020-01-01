@@ -37,10 +37,6 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins }) => {
             use: loaders.null(),
           },
           {
-            test: /components\/ooh-icon-system/,
-            use: loaders.null(),
-          },
-          {
             test: /scripts\/ooh-icon-system/,
             use: loaders.null(),
           },
