@@ -21,18 +21,17 @@ import ux from './ux'
 
 CSSPlugin.defaultSmoothingOrigin = true
 
-export const _BASE = !TimlineMax
-	? {
-		ease: Circ.easeInOut,
-		stagger: 0.08,
-		duration: 0.35,
-		jumpTime: "-=.75",
-		restDuration: 1.5,
-		restDelay: .5,
-		restJumpTime: "-=.75",
-		restJumpTimeFast: "-=1.25",
-		restEase: Circ.easeInOut
-	} : { }
+export const _BASE = {
+	ease: Circ.easeInOut,
+	stagger: 0.08,
+	duration: 0.35,
+	jumpTime: "-=.75",
+	restDuration: 1.5,
+	restDelay: .5,
+	restJumpTime: "-=.75",
+	restJumpTimeFast: "-=1.25",
+	restEase: Circ.easeInOut
+}
 
 function init() {
 	if (!TimelineMax) { return }
