@@ -4,13 +4,20 @@
 
 .masthead {
     backface-visibility: hidden;
-    margin-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
     opacity: var(--masthead-opacity);
     transform: translateY(var(--masthead-ty));
     transition: translate .1s;
     will-change: transform, opacity;
     position: relative;
     z-index: 5;
+
+    @include m {
+        display: block;
+        margin-bottom: 200px;
+    }
 
     &__back {
         align-items: center;
@@ -25,28 +32,76 @@
         }
     }
 
+    &__top {
+    }
+
     &__bottom {
-        align-items: stretch;
-        display: flex;
+        @include m {
+            align-items: stretch;
+            display: flex;
+            transform: translateY(0);
+            height: auto;
+        }
     }
 
     &__heading {
-        font-size: 10vw;
+        font-size: 48px;
         font-family: $font-serif;
         margin-bottom: 24px;
+        text-transform: uppercase;
+        line-height: .9;
+
+        .section--index & {
+            font-size: 74px;
+        }
+
+        @include m {
+            text-transform: none;
+            font-size: 10vw;
+            line-height: 1;
+        }
+
+        em {
+            font-style: normal;
+
+            @include m {
+                font-style: italic;
+            }
+        }
     }
 
     &__text {
 
+        @include m {
+            display: block;
+            position: static;
+            top: auto;
+            left: auto;
+        }
     }
 
     &__pill {
         align-items: center;
         border-radius: 999px;
-        border: 1px solid $col-white;
         display: inline-flex;
-        padding: 16px 32px;
-        margin-right: 40px;
+        transform-origin: 100% 100%;
+        transform: rotate(-90deg);
+        position: absolute;
+        top: 0;
+        right: 0;
+        white-space: nowrap;
+        font-size: 12px;
+
+        @include m {
+            margin-right: 40px;
+            padding: 16px 32px;
+            position: static;
+            top: auto;
+            left: auto;
+            transform: none;
+            max-width: none;
+            font-size: 16px;
+        }
     }
 
     &__timespan {
@@ -55,11 +110,20 @@
     }
 
     &__textline {
+        font-size: 12px;
         text-transform: lowercase;
 
+        @include m {
+            font-size: 16px;
+        }
+
         &--large {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 8px;
+
+            @include m {
+                font-size: 20px;
+            }
         }
     }
 

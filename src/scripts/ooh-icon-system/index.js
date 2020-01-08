@@ -36,6 +36,8 @@ export const _BASE = {
 function init() {
 	if (!TimelineMax) { return }
 
+		console.log('initialized')
+
 	const webIcon                         = new Icon( document.body.querySelector('[data-ois="web"]'), 'web', web.getRestingTl)
 	const webDevelopmentIcon              = new Icon( document.body.querySelector('[data-ois="web-development"]'), 'web-development', webDevelopment.getRestingTl)
 	const uxIcon                          = new Icon( document.body.querySelector('[data-ois="ux"]'), 'ux', ux.getRestingTl)

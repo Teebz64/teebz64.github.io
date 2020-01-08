@@ -17,6 +17,8 @@ class Icosohedron extends React.PureComponent {
         }
     }
 
+    device = 'mobile'
+
     container = React.createRef()
 
     componentDidMount() {
@@ -25,7 +27,7 @@ class Icosohedron extends React.PureComponent {
                 75,
                 window.innerWidth / window.innerHeight,
                 0.1,
-                1000
+                10000
             )
             this.renderer = new THREE.WebGLRenderer({
                 alpha: true
@@ -64,18 +66,26 @@ class Icosohedron extends React.PureComponent {
             `${path}/${fileName}`
         ])
 
-        this.reflectiveMaterial = new THREE.MeshBasicMaterial({
-            color: 0x979797,
-            envMap: this.textureCube,
-            // wireframe: true
-        })
+        this.reflectiveMaterial = this.getMaterial()
     }
+
+    getMaterial = (device) =>
+        new THREE.MeshBasicMaterial({
+            color: device === 'mobile'
+                ? 0x979797
+                : 0x666666,
+            envMap: this.textureCube,
+            // wireframe: true,
+            // wireframeLinewidth: 10,
+            side: THREE.DoubleSide
+        })
 
     buildScene = () => {
         this.buildSmallIcosahedron()
         this.buildLargeIcosahedron()
         this.buildLights()
         this.afterBuild()
+        this.position(this.device)
     }
 
     afterBuild = () => {
@@ -105,24 +115,22 @@ class Icosohedron extends React.PureComponent {
             geometry,
             this.reflectiveMaterial
         )
-
-        this.largeIcosahedron.position.set( 0, -100, -400 )
-
-        this.scene.add( this.largeIcosahedron )
     }
 
     buildLights = () => {
         this.light = new THREE.PointLight( 0xffffff, 1.5 )
-        this.light.position.set( 30, 30, 30 )
-
         this.scene.add( this.light )
     }
 
     animate = () => {
         requestAnimationFrame( this.animate )
 
-        this.largeIcosahedron.rotation.y += .001
-        this.smallIcosahedron.rotation.z += .003
+        this.largeIcosahedron.rotation.y += this.device === 'mobile'
+            ? .0001
+            : .001
+        this.smallIcosahedron.rotation.z += this.device === 'mobile'
+            ? .0007
+            : .003
 
         this.renderer.render(
             this.scene,
@@ -138,6 +146,22 @@ class Icosohedron extends React.PureComponent {
         this.camera.aspect = window.innerWidth / window.innerHeight;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize( window.innerWidth, window.innerHeight )
+    }
+
+    position = (device) => {
+        this.light.position.set( 30, 30, 30 )
+
+        if (device === 'mobile') {
+            this.smallIcosahedron.position.set( 6, 9, 6 )
+            this.scene.remove(this.largeIcosahedron)
+        }
+
+        if (device === 'desktop') {
+            this.smallIcosahedron.position.set( 0, 0, 0 )
+            this.largeIcosahedron.position.set( 0, -100, -400 )
+            this.light.position.set( 30, 30, 30 )
+            this.scene.add(this.largeIcosahedron)
+        }
     }
 
     render() {

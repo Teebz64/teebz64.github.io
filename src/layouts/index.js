@@ -14,7 +14,7 @@ export default function Layout({children, location}) {
             <ContactButton />
             <Icosohedron />
             <PageTransition location={location}>
-                <div className="container">
+                <div className="container container--v-padding">
                     {children}
                 </div>
                 <Footer />

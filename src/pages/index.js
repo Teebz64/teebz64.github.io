@@ -40,7 +40,7 @@ const work = [
 
 const IndexPage = () => (
     <React.Fragment>
-        <section className="section section--hero">
+        <section className="section section--hero section--index">
             <div className="section__indicator section__indicator--x-margin-bottom">
                 01
             </div>

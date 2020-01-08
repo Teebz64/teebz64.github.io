@@ -9,9 +9,47 @@ body {
 }
 
 .container {
-    padding: 40px;
+    padding: {
+        left: 24px;
+        right: 24px;
+    }
     position: relative;
     max-width: 100vw;
+
+    @include xs {
+        padding: {
+            left: 32px;
+            right: 32px;
+        }
+    }
+
+    @include m {
+        padding: {
+            left: 40px;
+            right: 40px;
+        }
+    }
+
+    &--v-padding {
+        padding: {
+            top: 24px;
+            bottom: 24px;
+        }
+
+        @include xs {
+            padding: {
+                top: 32px;
+                bottom: 32px;
+            }
+        }
+
+        @include m {
+            padding: {
+                top: 40px;
+                bottom: 40px;
+            }
+        }
+    }
 }
 
 main {

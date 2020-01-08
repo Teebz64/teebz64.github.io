@@ -1,5 +1,11 @@
 .icosohedron {
     pointer-events: none;
+    z-index: -5;
+
+    @include m {
+        z-index: 0;
+        opacity: 1;
+    }
 
     &__canvas {
         position: absolute;
@@ -8,5 +14,9 @@
         //transition: transform .1s;
         will-change: transform;
         transform: translateY(var(--icosohedron-ty));
+
+        @include m {
+            
+        }
     }
 }

@@ -47,7 +47,7 @@ class Masthead extends React.PureComponent {
                         <IoMdArrowBack /> Back To All Projects
                     </Link>
                 }
-                <div>
+                <div className="masthead__top">
                     <h1 className="masthead__heading">{heading}</h1>
                     {subheading &&
                         <h2 className="masthead__sub-heading">{subheading}</h2>

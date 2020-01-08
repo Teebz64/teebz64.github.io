@@ -1,8 +1,9 @@
 
 //Base
 @import '~reset-css/sass/_reset';
-@import 'functions';
 @import 'variables';
+@import 'breakpoints';
+@import 'functions';
 
 //Components
 @import 'scanlines';

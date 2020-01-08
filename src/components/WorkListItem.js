@@ -68,6 +68,13 @@ class WorkListItem extends React.PureComponent {
 
         this.titleScroll.start()
         this.listItemScroll.start()
+
+        window.addEventListener('resize', () => {
+            this.titleScroll.calculate()
+            this.titleScroll.update()
+            this.listItemScroll.calculate()
+            this.listItemScroll.update()
+        })
     }
 
     onEnter = () => {
@@ -81,13 +88,16 @@ class WorkListItem extends React.PureComponent {
             duration: 2500,
         })
 
-        anime({
-            easing: 'easeOutExpo',
-            targets: this.shutters.current.children,
-            scaleY: [1, 0],
-            duration: 750,
-            delay: anime.stagger(100)
-        })
+
+        if (this.shutters.current) {
+            anime({
+                easing: 'easeOutExpo',
+                targets: this.shutters.current.children,
+                scaleY: [1, 0],
+                duration: 750,
+                delay: anime.stagger(100)
+            })
+        }
 
         anime({
             easing: 'easeOutExpo',

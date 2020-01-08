@@ -1,7 +1,7 @@
 import React from "react"
 
 const Grid = () => (
-    <ul className="grid">
+    <ul className="grid container">
         <li></li>
         <li></li>
         <li></li>
