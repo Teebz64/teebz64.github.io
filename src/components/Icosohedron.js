@@ -5,6 +5,10 @@ import debounce from 'lodash/debounce'
 
 class Icosohedron extends React.PureComponent {
 
+    state = {
+        device: undefined
+    }
+
     scrollConfig = {
         from: '0px',
         to: '800px',
@@ -17,36 +21,50 @@ class Icosohedron extends React.PureComponent {
         }
     }
 
-    device = 'mobile'
-
     container = React.createRef()
 
     componentDidMount() {
-            this.scene = new THREE.Scene()
-            this.camera = new THREE.PerspectiveCamera(
-                75,
-                window.innerWidth / window.innerHeight,
-                0.1,
-                10000
-            )
-            this.renderer = new THREE.WebGLRenderer({
-                alpha: true
-            })
+        this.scene = new THREE.Scene()
+        this.camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            10000
+        )
+        this.renderer = new THREE.WebGLRenderer({
+            alpha: true
+        })
 
-            this.camera.position.set( 10,10,10 )
-            this.camera.lookAt( 0, 0, 0 )
+        this.camera.position.set( 10,10,10 )
+        this.camera.lookAt( 0, 0, 0 )
 
-            this.renderer.setSize(
-                window.innerWidth,
-                window.innerHeight
-            )
+        this.renderer.setSize(
+            window.innerWidth,
+            window.innerHeight
+        )
 
-            this.renderer.domElement.className = `icosohedron__canvas`
+        this.renderer.domElement.className = `icosohedron__canvas`
 
+        this.checkDevice(() => {
             this.init()
             this.buildScene()
             this.animate()
             this.bindEvents()
+        })
+    }
+
+    checkDevice = callback => {
+        const device = window.matchMedia('(min-width: 840px)').matches
+            ? 'desktop'
+            : 'mobile'
+
+        if (device === this.state.device) {
+            return
+        }
+
+        this.setState({
+            device
+        }, callback)
     }
 
     init = () => {
@@ -69,23 +87,23 @@ class Icosohedron extends React.PureComponent {
         this.reflectiveMaterial = this.getMaterial()
     }
 
-    getMaterial = (device) =>
-        new THREE.MeshBasicMaterial({
-            color: device === 'mobile'
-                ? 0x979797
-                : 0x666666,
+    getMaterial = () => {
+        return new THREE.MeshBasicMaterial({
+            color: this.state.device === 'mobile'
+                ? 0x666666
+                : 0x979797,
             envMap: this.textureCube,
             // wireframe: true,
             // wireframeLinewidth: 10,
             side: THREE.DoubleSide
         })
+    }
 
     buildScene = () => {
         this.buildSmallIcosahedron()
         this.buildLargeIcosahedron()
         this.buildLights()
         this.afterBuild()
-        this.position(this.device)
     }
 
     afterBuild = () => {
@@ -95,6 +113,7 @@ class Icosohedron extends React.PureComponent {
         })
 
         this.basicScroll.start()
+        this.position()
     }
 
     buildSmallIcosahedron = () => {
@@ -125,10 +144,10 @@ class Icosohedron extends React.PureComponent {
     animate = () => {
         requestAnimationFrame( this.animate )
 
-        this.largeIcosahedron.rotation.y += this.device === 'mobile'
+        this.largeIcosahedron.rotation.y += this.state.device === 'mobile'
             ? .0001
             : .001
-        this.smallIcosahedron.rotation.z += this.device === 'mobile'
+        this.smallIcosahedron.rotation.z += this.state.device === 'mobile'
             ? .0007
             : .003
 
@@ -139,7 +158,15 @@ class Icosohedron extends React.PureComponent {
     }
 
     bindEvents = () => {
-        window.onresize = debounce(this.resizeCanvas, 150)
+        window.onresize = debounce(this.onResize, 150)
+    }
+
+    onResize = () => {
+        this.resizeCanvas()
+        this.checkDevice(() => {
+            this.position()
+            this.updateMaterials()
+        })
     }
 
     resizeCanvas = () => {
@@ -148,7 +175,8 @@ class Icosohedron extends React.PureComponent {
         this.renderer.setSize( window.innerWidth, window.innerHeight )
     }
 
-    position = (device) => {
+    position = () => {
+        const { device } = this.state
         this.light.position.set( 30, 30, 30 )
 
         if (device === 'mobile') {
@@ -162,6 +190,13 @@ class Icosohedron extends React.PureComponent {
             this.light.position.set( 30, 30, 30 )
             this.scene.add(this.largeIcosahedron)
         }
+    }
+
+    updateMaterials = () => {
+        this.largeIcosahedron.material = this.getMaterial()
+        this.smallIcosahedron.material = this.getMaterial()
+        // this.largeIcosahedron.material.needsUpdate = true
+        // this.smallIcosahedron.material.needsUpdate = true
     }
 
     render() {

@@ -51,14 +51,19 @@
         text-transform: uppercase;
         line-height: .9;
 
-        .section--index & {
-            font-size: 74px;
-        }
-
         @include m {
             text-transform: none;
             font-size: 10vw;
             line-height: 1;
+        }
+
+        .section--index & {
+            font-size: 74px;
+            padding-right: 32px;
+
+            @include m {
+                font-size: 10vw;
+            }
         }
 
         em {
@@ -93,6 +98,7 @@
         font-size: 12px;
 
         @include m {
+            border: 1px solid $col-white;
             margin-right: 40px;
             padding: 16px 32px;
             position: static;
