@@ -1,10 +1,11 @@
 .contact-me {
     display: none;
-    width: 160px;
-    height: 160px;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
     position: fixed;
-    top: 40px;
-    right: 40px;
+    top: 0px;
+    right:0px;
     z-index: 100;
     transform: scale(0.8);
 
@@ -32,6 +33,24 @@
     }
 
     &__smile {
-        transform: rotate(var(--inner-rot));
+        transform: scale(.7) rotate(var(--inner-rot));
+
+        &--static {
+            display: block;
+        }
+
+        &--hover {
+            display: none !important;
+        }
+
+        .contact-me:hover & {
+            &--static {
+                display: none;
+            }
+
+            &--hover {
+                display: block !important;
+            }
+        }
     }
 }

@@ -1,6 +1,12 @@
 .icosohedron {
     pointer-events: none;
     z-index: -5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 
     @include m {
         z-index: 0;
@@ -8,12 +14,10 @@
     }
 
     &__canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
         //transition: transform .1s;
         will-change: transform;
         transform: translateY(var(--icosohedron-ty));
+        //min-height: 1000px;
 
         @include m {
             

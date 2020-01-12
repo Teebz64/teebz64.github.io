@@ -6,7 +6,8 @@ import debounce from 'lodash/debounce'
 class Icosohedron extends React.PureComponent {
 
     state = {
-        device: undefined
+        device: undefined,
+        hasRendered: false
     }
 
     scrollConfig = {
@@ -155,6 +156,15 @@ class Icosohedron extends React.PureComponent {
             this.scene,
             this.camera
         )
+
+        if (!this.state.hasRendered) {
+            this.setState({
+                hasRendered: true
+            })
+            document.body.dispatchEvent(
+                new Event('first-three-render')
+            )
+        }
     }
 
     bindEvents = () => {
@@ -170,9 +180,16 @@ class Icosohedron extends React.PureComponent {
     }
 
     resizeCanvas = () => {
-        this.camera.aspect = window.innerWidth / window.innerHeight;
+        const windowHeight = window.innerHeight >= 900
+            ? window.innerHeight
+            : 900
+
+        this.camera.aspect = window.innerWidth / windowHeight;
         this.camera.updateProjectionMatrix();
-        this.renderer.setSize( window.innerWidth, window.innerHeight )
+        this.renderer.setSize(
+            window.innerWidth,
+            windowHeight
+        )
     }
 
     position = () => {

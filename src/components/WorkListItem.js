@@ -85,7 +85,7 @@ class WorkListItem extends React.PureComponent {
             easing: 'easeOutExpo',
             targets: this.figure.current,
             translateY: [100, 0],
-            duration: 2500,
+            duration: 3500,
         })
 
 
@@ -94,7 +94,7 @@ class WorkListItem extends React.PureComponent {
                 easing: 'easeOutExpo',
                 targets: this.shutters.current.children,
                 scaleY: [1, 0],
-                duration: 750,
+                duration: 1650,
                 delay: anime.stagger(100)
             })
         }
@@ -118,39 +118,41 @@ class WorkListItem extends React.PureComponent {
                     to={`/${slug}/`}
                     ref={this.figure}
                 >
-                    <div className="work__thumbnail-container" ref={this.thumbnail}>
-                        <div className="work__gradient"></div>
+                    <div className="work__item-container" ref={this.thumbnail}>
                         <ul className="work__shutters" ref={this.shutters}>
                             <li></li>
                             <li></li>
                             <li></li>
                             <li></li>
                         </ul>
-                        { thumbnail &&
-                            <img
-                                className={`
-                                    work__thumbnail
-                                    work__thumbnail--${slug}
-                                `}
-                                src={thumbnail}
-                                alt={title}
-                            />
-                        }
-                        { (video && !thumbnail) &&
-                            <div className="video work__video">
-                                <video
-                                    className="video__video"
-                                    autoPlay={true}
-                                    loop
-                                    muted={true}
-                                    width="1176" 
-                                    height=" 650"
-                                    src={video}
+                        <div className="work__thumbnail-container">
+                            <div className="work__gradient"></div>
+                            { thumbnail &&
+                                <img
+                                    className={`
+                                        work__thumbnail
+                                        work__thumbnail--${slug}
+                                    `}
+                                    src={thumbnail}
+                                    alt={title}
                                 />
-                            </div>
-                        }
+                            }
+                            { (video && !thumbnail) &&
+                                <div className="video work__video">
+                                    <video
+                                        className="video__video"
+                                        autoPlay={true}
+                                        loop
+                                        muted={true}
+                                        width="1176" 
+                                        height=" 650"
+                                        src={video}
+                                    />
+                                </div>
+                            }
+                        </div>
                     </div>
-                    <div className="work__text">
+                    <div className="work__text" ref={this.text}>
                         <div className="work__category">
                             {categories.map((category, i) => i + 1 === categories.length
                                 ? category

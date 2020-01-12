@@ -95,8 +95,38 @@
     flex-wrap: wrap;
 
     & > li {
-        flex: 0 0 16.6666%;
-        padding: 48px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        flex: 0 0 50%;
+
+        @include xs {
+            flex: 0 0 33.3333%;
+        }
+
+        @include s {
+            flex: 0 0 25%;
+        }
+
+        @include m {
+            flex: 0 0 25%;
+            padding: 24px;
+        }
+
+        @include l {
+            flex: 0 0 16.6666%;
+            padding: 32px;
+        }
+
+        @include xl {
+            padding: 40px;
+        }
+    }
+
+    svg {
+        max-width: 120px;
+        width: 100%;
     }
 }
 

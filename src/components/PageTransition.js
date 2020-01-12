@@ -19,9 +19,10 @@ class PageTransition extends React.PureComponent {
                 transformOrigin: '50% 0%'
             })
             .add({
+                duration: 1000, 
                 targets: '.transition__grid li',
                 scaleY: [0, 1.3],
-                delay: anime.stagger(50)
+                delay: anime.stagger(115)
             })
             .add({
                 targets: '.transition__grid li',
@@ -29,9 +30,10 @@ class PageTransition extends React.PureComponent {
                 transformOrigin: '50% 100%'
             }, '-=400')
             .add({
+                duration: 1000, 
                 targets: '.transition__grid li',
                 scaleY: [1, 0],
-                delay: anime.stagger(50),
+                delay: anime.stagger(115),
             }, '-=400')
     }
 

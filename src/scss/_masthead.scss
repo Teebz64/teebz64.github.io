@@ -26,6 +26,19 @@
         z-index: 10;
         margin-bottom: 24px;
         text-decoration: none;
+        font-size: 12px;
+
+        @include s {
+            font-size: 14px;
+        }
+
+        @include l {
+            font-size: 16px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
 
         svg {
             margin-right: 16px;
@@ -48,21 +61,26 @@
         font-size: 48px;
         font-family: $font-serif;
         margin-bottom: 24px;
-        text-transform: uppercase;
         line-height: .9;
 
+        @include xxxs {
+            font-size: 56px;
+        }
+
         @include m {
-            text-transform: none;
             font-size: 10vw;
             line-height: 1;
         }
 
         .section--index & {
-            font-size: 74px;
+            font-size: 20vw;
             padding-right: 32px;
+            text-transform: uppercase;
+            @include fluid-type($bp-xxxs, $bp-m, 64px, 96px);
 
             @include m {
-                font-size: 10vw;
+                font-size: 12vw;
+                text-transform: none;
             }
         }
 
@@ -76,7 +94,6 @@
     }
 
     &__text {
-
         @include m {
             display: block;
             position: static;
@@ -147,8 +164,21 @@
         font: {
             style: italic;
             family: $font-serif;
-            size: 48px;
+            size: 24px;
         }
-        margin-bottom: 80px;
+        margin-bottom: 32px;
+
+        @include xxxs {
+            font-size: 26px;
+            margin-bottom: 40px
+        }
+
+        @include m {
+            margin-bottom: 64px
+        }
+
+        @include l {
+            margin-bottom: 80px;
+        }
     }
 }

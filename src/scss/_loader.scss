@@ -1,11 +1,5 @@
-$rows: 12;
-$cols: 12;
-$height: 100 / $rows;
-$width: 100 / $cols;
-
 .loader {
     align-items: center;
-    background-color: rgba($col-bg, 0.9);
     position: fixed;
     top: 0;
     left: 0;
@@ -13,27 +7,34 @@ $width: 100 / $cols;
     bottom: 0;
     display: flex;
     justify-content: center;
+    z-index: 9999;
 
-    &__text {
-        opacity: .9;
+    &--loaded {
+        display: none;
     }
 
-    &__tile-container {
+    &__grid {
+        align-items: stretch;
         display: flex;
-        flex-wrap: wrap;
-        position: absolute;
-        justify-content: stretch;
+        position: fixed;
         top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
-    }
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        justify-content: space-between;
 
-    &__tile {
-        background-color: white;
-        border: 1px solid white;
-        flex: 1 0 auto;
-        width: #{$width}vw;
-        height: #{$height}vh;
+        & > li {
+            background-color: $col-purple--dark;
+            border-right: 1px solid $col-purple;
+            flex: 1 0;
+            transform-origin: 100% 50%;
+            transform: scale(1);
+
+            &:first-child,
+            &:last-child {
+                flex: 0 0 $site-padding;
+            }
+        }
     }
 }

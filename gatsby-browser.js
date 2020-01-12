@@ -4,8 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-const transitionDelay = 500
-const navigationEvent = new Event('navigate')
+const transitionDelay = 1000
+const navigationEvent = new Event('calc-smiley')
 
 exports.shouldUpdateScroll = ({
     routerProps: { location },

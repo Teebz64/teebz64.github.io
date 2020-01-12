@@ -1,6 +1,7 @@
 import React from "react"
 import ContactButton from '../components/ContactButton'
 import Grid from '../components/Grid'
+import Loader from '../components/Loader'
 import TransitionGrid from '../components/TransitionGrid'
 import Icosohedron from '../components/Icosohedron'
 import PageTransition from '../components/PageTransition'
@@ -20,6 +21,7 @@ export default function Layout({children, location}) {
                 <Footer />
             </PageTransition>
             <TransitionGrid />
+            {/*<Loader />*/}
         </React.Fragment>
     )
 }

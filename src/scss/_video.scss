@@ -1,6 +1,10 @@
 .video {
+    height: 100%;
+
     &__video {
         width: 100%;
         height: auto;
+        object-fit: cover;
+        height: 100%;
     }
 }

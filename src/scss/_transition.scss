@@ -29,10 +29,20 @@
         pointer-events: none;
 
         li {
-            background-color: $col-purple--dark;
             flex: 1 0;
             transform-origin: 50% 0%;
             transform: scaleY(0);
+            position: relative;
+
+            &:before {
+                background-color: $col-purple--dark;
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -3px;
+                right: 3px;
+            }
 
             &:first-child,
             &:last-child {

@@ -3,10 +3,15 @@
     position: fixed;
     bottom: 24px;
     right: 0px;
-    width: 120px;
-    z-index: 100;
-    padding: 8px;
+    width: 60px;
+    z-index: 40;
+    padding: 4px;
     border-radius: 999px 0 0 999px;
+
+    @include m {
+        width: 120px;
+        padding: 8px;
+    }
 
     &__icon-container {
         align-items: center;
@@ -14,7 +19,12 @@
         border: 1px solid $col-accent;
         display: flex;
         justify-content: center;
-        width: 64px;
-        height: 64px;
+        width: 40px;
+        height: 40px;
+
+        @include m {
+            width: 64px;
+            height: 64px;
+        }
     }
 }

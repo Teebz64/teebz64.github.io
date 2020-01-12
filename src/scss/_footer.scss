@@ -2,35 +2,70 @@
     background-color: $col-purple__dark;
     display: flex;
     align-items: flex-end;
-    min-height: 580px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     overflow: hidden;
+    min-height: 320px;
+    position: relative;
+    z-index: 50;
+
+    @include xs {
+        padding-bottom: 32px;
+    }
+
+    @include m {
+        min-height: 440px;
+        padding-bottom: 40px;
+    }
+
+    @include l {
+        min-height: 580px;
+    }
 
     &__heading-container {
         align-items: center;
         display: flex;
         justify-content: space-between;
+        margin-bottom: 40px;
     }
 
     &__heading {
         color: $col-white;
         font: {
             family: $font-serif;
-            size: 56px;
+            size: 48px;
         }
-        margin-bottom: 40px;
+
+        @include m {
+            font-size: 56px;
+        }
+    }
+
+    &__decorative-text {
+        font-size: 12px;
+
+        @include s {
+            font-size: 14px;
+        }
+
+        @include l {
+            font-size: 16px;
+        }
     }
 
     &__email {
         display: block;
         background-color: $col-accent;
         color: $col-purple--dark;
-        font-size: 120px;
+        font-size: 40px;
         overflow: hidden;
         padding: 40px 0;
         width: 100%;
         max-width: 100%;
         text-decoration: none;
+
+        @include m {
+            font-size: 94px;
+        }
 
         & > div {
             white-space: nowrap;
