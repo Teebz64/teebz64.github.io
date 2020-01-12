@@ -19,6 +19,7 @@
     &__main {
         display: block;
         text-decoration: none;
+        perspective: 300px;
     }
 
     &__thumbnail {
@@ -155,6 +156,8 @@
         position: relative;
         z-index: 10;
         pointer-events: none;
+        transform-origin: 50% 0%;
+        opacity: 0.01;
 
         @include xs {
             padding: 16px 32px 16px;

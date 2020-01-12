@@ -11,6 +11,7 @@ class WorkListItem extends React.PureComponent {
     figure = React.createRef()
     title = React.createRef()
     listItem = React.createRef()
+    text = React.createRef()
 
     titleScrollConfig = {
         from: 'top-bottom',
@@ -95,15 +96,24 @@ class WorkListItem extends React.PureComponent {
                 targets: this.shutters.current.children,
                 scaleY: [1, 0],
                 duration: 1650,
-                delay: anime.stagger(100)
+                delay: anime.stagger(100),
             })
         }
 
         anime({
             easing: 'easeOutExpo',
             targets: this.thumbnail.current,
-            opacity: [0.1, 1],
+            opacity: [0.01, 1],
             duration: 0,
+        })
+
+        anime({
+            easing: 'easeOutExpo',
+            targets: this.text.current,
+            opacity: [0.01, 1],
+            rotateX: [-20, 0],
+            duration: 750,
+            delay: 600
         })
     }
 
