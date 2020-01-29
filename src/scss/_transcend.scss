@@ -5,79 +5,21 @@
 
     &__logo {
         display: block;
-        max-width: 540px;
+        max-width: calc(75% - 48px);
         width: 100%;
         margin: 0 auto;
-    }
 
-    &__figure {
-        &--first {
-            align-items: center;
-            display: flex;
-            height: 520px;
-            justify-content: center;
-
-            picture {
-                max-width: 520px;
-                width: 100%;
-                height: auto;
-            }
+        @include m {
+            max-width: 50%;
         }
 
-        &--second {
-            align-items: center;
-            display: flex;
-            height: 300px;
-            width: 50%;
+        @include l {
+            max-width: 540px;
+        }
+
+        &:nth-child(2) {
             margin-left: 50%;
-        }
-
-        &--third {
-            align-items: center;
-            display: flex;
-            height: 520px;
-            justify-content: center;
+            margin-right: 0;
         }
     }
-
-    &__figure-fill {
-        &--first {
-            background-color: $col-purple--dark;
-        }
-
-        &--second {
-            background-color: #ECDFD5;
-        }
-
-        &--third {
-            background-color: #ECDFD5;
-        }
-    }
-
-    &__floating-seal {
-        display: block;
-        position: absolute;
-        width: 25%;
-        height: auto;
-        left: 12.5%;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    &__pattern-container {
-        background-color: #ECDFD5;
-        max-height: 380px;
-        width: 75%;
-        margin-left: 12.5%;
-        overflow: hidden;
-        border-radius: 8px;
-    }
-
-    &__pattern {
-        width: 100%;
-    }
-}
-
-.case-study {
-
 }

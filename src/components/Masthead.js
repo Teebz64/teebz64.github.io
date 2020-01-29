@@ -2,6 +2,7 @@ import React from "react"
 import * as basicScroll from 'basicscroll'
 import { IoMdArrowBack } from "react-icons/io"
 import { Link } from "gatsby"
+import classnames from 'classNames'
 
 class Masthead extends React.PureComponent {
 
@@ -48,7 +49,11 @@ class Masthead extends React.PureComponent {
                     </Link>
                 }
                 <div className="masthead__top">
-                    <h1 className="masthead__heading">{heading}</h1>
+                    <h1 className={
+                        classnames('masthead__heading', {
+                            'masthead__heading--inner': hasBackButton
+                        })
+                    }>{heading}</h1>
                     {subheading &&
                         <h2 className="masthead__sub-heading">{subheading}</h2>
                     }

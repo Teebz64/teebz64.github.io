@@ -79,15 +79,16 @@ class WorkListItem extends React.PureComponent {
     }
 
     onEnter = () => {
+        return
         if (this.state.hasEntered) { return }
         this.setState({ hasEntered: true })
 
-        anime({
-            easing: 'easeOutExpo',
-            targets: this.figure.current,
-            translateY: [100, 0],
-            duration: 3500,
-        })
+        // anime({
+        //     easing: 'easeOutExpo',
+        //     targets: this.figure.current,
+        //     translateY: [100, 0],
+        //     duration: 3500,
+        // })
 
 
         if (this.shutters.current) {
@@ -112,8 +113,13 @@ class WorkListItem extends React.PureComponent {
             targets: this.text.current,
             opacity: [0.01, 1],
             rotateX: [-20, 0],
+            translateZ: 1,
             duration: 750,
-            delay: 600
+            delay: 750,
+            complete: () => {
+                if (!this.listItem.current) { return }
+                this.listItem.current.classList.add('work--entered')
+            }
         })
     }
 
@@ -130,6 +136,13 @@ class WorkListItem extends React.PureComponent {
                 >
                     <div className="work__item-container" ref={this.thumbnail}>
                         <ul className="work__shutters" ref={this.shutters}>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <ul className="work__crosshairs">
+                            <li></li>
                             <li></li>
                             <li></li>
                             <li></li>

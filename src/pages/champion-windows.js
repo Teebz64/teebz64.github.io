@@ -3,12 +3,7 @@ import CaseStudyLayout from '../layouts/case-study'
 import Picture from '../components/Picture'
 
 class ChampionWindows extends React.PureComponent {
-
-    styleBlock = 'champion-windows'
-
     render() {
-        const { styleBlock } = this
-
         return (
             <CaseStudyLayout
                 slug='champion-windows'

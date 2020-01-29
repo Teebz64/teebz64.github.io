@@ -28,7 +28,7 @@ class TwoBards extends React.PureComponent {
                     <div className="section__indicator section__indicator--x-margin-bottom">
                         02
                     </div>
-                    <div className="case-study__row">
+                    <div className="case-study__row two-bards__row">
                         <RevealerWithoutAnimation
                             image='/images/two-bards/two-bards-seal--red.svg'
                             alt='Pattern from Logo'
@@ -37,8 +37,8 @@ class TwoBards extends React.PureComponent {
                             span="4"
                         />
                     </div>
-                    <div className="case-study__row">
-                        <div className="two-bards__video two-bards__sketch-video video shift-half">
+                    <div className="case-study__row two-bards__row">
+                        <div className="two-bards__video two-bards__sketch-video">
                             <video
                                 className="video__video"
                                 autoPlay={true}
@@ -50,8 +50,8 @@ class TwoBards extends React.PureComponent {
                             />
                         </div>
                     </div>
-                    <div className="case-study__row">
-                        <div className="two-bards__video two-bards__refinement-video video shift-1-half">
+                    <div className="case-study__row two-bards__row">
+                        <div className="two-bards__video two-bards__refinement-video">
                             <video
                                 autoPlay={true}
                                 loop

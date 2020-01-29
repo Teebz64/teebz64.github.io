@@ -3,9 +3,17 @@
         &--first {
             align-items: center;
             display: flex;
-            height: 720px;
             justify-content: center;
-            width: 100%;
+            width: 100.2%;
+            padding: 32px 16px;
+
+            @include s {
+                padding: 56px 32px;
+            }
+
+            @include m {
+                height: 720px;
+            }
 
             picture {
                 width: 100%;
@@ -15,6 +23,7 @@
     }
 
     &__figure-fill {
+
         &--first {
             background-color: #9B7D49;
         }
@@ -22,18 +31,74 @@
 
     &__video {
         background-color: white;
-        width: 50%;
-        padding: 120px;
+        border-radius: $border-radius;
+        width: 100%;
+        padding: 24px 40px;
         position: relative;
+
+        @include m {
+            padding: 24px 80px;
+            width: 75%;
+        }
+
+        @include l {
+            padding: 80px 160px;
+            width: 50%;
+        }
+
+        @include xxl {
+            padding: 120px;
+        }
 
         &:after {
             background-color: white;
+            border-radius: $border-radius;
             content: '';
             width: 100%;
-            height: 128px;
+            height: 34px;
             position: absolute;
             bottom: 0;
             left: 0;
+
+            @include m {
+                height: 40px;
+            }
+
+            @include l {
+                height: 120px;
+            }
+        }
+    }
+
+    &__sketch-video {
+        @include m {
+            margin-left: 12.5%;
+        }
+
+        @include l {
+            margin-left: 0%;
+        }
+    }
+
+    &__refinement-video {
+        @include m {
+            margin-left: 12.5%;
+        }
+
+        @include l {
+            margin-left: 50%;
+        }
+    }
+
+    &__row {
+        margin-bottom: 20px;
+
+        @include m {
+            margin-bottom: 40px;
+        }
+
+        @include l {
+            margin-bottom: 80px;
         }
     }
 }

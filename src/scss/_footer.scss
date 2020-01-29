@@ -15,10 +15,12 @@
     @include m {
         min-height: 440px;
         padding-bottom: 40px;
+        position: static;
+        z-index: 0;
     }
 
     @include l {
-        min-height: 580px;
+        min-height: 480px;
     }
 
     &__heading-container {
