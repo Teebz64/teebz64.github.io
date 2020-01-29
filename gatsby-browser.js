@@ -11,7 +11,7 @@ exports.shouldUpdateScroll = ({
     routerProps: { location },
     getSavedScrollPosition,
 }) => {
-    if (location.action === 'PUSH') {
+    // if (location.action === 'PUSH') {
         window.setTimeout(
             () => {
                 window.scrollTo(0, 0)
@@ -19,16 +19,16 @@ exports.shouldUpdateScroll = ({
             },
             transitionDelay
         )
-    } else {
-        const savedPosition = getSavedScrollPosition(location)
-        window.setTimeout(
-            () => {
-                window.scrollTo(...(savedPosition || [0, 0]))
-                document.body.dispatchEvent(navigationEvent)
-            },
-            transitionDelay
-        )
-    }
+    // } else {
+    //     const savedPosition = getSavedScrollPosition(location)
+    //     window.setTimeout(
+    //         () => {
+    //             window.scrollTo(...(savedPosition || [0, 0]))
+    //             document.body.dispatchEvent(navigationEvent)
+    //         },
+    //         transitionDelay
+    //     )
+    // }
 
     return false
 }

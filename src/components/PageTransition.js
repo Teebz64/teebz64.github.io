@@ -49,7 +49,7 @@ class PageTransition extends React.PureComponent {
                 <ReactTransition
                     key={location.pathname}
                     timeout={{
-                        enter: 700,
+                        enter: 710,
                         exit: 700,
                     }}
                     onExit={this.onExit}
