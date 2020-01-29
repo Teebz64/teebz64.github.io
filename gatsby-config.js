@@ -1,9 +1,12 @@
 module.exports = {
   pathPrefix: "/stevendana.github.io",
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: "Steven Dana",
+    titleTemplate: "%s – Steven Dana",
+    description:
+      "Design and development portfolio of Steven Dana.",
+    url: "http://www.stevendana.com", // No trailing slash allowed!
+    image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
