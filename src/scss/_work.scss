@@ -6,6 +6,11 @@
 
     & > li {
         margin-bottom: 20px;
+        pointer-events: none;
+
+        &.work--entered {
+            pointer-events: auto;
+        }
 
         @include xs {
             margin-bottom: 40px;
@@ -35,6 +40,7 @@
         z-index: 5;
         backface-visibility: hidden;
         will-change: transform;
+        opacity: .99;
 
         @include xs {
             min-width: 300px;
@@ -81,11 +87,51 @@
         position: relative;
         opacity: 0.1;
         backface-visibility: hidden;
+        transition: background-color .3s;
 
         &:hover {
-            .work__gradient {
+
+            @include m {
+                outline: 1px solid $col-accent;
+            }
+
+            // .work__gradient {
+            //     opacity: .8;
+            // }
+
+            .work__thumbnail {
                 opacity: .8;
             }
+
+            &__thumbnail-container {
+                border: 1px solid $col-accent;
+            }
+
+            .work__thumbnail-container:before {
+                display: block !important;
+            }
+
+            & + .work__text .work__title {
+                -webkit-text-stroke: 1px $col-accent;
+                -webkit-text-fill-color: $col-purple--dark;
+                text-shadow: -2px 2px 0 $col-accent;
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+
+        &:before {
+            background-color: rgba($col-accent, 1);
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 200;
+            display: none;
         }
     }
 
@@ -187,7 +233,7 @@
         };
         position: relative;
         line-height: 1.3;
-        transition: opacity .2s, transform .2s;
+        transition: opacity .2s, transform .1s;
 
         @include xxxs {
             font-size: 40px;
@@ -210,8 +256,7 @@
 
         .work__main:hover & {
             opacity: 1;
-            transform: translateX(0);
-            transition: opacity .2s, transform .2s;
+            transition: opacity .2s;
         }
 
         em {
@@ -249,7 +294,7 @@
 
             .work__main:hover & {
                 opacity: 1;
-                transform: scaleX(1) translateX(0);
+                transform: scaleX(1) translateX(var(--title-accent-ty));
             }
         }
     }
@@ -274,4 +319,92 @@
             backface-visibility: hidden;
         }
     }
+
+    // &__crosshairs > li {
+    //     display: none;
+    //     &:before,
+    //     &:after {
+    //         background: {
+    //             image: url('/images/misc/crosshair.svg');
+    //             size: cover;
+    //         };
+    //         margin: {
+    //             top: -6.5px;
+    //             left: -6.5px;
+    //         };
+    //         content: '';
+    //         width: 13px;
+    //         height: 13px;
+    //         position: absolute;
+    //         z-index: 60;
+    //         opacity: 0.01;
+    //         transition: transform .2s, opacity .2s;
+    //         //transform: translateX(-50%) translateY(-50%);
+
+    //         .work__item-container:hover & {
+    //             opacity: .6;
+    //             transform: translateY(0) scale(1);
+    //         }
+    //     }
+
+    //     &:before {
+    //         top: 0%;
+    //         transform: translateY(-10px) scale(0);
+    //     }
+
+    //     &:after {
+    //         top: 100%;
+    //         transform: translateY(10px) scale(0);
+    //     }
+
+    //     &:nth-child(1) {
+    //         &:before,
+    //         &:after {
+    //             left: 0%;
+    //             transition-delay: .1s;
+    //         }
+    //     }
+
+    //     &:nth-child(2) {
+    //         &:before,
+    //         &:after {
+    //             left: 25%;
+    //             transition-delay: .2s;
+    //         }
+    //     }
+
+    //     &:nth-child(3) {
+    //         &:before,
+    //         &:after {
+    //             left: 50%;
+    //             transition-delay: .3s;
+    //         }
+    //     }
+
+    //     &:nth-child(4) {
+    //         &:before,
+    //         &:after {
+    //             left: 75%;
+    //             transition-delay: .4s;
+    //         }
+    //     }
+
+    //     &:nth-child(5) {
+    //         &:before,
+    //         &:after {
+    //             left: 100%;
+    //             transition-delay: .5s;
+    //         }
+    //     }
+
+    //     @for $i from 0 through 4 {
+    //         &:nth-child(#{$i}) {
+    //             &:before,
+    //             &:after {
+    //                 left: calc(25% * #{i});
+    //                 transition-delay: #{i} * .25s;
+    //             }
+    //         }
+    //     }
+    // }
 }

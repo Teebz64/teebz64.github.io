@@ -67,6 +67,18 @@
             font-size: 56px;
         }
 
+        @include xxs {
+            font-size: 66px
+        }
+
+        @include xs {
+            font-size: 72px;
+        }
+
+        @include s {
+            font-size: 80px
+        }
+
         @include m {
             font-size: 10vw;
             line-height: 1;
