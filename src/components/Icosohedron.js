@@ -92,7 +92,7 @@ class Icosohedron extends React.PureComponent {
         return new THREE.MeshBasicMaterial({
             color: this.state.device === 'mobile'
                 ? 0x666666
-                : 0x979797,
+                : 0xABABAB,
             envMap: this.textureCube,
             // wireframe: true,
             // wireframeLinewidth: 10,

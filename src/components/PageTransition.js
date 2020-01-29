@@ -8,7 +8,7 @@ class PageTransition extends React.PureComponent {
     componentDidMount = () => {
         this.tl = anime.timeline({
             easing: 'easeOutExpo',
-            duration: 850,
+            //duration: 850,
             autoplay: false
         })
 
@@ -16,23 +16,23 @@ class PageTransition extends React.PureComponent {
             .add({
                 targets: '.transition__grid li',
                 duration: 1,
-                transformOrigin: '50% 0%'
+                transformOrigin: '100% 50%'
             })
             .add({
                 duration: 1000, 
                 targets: '.transition__grid li',
-                scaleY: [0, 1.3],
-                delay: anime.stagger(115)
+                scaleX: [0, 1.3],
+                delay: anime.stagger(115),
             })
             .add({
                 targets: '.transition__grid li',
-                duration: 1,
-                transformOrigin: '50% 100%'
+                duration: 300,
+                transformOrigin: '0% 50%'
             }, '-=400')
             .add({
                 duration: 1000, 
                 targets: '.transition__grid li',
-                scaleY: [1, 0],
+                scaleX: [1, 0],
                 delay: anime.stagger(115),
             }, '-=400')
     }
@@ -49,8 +49,8 @@ class PageTransition extends React.PureComponent {
                 <ReactTransition
                     key={location.pathname}
                     timeout={{
-                        enter: 500,
-                        exit: 500,
+                        enter: 700,
+                        exit: 700,
                     }}
                     onExit={this.onExit}
                     unmountOnExit={true}

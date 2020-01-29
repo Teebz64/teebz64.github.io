@@ -79,7 +79,6 @@ class WorkListItem extends React.PureComponent {
     }
 
     onEnter = () => {
-        return
         if (this.state.hasEntered) { return }
         this.setState({ hasEntered: true })
 
@@ -112,8 +111,8 @@ class WorkListItem extends React.PureComponent {
             easing: 'easeOutExpo',
             targets: this.text.current,
             opacity: [0.01, 1],
-            rotateX: [-20, 0],
-            translateZ: 1,
+            //rotateX: [-20, 0],
+            //translateZ: 1,
             duration: 750,
             delay: 750,
             complete: () => {
@@ -183,7 +182,7 @@ class WorkListItem extends React.PureComponent {
                             )}
                         </div>
                         <button className="work__title" ref={this.title}>
-                            { title }
+                            <div>{ title }</div>
                             { subtitle && <em>{subtitle}</em> }
                         </button>
                     </div>

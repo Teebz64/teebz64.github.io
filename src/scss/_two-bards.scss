@@ -1,32 +1,25 @@
 .two-bards {
-    &__figure {
-        &--first {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            width: 100.2%;
-            padding: 32px 16px;
 
-            @include s {
-                padding: 56px 32px;
-            }
+    &__logo-container {
+        background-color: #9B7D49;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100.2%;
+        padding: 32px 16px;
 
-            @include m {
-                height: 720px;
-            }
+        @include s {
+            padding: 56px 32px;
+        }
 
-            picture {
-                width: 100%;
-                max-width: 500px;
-            }
+        @include m {
+            height: 720px;
         }
     }
 
-    &__figure-fill {
-
-        &--first {
-            background-color: #9B7D49;
-        }
+    &__logo {
+        width: 100%;
+        max-width: 500px;
     }
 
     &__video {
