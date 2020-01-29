@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>crosshair</title>
+    <desc>Created with Sketch.</desc>
+    <g id="crosshair" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polyline id="Rectangle" stroke="#8CE9A2" points="0 8 5 8 5 13"></polyline>
+        <polyline id="Rectangle-Copy" stroke="#8CE9A2" transform="translate(10.500000, 2.500000) rotate(-180.000000) translate(-10.500000, -2.500000) " points="8 0 13 0 13 5"></polyline>
+        <polyline id="Rectangle" stroke="#8CE9A2" transform="translate(10.500000, 10.500000) rotate(-90.000000) translate(-10.500000, -10.500000) " points="8 8 13 8 13 13"></polyline>
+        <polyline id="Rectangle-Copy-2" stroke="#8CE9A2" transform="translate(2.500000, 2.500000) rotate(-270.000000) translate(-2.500000, -2.500000) " points="-6.48776069e-13 0 5 0 5 5"></polyline>
+    </g>
+</svg>
