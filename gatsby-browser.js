@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-const transitionDelay = 1000
+const transitionDelay = 800
 const navigationEvent = new Event('calc-smiley')
 
 exports.shouldUpdateScroll = ({

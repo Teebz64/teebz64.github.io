@@ -1,12 +1,13 @@
 module.exports = {
   pathPrefix: "/stevendana.github.io",
   siteMetadata: {
+    author: "Steven Dana",
     title: "Steven Dana",
     titleTemplate: "%s – Steven Dana",
     description:
       "Design and development portfolio of Steven Dana.",
     url: "http://www.stevendana.com", // No trailing slash allowed!
-    image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
+    image: "/images/meta/og-image.png", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -31,7 +32,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-//        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `static/icons/favicon@9x.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

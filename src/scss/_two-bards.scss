@@ -2,6 +2,7 @@
 
     &__logo-container {
         background-color: #9B7D49;
+        border-radius: $border-radius;
         align-items: center;
         display: flex;
         justify-content: center;
@@ -64,6 +65,8 @@
     }
 
     &__sketch-video {
+        margin-left: 0;
+
         @include m {
             margin-left: 12.5%;
         }
@@ -74,6 +77,8 @@
     }
 
     &__refinement-video {
+        margin-left: 0;
+
         @include m {
             margin-left: 12.5%;
         }
@@ -84,7 +89,7 @@
     }
 
     &__row {
-        margin-bottom: 20px;
+        margin-bottom: 24px;
 
         @include m {
             margin-bottom: 40px;

@@ -16,24 +16,24 @@ class PageTransition extends React.PureComponent {
             .add({
                 targets: '.transition__grid li',
                 duration: 1,
-                transformOrigin: '100% 50%'
+                transformOrigin: '100% 0%'
             })
             .add({
-                duration: 1000, 
+                duration: 750, 
                 targets: '.transition__grid li',
                 scaleX: [0, 1.3],
-                delay: anime.stagger(115),
+                delay: anime.stagger(85),
             })
             .add({
                 targets: '.transition__grid li',
                 duration: 300,
-                transformOrigin: '0% 50%'
+                transformOrigin: '0% 100%'
             }, '-=400')
             .add({
-                duration: 1000, 
+                duration: 750, 
                 targets: '.transition__grid li',
                 scaleX: [1, 0],
-                delay: anime.stagger(115),
+                delay: anime.stagger(85),
             }, '-=400')
     }
 
@@ -49,8 +49,8 @@ class PageTransition extends React.PureComponent {
                 <ReactTransition
                     key={location.pathname}
                     timeout={{
-                        enter: 710,
-                        exit: 700,
+                        enter: 530,
+                        exit: 530,
                     }}
                     onExit={this.onExit}
                     unmountOnExit={true}

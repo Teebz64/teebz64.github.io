@@ -25,7 +25,7 @@ class TwoBards extends React.PureComponent {
                     <div className="section__indicator section__indicator--x-margin-bottom">
                         02
                     </div>
-                    <div className="case-study__row">
+                    <div className="case-study__row two-bards__row">
                         <div className="two-bards__logo-container">
                             <Picture
                                 svg='/images/two-bards/two-bards-seal--red.svg'
@@ -34,7 +34,7 @@ class TwoBards extends React.PureComponent {
                             />
                         </div>
                     </div>
-                    <div className="case-study__row">
+                    <div className="case-study__row two-bards__row">
                         <div className="two-bards__video two-bards__sketch-video video shift-half">
                             <video
                                 className="video__video"
@@ -47,7 +47,7 @@ class TwoBards extends React.PureComponent {
                             />
                         </div>
                     </div>
-                    <div className="case-study__row">
+                    <div className="case-study__row two-bards__row">
                         <div className="two-bards__video two-bards__refinement-video video shift-1-half">
                             <video
                                 autoPlay={true}

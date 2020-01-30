@@ -1,6 +1,7 @@
 import React from "react"
 import WorkListItem from '../components/WorkListItem'
 import Masthead from '../components/Masthead'
+import SEO from "../components/seo"
 
 const work = [
     {
@@ -40,6 +41,7 @@ const work = [
 
 const IndexPage = () => (
     <React.Fragment>
+        <SEO title="Portfolio" />
         <section className="section section--hero section--index">
             <div className="section__indicator section__indicator--x-margin-bottom">
                 01

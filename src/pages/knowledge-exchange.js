@@ -11,14 +11,14 @@ class KnowledgeExchange extends React.PureComponent {
                 subheading='Knowledge Exchange'
                 tags={['Architecture • Design']}
             >
-                <div className="case-study__row">
+                <div className="case-study__row knowledge-exchange__row">
                     <Picture
                         path='/images/knowledge-exchange/feed-in-laptop'
                         alt='The Knowledge Exchange Feed'
                         className='knowledge-exchange__laptop'
                     />
                 </div>
-                <div className="case-study__row">
+                <div className="case-study__row knowledge-exchange__row">
                     <Picture
                         path='/images/knowledge-exchange/manage-topics'
                         alt='The Knowledge Exchange Topic Management Screen'
@@ -30,7 +30,7 @@ class KnowledgeExchange extends React.PureComponent {
                         className='knowledge-exchange__signup-topics'
                     />
                 </div>
-                <div className="case-study__row">
+                <div className="case-study__row knowledge-exchange__row">
                     <div className="knowledge-exchange__suggested-widgets">
                         <Picture
                             path='/images/knowledge-exchange/suggested-articles'

@@ -1,13 +1,20 @@
 import React from "react"
-import { ReactBasicScroll } from "react-basic-scroll"
-import { Link } from "gatsby"
 import Masthead from '../components/Masthead'
 import GoBackButton from '../components/GoBackButton'
-import NavBar from '../components/NavBar'
+import SEO from '../components/Seo'
 
 const CaseStudyLayout = ({children, location, slug, tags, heading, subheading, deck}) => {
+    const getTitle = () => {
+        return 
+    }
+
     return (
         <main className={slug}>
+            <SEO title={
+                subheading
+                    ? `${heading}: ${subheading}`
+                    : heading
+            } />
             <GoBackButton />
             <section className="section section--hero">
                 <div className="section__indicator section__indicator--x-margin-bottom">
@@ -34,13 +41,5 @@ const CaseStudyLayout = ({children, location, slug, tags, heading, subheading, d
         </main>
     )
 }
-
-// const CaseStudyLayout = ({children, location, slug, tags, heading, subheading, deck}) => {
-//     return (
-//         <main className={slug}>
-//             { children }
-//         </main>
-//     )
-// }
 
 export default CaseStudyLayout

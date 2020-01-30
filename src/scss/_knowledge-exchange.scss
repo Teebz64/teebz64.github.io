@@ -1,7 +1,9 @@
 .knowledge-exchange {
     &__laptop {
-        max-width: 80%;
-        margin: 0 auto;
+        @include m {
+            max-width: 80%;
+            margin: 0 auto;
+        }
     }
 
     &__manage-topics,
@@ -10,21 +12,34 @@
     }
 
     &__manage-topics {
-        width: 75%;
+        margin-bottom: 40px;
+
+        @include m {
+            width: 75%;
+            margin-bottom: 0;
+        }
     }
 
     &__signup-topics {
-        width: 50%;
-        margin: {
-            top: -20%;
-            left: 50%;
+        @include m {
+            width: 50%;
+            margin: {
+                top: -20%;
+                left: 50%;
+            }
         }
     }
 
     &__suggested-widgets {
         position: relative;
-        width: 33%;
-        transform: translateY(-20%);
+        margin-bottom: calc(5% + 40px);
+        width: 67%;
+
+        @include m {
+            margin-bottom: 0;
+            width: 33%;
+            transform: translateY(-20%);
+        }
     }
 
     &__suggested-experts,
@@ -44,7 +59,11 @@
 
     &__profile {
         border-radius: $border-radius;
-        width: 75%;
-        margin-left: 25%;
+        width: 100%;
+
+        @include s {
+            width: 75%;
+            margin-left: 25%;
+        }
     }
 }

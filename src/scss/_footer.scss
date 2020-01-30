@@ -96,7 +96,7 @@
 
     &__decoration {
         border-top: 1px solid $col-grid-color;
-        display: flex;
+        display: none;
         position: absolute;
         top: 0;
         left: 40px;
@@ -115,6 +115,10 @@
             position: absolute;
             top: 0;
             left: 0;
+        }
+
+        @include m {
+            display: flex;
         }
     }
 

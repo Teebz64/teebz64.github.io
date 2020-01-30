@@ -1,48 +1,89 @@
 .champ {
     &__laptop {
-        max-width: 80%;
         margin: 0 auto;
+
+        @include m {
+            max-width: 80%;
+        }
     }
 
     &__desktop-styles {
-        width: 75%;
+        margin-bottom: 16px;
+
+        @include m {
+            margin-bottom: 0;
+            width: 75%;
+        }
     }
 
     &__mobile-styles {
-        width: 25%;
-        margin: {
-            top: -32%;
-            left: 62.5%;
+        width: 50%;
+        max-width: 350px;
+        margin: 0 auto;
+
+        @include m {
+            width: 25%;
+            margin: {
+                top: -32%;
+                left: 62.5%;
+            }
+            max-width: 9999px;
         }
     }
 
     &__roi,
     &__frame-diagram {
-        width: 56.25%;
+
+        &__mobile-styles {
+            width: 56.25%;
+        }
     }
 
     &__roi {
-        margin-left: 38.75%;
+        margin-bottom: 40px;
+
+        @include m {
+            margin: {
+                left: 38.75%;
+                bottom: 0;
+            }
+        }
     }
 
     &__frame-diagram {
-        margin: {
-            left: 5%;
-            top: -15%;
+        @include m {
+            margin: {
+                left: 5%;
+                top: -15%;
+            }
         }
     }
 
     &__options-desktop {
-        width: 50%;
-        margin-left: 25%;
+        margin-bottom: 16px;
+
+        @include m {
+            width: 50%;
+            margin: {
+                left: 25%;
+                bottom: 0;
+            }
+        }
     }
 
     &__options-mobile {
-        width: 25%;
-        margin: {
-            top: -57%;
-            left: 12.5%;
-            bottom: calc(9.5% + 120px);
+        width: 50%;
+        max-width: 350px;
+        margin: 0 auto;
+
+        @include m {
+            width: 25%;
+            margin: {
+                top: -57%;
+                left: 12.5%;
+                bottom: calc(9.5% + 120px);
+            }
+            max-width: 9999px;
         }
     }
 }

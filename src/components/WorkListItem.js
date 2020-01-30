@@ -78,6 +78,11 @@ class WorkListItem extends React.PureComponent {
         })
     }
 
+    componentWillUnmount = () => {
+        this.titleScroll.destroy()
+        this.listItemScroll.destroy()
+    }
+
     onEnter = () => {
         if (this.state.hasEntered) { return }
         this.setState({ hasEntered: true })
