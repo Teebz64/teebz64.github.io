@@ -7,7 +7,7 @@ module.exports = {
     description:
       "Design and development portfolio of Steven Dana.",
     url: "http://www.stevendana.com", // No trailing slash allowed!
-    image: "/images/meta/og-image.png", // Path to your image you placed in the 'static' folder
+    image: "images/meta/og-image.png", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
