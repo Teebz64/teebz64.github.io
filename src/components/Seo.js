@@ -27,6 +27,9 @@ function SEO({ description, image, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaImage = image || site.siteMetadata.image
+
+  console.log(metaImage)
 
   return (
     <Helmet
@@ -45,8 +48,16 @@ function SEO({ description, image, lang, meta, title }) {
           content: title,
         },
         {
+          property: `image`,
+          content: metaImage,
+        },
+        {
           property: `og:image`,
-          content: image,
+          content: metaImage,
+        },
+        {
+          property: `twitter:image`,
+          content: metaImage,
         },
         {
           property: `og:description`,
