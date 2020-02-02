@@ -58,5 +58,6 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "browserslist": ["defaults", "edge 14", "edge 15", "edge 16"]
 }
