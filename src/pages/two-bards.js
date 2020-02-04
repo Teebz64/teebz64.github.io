@@ -1,5 +1,4 @@
 import React from "react"
-import { ReactBasicScroll } from "react-basic-scroll"
 import { Link } from "gatsby"
 import Masthead from '../components/Masthead'
 import GoBackButton from '../components/GoBackButton'

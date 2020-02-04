@@ -99,13 +99,9 @@
                 display: block !important;
             }
 
-            & + .work__text .work__title {
-                & > div {
-                    // text-decoration: underline;
-                    // -webkit-text-stroke: 1px $col-accent;
-                    // -webkit-text-fill-color: $col-purple--dark;
-                    // text-shadow: -2px 2px 0 $col-accent;
-                }
+            & + .work__text .work__title > div:after {
+                transform: scaleX(1);
+                transform-origin: 0% 0%;
             }
         }
 
@@ -305,6 +301,28 @@
             .work__main:hover & {
                 opacity: 1;
                 transform: scaleX(1) translateX(var(--title-accent-ty));
+            }
+        }
+
+        & > div {
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: calc(100% - 16px);
+                border-bottom: 2px solid $col-accent;
+                transform-origin: 100% 100%;
+                transform: scaleX(0);
+                transition: transform .3s ease-out;
+                display: none;
+
+                @include m {
+                    display: block;
+                }
             }
         }
     }

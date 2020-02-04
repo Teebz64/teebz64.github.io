@@ -197,7 +197,7 @@ class Icosohedron extends React.PureComponent {
         this.light.position.set( 30, 30, 30 )
 
         if (device === 'mobile') {
-            this.smallIcosahedron.position.set( 6, 9, 6 )
+            this.smallIcosahedron.position.set( 6, 10, 6 )
             this.scene.remove(this.largeIcosahedron)
         }
 

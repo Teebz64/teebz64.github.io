@@ -125,6 +125,8 @@
         right: 0;
         white-space: nowrap;
         font-size: 12px;
+        justify-content: center;
+        width: 144px;
 
         @include m {
             border: 1px solid $col-white;
@@ -135,6 +137,7 @@
             left: auto;
             transform: none;
             max-width: none;
+            width: auto;
             font-size: 16px;
         }
     }

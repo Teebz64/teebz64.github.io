@@ -5,10 +5,10 @@ import SEO from "../components/seo"
 
 const work = [
     {
-        slug: 'transcend',
-        thumbnail: '/images/logos/transcend-logo.svg',
+        slug: 'two-bards',
+        thumbnail: '/images/two-bards/two-bards-seal--purple.svg',
         categories: ['Logo Design', 'Branding'],
-        title: 'Transcend',
+        title: 'Two Bards',
     },
     {
         slug: 'knowledge-exchange',
@@ -18,17 +18,23 @@ const work = [
         subtitle: 'Knowledge Exchange'
     },
     {
-        slug: 'two-bards',
-        thumbnail: '/images/two-bards/two-bards-seal--purple.svg',
-        categories: ['Logo Design', 'Branding'],
-        title: 'Two Bards',
-    },
-    {
         slug: 'ooh-icon-system',
         video: '/images/ooh-icon-system/output.export.mp4',
         categories: ['Development', 'Animation'],
         title: 'Oohology',
         subtitle: 'Icon System'
+    },
+    {
+        slug: 'transcend',
+        thumbnail: '/images/logos/transcend-logo.svg',
+        categories: ['Logo Design', 'Branding'],
+        title: 'Transcend',
+    },
+    {
+        slug: 'ripple-cube',
+        video: '/images/ripple-cube/ripplebox.export.mp4',
+        categories: ['threejs', 'experiment'],
+        title: 'Ripple Cube',
     },
     {
         slug: 'champion-windows',

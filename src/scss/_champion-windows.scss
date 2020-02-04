@@ -34,7 +34,7 @@
     &__roi,
     &__frame-diagram {
 
-        &__mobile-styles {
+        @include m {
             width: 56.25%;
         }
     }

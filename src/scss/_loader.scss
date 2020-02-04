@@ -33,7 +33,15 @@
 
             &:first-child,
             &:last-child {
-                flex: 0 0 $site-padding;
+                flex: 0 0 20px;
+
+                @include xs {
+                    flex-basis: 32px;
+                }
+
+                @include m {
+                    flex-basis: 40px;
+                }
             }
         }
     }
