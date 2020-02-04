@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const work = [
     {
         slug: 'two-bards',
-        thumbnail: '/images/two-bards/two-bards-seal--purple.svg',
+        thumbnail: '/images/two-bards/two-bards-seal--mark-only.svg',
         categories: ['Logo Design', 'Branding'],
         title: 'Two Bards',
     },
@@ -26,7 +26,7 @@ const work = [
     },
     {
         slug: 'transcend',
-        thumbnail: '/images/logos/transcend-logo.svg',
+        thumbnail: '/images/transcend/alt-mark.svg',
         categories: ['Logo Design', 'Branding'],
         title: 'Transcend',
     },

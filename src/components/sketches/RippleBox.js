@@ -5,6 +5,10 @@ import * as THREE from 'three'
 
 class RippleBox extends React.PureComponent {
 
+    state = {
+        animating: true
+    }
+
     frameCount = 0
     bandIndex = 0
     config = {
@@ -55,6 +59,10 @@ class RippleBox extends React.PureComponent {
         this.center = new THREE.Vector3(0,60,0)
         this.camera.lookAt(this.center)
         this.init()
+    }
+
+    componentWillUnmount() {
+        this.destroyScene()
     }
 
     init = () => {
@@ -158,8 +166,13 @@ class RippleBox extends React.PureComponent {
     }
 
     animate = () => {
+        if (!this.state.animating) { return }
+
+        requestAnimationFrame( this.animate )
+
         const { config } = this
         this.frameCount++
+
         times(this.bandIndex, (bandId) => {
             const band = this.scene.getObjectByName(`band-${bandId + 1}`)
             const dist = band.position.distanceTo(this.center)
@@ -179,8 +192,6 @@ class RippleBox extends React.PureComponent {
             this.scene,
             this.camera
         )
-
-        requestAnimationFrame( this.animate )
     }
 
     translateMeshes = () => {
@@ -190,6 +201,17 @@ class RippleBox extends React.PureComponent {
             band.translateY(50)
             band.translateX((config.bandSize + config.bandSpacing) * config.numBandsX * -0.5)
             band.translateZ((config.bandSize + config.bandSpacing) * config.numBandsZ * -0.5)
+        })
+    }
+
+    destroyScene = () => {
+        this.setState({
+            animating: false
+        }, () => {
+            this.gui.destroy()
+            this.scene = null
+            this.renderer = null
+            this.camera = null
         })
     }
 
