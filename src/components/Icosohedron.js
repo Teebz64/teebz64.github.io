@@ -168,7 +168,7 @@ class Icosohedron extends React.PureComponent {
     }
 
     bindEvents = () => {
-        window.onresize = debounce(this.onResize, 150)
+        window.addEventListener('resize', debounce(this.onResize, 150))
     }
 
     onResize = () => {

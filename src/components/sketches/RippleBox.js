@@ -1,14 +1,13 @@
 import React from "react"
 import times from 'lodash/times'
+import debounce from 'lodash/debounce'
 import dat from 'dat.gui'
 import * as THREE from 'three'
 
 class RippleBox extends React.PureComponent {
 
-    state = {
-        animating: true
-    }
-
+    device = undefined
+    animating = true
     frameCount = 0
     bandIndex = 0
     config = {
@@ -23,7 +22,8 @@ class RippleBox extends React.PureComponent {
         crestScaleFactor: 4,
         xyScaleMin: 1,
         frequencyModulation: .02,
-        aspectRatio: 1.75
+        desktopAspectRatio: .75,
+        mobileAspectRatio: 1.75
     }
 
     container = React.createRef()
@@ -51,21 +51,23 @@ class RippleBox extends React.PureComponent {
         this.renderer = new THREE.WebGLRenderer({
             alpha: true
         })
-        this.setSize()
         this.camera.position.set( 80, 200, 80 )
         this.camera.lookAt( 0, 0, 0 )
 
         this.renderer.domElement.className = `ripple-cube__canvas`
         this.center = new THREE.Vector3(0,60,0)
         this.camera.lookAt(this.center)
+        this.device = this.checkDevice()
+        this.debouncedResize = debounce(this.onResize, 150)
         this.init()
     }
 
     componentWillUnmount() {
-        this.destroyScene()
+        this.animating = false
     }
 
     init = () => {
+        this.setSize()
         this.container.current.appendChild(
             this.renderer.domElement
         )
@@ -78,9 +80,16 @@ class RippleBox extends React.PureComponent {
     }
 
     getSize = () => {
-        const width = this.container.current.offsetWidth
-        const height = width * this.config.aspectRatio
-        console.log(width, height, this.container.current)
+        const aspectRatio = this.device === 'desktop'
+            ? this.config.desktopAspectRatio
+            : this.config.mobileAspectRatio
+
+        const width = this.container.current 
+            ? this.container.current.offsetWidth
+            : 0
+
+        const height = width * aspectRatio
+
         return { width, height }
     }
 
@@ -96,8 +105,12 @@ class RippleBox extends React.PureComponent {
     }
 
     bindEvents = () => {
-        // this.meshes.forEach(function(mesh) => {
-        // })
+        window.addEventListener('resize', this.debouncedResize)
+    }
+
+    onResize = () => {
+        this.device = this.checkDevice()
+        this.setSize()
     }
 
     buildMeshes = () => {
@@ -166,7 +179,11 @@ class RippleBox extends React.PureComponent {
     }
 
     animate = () => {
-        if (!this.state.animating) { return }
+        if (!this.animating) { 
+            // Abandon Animation Looping
+            this.destroyScene()
+            return 
+        }
 
         requestAnimationFrame( this.animate )
 
@@ -205,14 +222,20 @@ class RippleBox extends React.PureComponent {
     }
 
     destroyScene = () => {
-        this.setState({
-            animating: false
-        }, () => {
-            this.gui.destroy()
-            this.scene = null
-            this.renderer = null
-            this.camera = null
-        })
+        window.removeEventListener('resize', this.debouncedResize)
+        this.animate = null
+        this.gui = null
+        this.scene = null
+        this.renderer = null
+        this.camera = null
+    }
+
+    checkDevice = callback => {
+        const device = window.matchMedia('(min-width: 840px)').matches
+            ? 'desktop'
+            : 'mobile'
+
+        return device
     }
 
     render = () => <figure ref={this.container} className="ripple-cube__container" />
