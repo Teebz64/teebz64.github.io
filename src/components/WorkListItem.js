@@ -169,6 +169,7 @@ class WorkListItem extends React.PureComponent {
                                     <video
                                         className="video__video"
                                         autoPlay={true}
+                                        playsInline
                                         loop
                                         muted={true}
                                         width="1176" 

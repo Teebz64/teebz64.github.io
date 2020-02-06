@@ -38,6 +38,7 @@ class TwoBards extends React.PureComponent {
                             <video
                                 className="video__video"
                                 autoPlay={true}
+                                playsInline
                                 loop
                                 muted=""
                                 width="480"
@@ -50,6 +51,7 @@ class TwoBards extends React.PureComponent {
                         <div className="two-bards__video two-bards__refinement-video video shift-1-half">
                             <video
                                 autoPlay={true}
+                                playsInline
                                 loop
                                 muted=""
                                 width="480"
