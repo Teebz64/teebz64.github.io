@@ -1,0 +1,86 @@
+.barton-malow {
+	&__laptop-homepage {
+		margin: 0 auto;
+
+        @include m {
+            max-width: 80%;
+        }
+	}
+
+	&__homepage-section {
+		border-radius: $border-radius;
+		width: 100%;
+        margin: 0 auto 40px;
+
+        @include m {
+        	margin: {
+        		left: 0;
+        		bottom: 0;
+        	}
+        	width: 75%;
+        }
+	}
+
+	&__about-us {
+		border-radius: $border-radius;
+		width: 100%;
+        margin: 0 auto;
+
+        @include m {
+        	box-shadow: $box-shadow;
+        	position: relative;
+        	width: 75%;
+        	margin :{
+        		top: -25%;
+        		left: 25%;
+        		right: 0;
+        	};
+        }
+	}
+
+	&__building-with-the-american-spirit {
+		margin: 0 auto;
+		max-width: 960px;
+		width: 100%;
+		height: auto;
+	}
+
+	&__case-study-1 {
+		border-radius: $border-radius;
+		width: 100%;
+        margin: 0 auto 40px;
+
+        @include m {
+        	margin: {
+        		left: 25%;
+        		right: 0;
+        		bottom: 0;
+        	};
+        	width: 75%;
+        }
+	}
+
+	&__case-study-2 {
+		border-radius: $border-radius;
+		margin: 0 auto;
+
+		@include m {
+        	margin: {
+        		left: 0;
+        		right: 0;
+        		top: -25%;
+        	};
+        	position: relative;
+        	box-shadow: $box-shadow;
+        	width: 75%;
+        }
+	}
+
+	&__timeline-laptop {
+		margin: 0 auto;
+
+        @include m {
+            max-width: 80%;
+        }
+	}
+}

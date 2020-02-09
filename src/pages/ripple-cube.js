@@ -9,7 +9,7 @@ class RippleCube extends React.PureComponent {
 
     render() {
         return (
-            <main className="two-bards">
+            <main className="ripple-box">
                 <GoBackButton />
                 <section className="section section--hero">
                     <div className="section__indicator section__indicator--x-margin-bottom">

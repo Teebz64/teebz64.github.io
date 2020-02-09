@@ -84,6 +84,10 @@
             line-height: 1;
         }
 
+        @include xxl {
+            font-size: 148px;
+        }
+
         .section--index & {
             font-size: 20vw;
             padding-right: 32px;

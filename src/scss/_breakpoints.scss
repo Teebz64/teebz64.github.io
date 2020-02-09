@@ -5,7 +5,7 @@ $bp-s: 768px;
 $bp-m: 840px;
 $bp-l: 1200px;
 $bp-xl: 1400px;
-$bp-xxl: 1600px;
+$bp-xxl: 1680px;
 
 @mixin xxxs {
   @media (min-width: #{$bp-xxxs}) {

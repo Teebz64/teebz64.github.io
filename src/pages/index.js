@@ -5,17 +5,16 @@ import SEO from "../components/seo"
 
 const work = [
     {
+        slug: 'barton-malow',
+        thumbnail: '/images/barton-malow/laptop-homepage.png',
+        categories: ['Design', 'Development'],
+        title: 'Barton Malow',
+    },
+    {
         slug: 'two-bards',
         thumbnail: '/images/two-bards/two-bards-seal--mark-only.svg',
         categories: ['Logo Design', 'Branding'],
         title: 'Two Bards',
-    },
-    {
-        slug: 'knowledge-exchange',
-        thumbnail: '/images/knowledge-exchange/feed-in-laptop.png',
-        categories: ['Architecture', 'Design'],
-        title: 'Humana:',
-        subtitle: 'Knowledge Exchange'
     },
     {
         slug: 'ooh-icon-system',
@@ -23,6 +22,13 @@ const work = [
         categories: ['Development', 'Animation'],
         title: 'Oohology',
         subtitle: 'Icon System'
+    },
+    {
+        slug: 'knowledge-exchange',
+        thumbnail: '/images/knowledge-exchange/feed-in-laptop.png',
+        categories: ['Architecture', 'Design'],
+        title: 'Humana:',
+        subtitle: 'Knowledge Exchange'
     },
     {
         slug: 'transcend',
