@@ -20,7 +20,6 @@ body {
     }
     position: relative;
     width: 100%;
-    max-width: 1680px;
     margin: 0 auto;
 
     @include xs {
@@ -35,6 +34,10 @@ body {
             left: 40px;
             right: 40px;
         }
+    }
+
+    @include xxl {
+        max-width: 1680px;
     }
 
     &--v-padding {

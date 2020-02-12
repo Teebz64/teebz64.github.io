@@ -98,6 +98,10 @@
                 font-size: 12vw;
                 text-transform: none;
             }
+
+            @include xxl {
+                font-size: 200px;
+            }
         }
 
         em {

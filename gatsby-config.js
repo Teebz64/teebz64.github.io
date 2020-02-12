@@ -41,7 +41,7 @@ module.exports = {
         trackingId: "UA-71779921-1",
         head: true,
         pageTransitionDelay: 1000,
-        cookieDomain: "stevendana.com",
+        cookieDomain: "www.stevendana.com",
       }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

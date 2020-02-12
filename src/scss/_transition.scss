@@ -31,7 +31,7 @@
         li {
             flex: 1 0;
             transform-origin: 50% 0%;
-            transform: scaleY(0);
+            transform: scaleX(0);
             position: relative;
 
             &:before {
@@ -54,6 +54,12 @@
 
                 @include m {
                     flex-basis: 40px;
+                }
+
+                @include xxl {
+                    flex-basis: calc(
+                        calc(100% - #{$bp-xxl - 80}) / 2
+                    )
                 }
             }
         }
