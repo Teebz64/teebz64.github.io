@@ -180,15 +180,22 @@ class Icosohedron extends React.PureComponent {
     }
 
     resizeCanvas = () => {
-        const windowHeight = window.innerHeight >= 900
+        const minHeight = window.innerHeight >= 900
             ? window.innerHeight
             : 900
 
-        this.camera.aspect = window.innerWidth / windowHeight;
+        const renderWidth = window.innerWidth >= 1800
+            ? 1800
+            : window.innerWidth
+
+        const aspectRatio = renderWidth / minHeight
+        const renderHeight = renderWidth / aspectRatio
+
+        this.camera.aspect = aspectRatio;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(
-            window.innerWidth,
-            windowHeight
+            renderWidth,
+            renderHeight
         )
     }
 
