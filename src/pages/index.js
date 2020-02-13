@@ -5,10 +5,11 @@ import SEO from "../components/seo"
 
 const work = [
     {
-        slug: 'barton-malow',
-        thumbnail: '/images/barton-malow/laptop-homepage.png',
-        categories: ['Design', 'Development'],
-        title: 'Barton Malow',
+        slug: 'champion-windows',
+        thumbnail: '/images/champion-windows/slider.png',
+        categories: ['Design'],
+        title: 'Champion',
+        subtitle: 'Windows'
     },
     {
         slug: 'two-bards',
@@ -31,6 +32,12 @@ const work = [
         subtitle: 'Knowledge Exchange'
     },
     {
+        slug: 'barton-malow',
+        thumbnail: '/images/barton-malow/laptop-homepage.png',
+        categories: ['Design', 'Development'],
+        title: 'Barton Malow',
+    },
+    {
         slug: 'transcend',
         thumbnail: '/images/transcend/alt-mark.svg',
         categories: ['Logo Design', 'Branding'],
@@ -42,13 +49,6 @@ const work = [
         categories: ['threejs', 'experiment'],
         title: 'Ripple Cube',
     },
-    {
-        slug: 'champion-windows',
-        thumbnail: '/images/champion-windows/slider.png',
-        categories: ['Design'],
-        title: 'Champion',
-        subtitle: 'Windows'
-    }
 ]
 
 const IndexPage = () => (

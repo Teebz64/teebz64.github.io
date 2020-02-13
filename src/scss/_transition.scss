@@ -1,7 +1,8 @@
 .transition {
     &--entering {
-        position: absolute;
         opacity: 0;
+        position: fixed;
+        top: 0;
     }
 
     &--entered {

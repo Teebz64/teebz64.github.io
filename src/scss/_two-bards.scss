@@ -8,6 +8,7 @@
         justify-content: center;
         width: 100.2%;
         padding: 32px 16px;
+        max-width: 100%;
 
         @include s {
             padding: 56px 32px;
