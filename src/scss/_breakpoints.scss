@@ -6,6 +6,8 @@ $bp-m: 840px;
 $bp-l: 1200px;
 $bp-xl: 1400px;
 $bp-xxl: 1680px;
+$bp-xxxl: 1900px;
+$bp-infinity: 3200px;
 
 @mixin xxxs {
   @media (min-width: #{$bp-xxxs}) {
@@ -51,6 +53,18 @@ $bp-xxl: 1680px;
 
 @mixin xxl {
    @media (min-width: #{$bp-xxl}) {
+      @content;
+  }
+}
+
+@mixin xxxl {
+   @media (min-width: #{$bp-xxxl}) {
+      @content;
+  }
+}
+
+@mixin infinity {
+   @media (min-width: #{$bp-infinity}) {
       @content;
   }
 }

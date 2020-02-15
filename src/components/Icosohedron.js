@@ -179,19 +179,17 @@ class Icosohedron extends React.PureComponent {
         })
     }
 
+    cap = (num, min, max) => {
+        const parsed = parseInt(num)
+        return Math.min(Math.max(parsed, min), max)
+    }
+
     resizeCanvas = () => {
-        const minHeight = window.innerHeight >= 900
-            ? window.innerHeight
-            : 900
 
-        const renderWidth = window.innerWidth >= 1800
-            ? 1800
-            : window.innerWidth
+        const renderWidth = this.cap(window.innerWidth, 1, 1800)
+        const renderHeight = this.cap(window.innerHeight, 900, 1080)
 
-        const aspectRatio = renderWidth / minHeight
-        const renderHeight = renderWidth / aspectRatio
-
-        this.camera.aspect = aspectRatio;
+        this.camera.aspect = renderWidth / renderHeight;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(
             renderWidth,
