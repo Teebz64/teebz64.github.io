@@ -24,14 +24,14 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins }) => {
             test: /DrawSVGPlugin/,
             use: loaders.null(),
           },
-          {
-            test: /vendor\/gsap/,
-            use: loaders.null(),
-          },
-          {
-            test: /gsap/,
-            use: loaders.null(),
-          },
+          // {
+          //   test: /vendor\/gsap/,
+          //   use: loaders.null(),
+          // },
+          // {
+          //   test: /gsap/,
+          //   use: loaders.null(),
+          // },
           {
             test: /anime/,
             use: loaders.null(),

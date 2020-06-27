@@ -16,7 +16,6 @@ const Footer = () => (
             </div>
             <div className="footer__heading-container">
                 <h4 className="footer__heading">Contact</h4>
-                <div className="footer__decorative-text">電子メイル</div>
             </div>
             <a href="mailto:stevendana86@gmail.com" className="footer__email">
                 <div>

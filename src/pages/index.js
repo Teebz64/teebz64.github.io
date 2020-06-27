@@ -5,17 +5,18 @@ import SEO from "../components/seo"
 
 const work = [
     {
+        slug: 'knowledge-exchange',
+        thumbnail: '/images/knowledge-exchange/feed-in-laptop.png',
+        categories: ['Architecture', 'Design'],
+        title: 'Humana:',
+        subtitle: 'Knowledge Exchange'
+    },
+    {
         slug: 'champion-windows',
         thumbnail: '/images/champion-windows/slider.png',
         categories: ['Design'],
         title: 'Champion',
         subtitle: 'Windows'
-    },
-    {
-        slug: 'two-bards',
-        thumbnail: '/images/two-bards/two-bards-seal--mark-only.svg',
-        categories: ['Logo Design', 'Branding'],
-        title: 'Two Bards',
     },
     {
         slug: 'ooh-icon-system',
@@ -25,30 +26,29 @@ const work = [
         subtitle: 'Icon System'
     },
     {
-        slug: 'knowledge-exchange',
-        thumbnail: '/images/knowledge-exchange/feed-in-laptop.png',
-        categories: ['Architecture', 'Design'],
-        title: 'Humana:',
-        subtitle: 'Knowledge Exchange'
+        slug: 'ripple-cube',
+        video: '/images/ripple-cube/ripplebox.export.mp4',
+        categories: ['threejs', 'experiment'],
+        title: 'Ripple Cube',
     },
+    // {
+    //     slug: 'two-bards',
+    //     thumbnail: '/images/two-bards/two-bards-seal--mark-only.svg',
+    //     categories: ['Logo Design', 'Branding'],
+    //     title: 'Two Bards',
+    // },
     {
         slug: 'barton-malow',
         thumbnail: '/images/barton-malow/laptop-homepage.png',
         categories: ['Design', 'Development'],
         title: 'Barton Malow',
     },
-    {
-        slug: 'transcend',
-        thumbnail: '/images/transcend/alt-mark.svg',
-        categories: ['Logo Design', 'Branding'],
-        title: 'Transcend',
-    },
-    {
-        slug: 'ripple-cube',
-        video: '/images/ripple-cube/ripplebox.export.mp4',
-        categories: ['threejs', 'experiment'],
-        title: 'Ripple Cube',
-    },
+    // {
+    //     slug: 'transcend',
+    //     thumbnail: '/images/transcend/alt-mark.svg',
+    //     categories: ['Logo Design', 'Branding'],
+    //     title: 'Transcend',
+    // },
 ]
 
 const IndexPage = () => (
@@ -59,15 +59,9 @@ const IndexPage = () => (
                 01
             </div>
             <Masthead
-                pill={
-                    <React.Fragment>
-                        <div>ポートフォリオ</div>
-                        <div className="masthead__timespan">'18–'19</div>
-                    </React.Fragment>
-                }
                 heading={
                     <React.Fragment>
-                        St<em>e</em>v<em>e</em>n D<em>a</em>n<em>a</em>
+                       Steven Dana
                     </React.Fragment>
                 }
                 text={
@@ -80,8 +74,14 @@ const IndexPage = () => (
             />
         </section>
         <section className="section">
+            <div className="deck">
+                <h2 className="deck__heading">Hi. I’m a UX Engineer &amp; Product Designer</h2>
+                <p className="deck__text">I make clever interfaces that are memorable and easy to use. When I’m not working on professional projects I’m exploring cellular automata, generative art, and lock-picking.</p>
+            </div>
+        </section>
+        <section className="section">
             <div className="section__indicator">
-                02
+                03
             </div>
             <ul className="work">
                 {work.map((item, i) =>

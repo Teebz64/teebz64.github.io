@@ -124,7 +124,6 @@
 
     &__pill {
         align-items: center;
-        border-radius: 999px;
         display: inline-flex;
         transform-origin: 100% 100%;
         transform: rotate(-90deg);
@@ -137,9 +136,7 @@
         width: 144px;
 
         @include m {
-            border: 1px solid $col-white;
             margin-right: 40px;
-            padding: 16px 32px;
             position: static;
             top: auto;
             left: auto;

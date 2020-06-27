@@ -145,15 +145,8 @@ class WorkListItem extends React.PureComponent {
                             <li></li>
                             <li></li>
                         </ul>
-                        <ul className="work__crosshairs">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
                         <div className="work__thumbnail-container">
-                            <div className="work__gradient"></div>
+                            { /* <div className="work__gradient"></div> */ }
                             { thumbnail &&
                                 <img
                                     className={`
