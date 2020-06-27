@@ -11,7 +11,7 @@ import "../scss/index.scss"
 export default function Layout({children, location}) {
     return (
         <React.Fragment>
-            <Grid />
+            {/* <Grid /> */}
             <ContactButton />
             <Icosohedron />
             <PageTransition location={location}>
