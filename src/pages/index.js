@@ -63,8 +63,8 @@ const IndexPage = () => (
                 }
                 text={
                     <React.Fragment>
-                        <div className="masthead__textline masthead__textline--large">Design & Development</div>
-                        <div className="masthead__textline masthead__textline--medium">Selected Work</div>
+                        <div className="masthead__textline masthead__textline--large -fade-in">Design & Development</div>
+                        <div className="masthead__textline masthead__textline--medium -fade-in">Selected Work</div>
                     </React.Fragment>
                 }
                 hasBackButton={false}
