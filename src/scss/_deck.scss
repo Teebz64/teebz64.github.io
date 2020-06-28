@@ -51,4 +51,9 @@
             font-size: 36px;
         }
     }
+
+    &__heading,
+    &__text {
+        opacity: 0;
+    }
 }

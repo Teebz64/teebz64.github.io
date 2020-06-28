@@ -4,7 +4,7 @@ import anime from 'animejs/lib/anime.es.js'
 
 class Loader extends React.PureComponent {
 
-    minTime = 2000
+    minTime = 0
     grid = React.createRef()
 
     state = {
@@ -14,7 +14,6 @@ class Loader extends React.PureComponent {
     }
 
     componentDidMount() {
-        document.body.classList.add('scroll-lock')
 
         document.body
             .addEventListener('first-three-render', () => {
@@ -42,47 +41,29 @@ class Loader extends React.PureComponent {
     }
 
     onLoad = () => {
-        if (this.grid.current) {
-            anime({
-                easing: 'easeOutExpo',
-                targets: this.grid.current.children,
-                scaleX: [1, 0],
-                duration: 1650,
-                delay: anime.stagger(200),
-                complete: () => {
-                    this.setState({
-                        unlockedScroll: true
-                    })
-                }
-            })
-        }
+        anime({
+            easing: 'easeOutExpo',
+            targets: '.icosohedron',
+            opacity: [0, 0.8],
+            delay: 1000,
+            duration: 10000,
+        })
+
+        anime({
+            easing: 'easeOutExpo',
+            targets: '.deck__heading, .deck__text',
+            opacity: [0.01, 1],
+            delay: anime.stagger(2500),
+            duration: 5000,
+        })
 
         setTimeout(() => {
-            document.body.classList.remove('scroll-lock')
             document.body.dispatchEvent(new Event('calc-smiley'))
         }, 1500)
     }
 
     render() {
-        const { unlockedScroll } = this.state
-
-        return !unlockedScroll
-            ? (
-                <div
-                    className="loader"
-                >
-                    <ul ref={this.grid} className="loader__grid">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            ) : (
-                <React.Fragment />
-            )
+        return <React.Fragment />
     }
 }
 

@@ -17,7 +17,11 @@
 
     @include m {
         display: block;
-        margin-bottom: 200px;
+        margin-bottom: 88px;
+    }
+
+    @include l {
+        margin-bottom: 124px;
     }
 
     &__back {

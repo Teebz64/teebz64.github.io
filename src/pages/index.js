@@ -58,7 +58,7 @@ const IndexPage = () => (
             <Masthead
                 heading={
                     <React.Fragment>
-                       Steven Dana
+                       <span class="hover-cursor">Steven Dana</span>
                     </React.Fragment>
                 }
                 text={
@@ -72,8 +72,8 @@ const IndexPage = () => (
         </section>
         <section className="section">
             <div className="deck">
-                <h2 className="deck__heading">Hi. I’m a UX Engineer &amp; Product Designer</h2>
-                <p className="deck__text">I make clever interfaces that are memorable and easy to use. When I’m not working on professional projects I’m exploring cellular automata, generative art, and lock-picking.</p>
+                <h2 className="deck__heading">Hi. I’m a <span className="underline">UX Engineer</span> &amp; <span className="underline">Product Designer</span></h2>
+                <p className="deck__text">I make memorable interfaces that are fun to use. When I’m not working on professional projects I’m exploring cellular automata, generative art, and lock-picking.</p>
             </div>
         </section>
         <section className="section">

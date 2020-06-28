@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: {
         color: $col-bg;
@@ -11,6 +15,12 @@ body {
         max-height: 100%;
         overflow: hidden;
     }
+}
+
+::selection {
+    background-color: $col-green;	
+    color: $col-purple--dark;
+    opacity: 1;
 }
 
 .container {

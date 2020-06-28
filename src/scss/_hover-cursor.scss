@@ -1,0 +1,29 @@
+.hover-cursor {
+    // cursor: url('/images/steven-cursor.png'), auto;
+}
+
+.underline {
+    text-decoration: none;
+    background-image: linear-gradient($col-gold, $col-gold);
+    background-position: 0% 83%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    animation: underline 1s forwards;
+
+    &:first-child {
+        animation-delay: 1s;
+    }
+
+    &:nth-child(2) {
+        animation-delay: 3s;
+    }
+}
+
+@keyframes underline {
+    0% {
+        background-size: 0% 2px;
+    }
+    100% {
+        background-size: 100% 2px;
+    }
+}
