@@ -17,9 +17,6 @@ const CaseStudyLayout = ({children, location, slug, tags, heading, subheading, d
             } />
             <GoBackButton />
             <section className="section section--hero">
-                <div className="section__indicator section__indicator--x-margin-bottom">
-                    01
-                </div>
                 <Masthead
                     pill={tags.map(
                         (tag, i) => i + 1 === tags.length

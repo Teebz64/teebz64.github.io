@@ -13,6 +13,7 @@
     will-change: transform, opacity;
     position: relative;
     z-index: 5;
+    padding-top: 4vw;
 
     @include m {
         display: block;

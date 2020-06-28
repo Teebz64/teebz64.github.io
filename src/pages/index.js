@@ -55,9 +55,6 @@ const IndexPage = () => (
     <React.Fragment>
         <SEO title="Portfolio" />
         <section className="section section--hero section--index">
-            <div className="section__indicator section__indicator--x-margin-bottom">
-                01
-            </div>
             <Masthead
                 heading={
                     <React.Fragment>
@@ -80,9 +77,6 @@ const IndexPage = () => (
             </div>
         </section>
         <section className="section">
-            <div className="section__indicator">
-                03
-            </div>
             <ul className="work">
                 {work.map((item, i) =>
                     <WorkListItem
