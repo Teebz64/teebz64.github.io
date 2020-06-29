@@ -4,7 +4,10 @@
     &__video {
         width: 100%;
         height: auto;
-        object-fit: cover;
+        object: {
+            fit: cover;
+            position: 50% 0%;
+        }
         height: 100%;
     }
 }

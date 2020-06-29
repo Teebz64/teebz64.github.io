@@ -7,9 +7,13 @@
             size: 40px;
         }
         margin-bottom: 12px;
+
+        @include xs {
+            font-size: 64px;
+        }
         
         @include s {
-            font-size: 64px;
+            font-size: 72px;
             margin-bottom: 16px;
         }
 
@@ -39,12 +43,12 @@
         }
 
         @include m {
-            font-size: 20px;
-            max-width: 75%;
+            font-size: 24px;
         }
 
         @include l {
             font-size: 1.9vw;
+            max-width: 75%;
         }
 
         @include xxl {

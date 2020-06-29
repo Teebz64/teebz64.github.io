@@ -89,8 +89,12 @@
             line-height: 1;
         }
 
+        @include l {
+            font-size: 12vw;
+        }
+
         @include xxl {
-            font-size: 148px;
+            font-size: 160px;
         }
 
         .section--index & {
@@ -187,7 +191,6 @@
 
     &__sub-heading {
         font: {
-            style: italic;
             family: $font-serif;
             size: 24px;
         }
@@ -199,7 +202,8 @@
         }
 
         @include m {
-            margin-bottom: 64px
+            margin-bottom: 64px;
+            font-size: 40px;
         }
 
         @include l {

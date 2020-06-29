@@ -12,12 +12,12 @@ class Icosohedron extends React.PureComponent {
 
     scrollConfig = {
         from: '0px',
-        to: '800px',
+        to: '1680px',
         direct: true,
         props: {
             '--icosohedron-ty': {
                 from: '0px',
-                to: '200px'
+                to: '-400px'
             }
         }
     }
@@ -109,7 +109,7 @@ class Icosohedron extends React.PureComponent {
 
     afterBuild = () => {
         this.basicScroll = basicScroll.create({
-            elem: document.querySelector('.icosohedron__canvas'),
+            elem: this.container.current,
             ...this.scrollConfig
         })
 
@@ -187,7 +187,7 @@ class Icosohedron extends React.PureComponent {
     resizeCanvas = () => {
 
         const renderWidth = this.cap(window.innerWidth, 1, 1800)
-        const renderHeight = this.cap(window.innerHeight, 900, 1080)
+        const renderHeight = this.cap(window.innerHeight, 900, 5000)
 
         this.camera.aspect = renderWidth / renderHeight;
         this.camera.updateProjectionMatrix();
