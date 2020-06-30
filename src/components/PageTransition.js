@@ -39,7 +39,6 @@ class PageTransition extends React.PureComponent {
 
     onEnter = () => {
         this.tl.play()
-        console.log(this.tl)
     }
 
     render() {

@@ -24,6 +24,10 @@
         margin-bottom: 124px;
     }
 
+    &--inner {
+        padding-top: 124px;
+    }
+
     &__back {
         align-items: center;
         display: inline-flex;
@@ -65,7 +69,7 @@
     &__heading {
         font-size: 48px;
         font-family: $font-serif;
-        margin-bottom: 24px;
+        margin-bottom: 8px;
         line-height: .9;
 
         @include xxxs {
@@ -203,7 +207,7 @@
 
         @include m {
             margin-bottom: 64px;
-            font-size: 40px;
+            font-size: 48px;
         }
 
         @include l {

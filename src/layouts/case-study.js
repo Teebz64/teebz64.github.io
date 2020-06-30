@@ -1,6 +1,6 @@
 import React from "react"
 import Masthead from '../components/Masthead'
-import GoBackButton from '../components/GoBackButton'
+import InnerNav from '../components/InnerNav'
 import SEO from '../components/Seo'
 
 const CaseStudyLayout = ({children, location, slug, tags, heading, subheading, deck}) => {
@@ -15,23 +15,34 @@ const CaseStudyLayout = ({children, location, slug, tags, heading, subheading, d
                     ? `${heading}: ${subheading}`
                     : heading
             } />
-            <GoBackButton />
+            <InnerNav title={subheading
+                    ? `${heading}: ${subheading}`
+                    : heading
+            } />
             <section className="section section--hero">
                 <Masthead
-                    pill={tags.map(
-                        (tag, i) => i + 1 === tags.length
-                            ? tag
-                            : `${tag} • `
-                        )
+                    pill={
+                        <div className="case-study__meta">
+                            <div className="section__indicator">
+                                Role
+                            </div>
+                            {tags.map(
+                                (tag, i) => i + 1 === tags.length
+                                    ? tag
+                                    : `${tag} • `
+                                )
+                            }
+                        </div>
                     }
                     heading={heading}
                     subheading={subheading}
+                    inner
                 />
                 { deck && deck }
             </section>
             <section className="section">
                 <div className="section__indicator section__indicator--x-margin-bottom">
-                    02
+                    About
                 </div>
                 { children }
             </section>

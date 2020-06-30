@@ -1,4 +1,11 @@
 .case-study {
+
+    &__label {
+        color: $col-gold;
+        margin-right: 8px;
+        font-weight: 900;
+    }
+
     &__row {
         margin-bottom: 40px;
 

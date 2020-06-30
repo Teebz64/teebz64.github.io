@@ -39,38 +39,35 @@ class Masthead extends React.PureComponent {
     }
 
     render() {
-        const { heading, pill, text, block, subheading, hasBackButton } = this.props
+        const { heading, pill, text, block, subheading, hasBackButton,inner } = this.props
 
         return (
-            <header className="masthead" ref={this.mastheadContainer}>
-                { hasBackButton &&
-                    <Link to='/' className="masthead__back">
-                        <IoMdArrowBack /> Back To All Projects
-                    </Link>
+            <>
+                <header className={classnames('masthead', { 'masthead--inner': inner })} ref={this.mastheadContainer}>
+                    <div className="masthead__top">
+                        <h1 className={
+                            classnames('masthead__heading', {
+                                'masthead__heading--inner': hasBackButton
+                            })
+                        }>{heading}</h1>
+                        {subheading &&
+                            <h2 className="masthead__sub-heading">{subheading}</h2>
+                        }
+                    </div>
+                    <div className="masthead__bottom">
+                        {text &&
+                            <div className="masthead__text">
+                                {text}
+                            </div>
+                        }
+                    </div>
+                </header>
+                {pill &&
+                    <div className="masthead__pill section--x-margin-bottom">
+                        {pill}
+                    </div>
                 }
-                <div className="masthead__top">
-                    <h1 className={
-                        classnames('masthead__heading', {
-                            'masthead__heading--inner': hasBackButton
-                        })
-                    }>{heading}</h1>
-                    {subheading &&
-                        <h2 className="masthead__sub-heading">{subheading}</h2>
-                    }
-                </div>
-                <div className="masthead__bottom">
-                    {pill &&
-                        <div className="masthead__pill">
-                            {pill}
-                        </div>
-                    }
-                    {text &&
-                        <div className="masthead__text">
-                            {text}
-                        </div>
-                    }
-                </div>
-            </header>
+            </>
         )
     }
 }

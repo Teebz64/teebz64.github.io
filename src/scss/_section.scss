@@ -1,11 +1,12 @@
 .section {
     &__indicator {
         align-items: center;
-        color: $col-accent;
+        color: $col-gold;
         display: flex;
         margin-bottom: 24px;
         justify-content: space-between;
         font-size: 12px;
+        font-weight: 900;
 
         @include m {
             margin-bottom: 16px;
@@ -22,6 +23,7 @@
             background-color: $col-white;
             display: block;
             height: 1px;
+            margin-right: 8px;
             width: 40px;
             margin-left: auto;
             transform-origin: 0% 50%;
@@ -42,7 +44,7 @@
         &--x-margin-bottom {
 
             @include m {
-                margin-bottom: 72px;
+                margin-bottom: 40px;
             }
         }
     }

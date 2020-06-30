@@ -1,0 +1,73 @@
+.nav {
+    background-color: rgba(40, 19, 44, .5);
+    backdrop-filter: blur(30px);
+    position: fixed;
+    font-size: 14px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    @include m {
+        font-size: 16px;
+    }
+
+    &__container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__center {
+        display: none;
+        color: rgba($col-white, .5);
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        flex: 0 0 50%;
+        text-align: center;
+
+        @include s {
+            display: block;
+        }
+    }
+
+    &__right,
+    &__left {
+        flex: 0 0 50%;
+
+        @include s {
+            flex: 0 0 calc(25% - 40px);
+        }
+    }
+
+    &__back {
+        align-items: center;
+        display: flex;
+        text-decoration: none;
+        padding: 20px 0;
+
+        @include s {
+            padding: 24px;
+        }
+
+        &:hover {
+            background-color: rgba($col-purple--dark, .5);;
+        }
+
+        &:focus {
+            outline: 2px solid $col-accent;
+        }
+
+        span {
+            display: none;
+
+            @include l {
+                display: block;
+            }
+        }
+    }
+
+    &__back-icon {
+        margin-right: 8px;
+    }
+}
