@@ -9,16 +9,21 @@
         margin-bottom: 12px;
 
         @include xs {
-            font-size: 64px;
+            font-size: 52px;
         }
         
         @include s {
-            font-size: 72px;
+            font-size: 56px;
             margin-bottom: 16px;
         }
 
         @include m {
             max-width: 75%;
+            font-size: 64px;
+        }
+
+        @include ml {
+            font-size: 72px;
         }
 
         @include l {
@@ -39,7 +44,7 @@
         }
 
         @include s {
-            font-size: 18px;
+            font-size: 20px;
         }
 
         @include m {

@@ -18,7 +18,6 @@ class WorkListItem extends React.PureComponent {
         to: 'top-middle',
         timing: 'expoOut',
         direct: true,
-        inside: () => this.onEnter(),
         props: {
             [`--title-opacity`]: {
                 from: 0,
@@ -40,9 +39,10 @@ class WorkListItem extends React.PureComponent {
     }
 
     listItemScrollConfig = {
-        from: 'top-bottom',
+        from: 'middle-bottom',
         to: 'bottom-top',
         timing: 'expoOut',
+        inside: () => this.onEnter(),
         direct: true,
         props: {
             [`--image-opacity`]: {

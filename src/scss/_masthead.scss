@@ -25,7 +25,15 @@
     }
 
     &--inner {
-        padding-top: 124px;
+        padding-top: 64px;
+
+        @include s {
+            padding-top: 80px;
+        }
+        
+        @include ml {
+            padding-top: 124px;
+        }
     }
 
     &__back {
@@ -67,17 +75,13 @@
     }
 
     &__heading {
-        font-size: 48px;
+        font-size: 56px;
         font-family: $font-serif;
         margin-bottom: 8px;
         line-height: .9;
 
-        @include xxxs {
-            font-size: 56px;
-        }
-
         @include xxs {
-            font-size: 66px
+            font-size: 72px
         }
 
         @include xs {
@@ -85,20 +89,20 @@
         }
 
         @include s {
-            font-size: 80px
+            font-size: 92px
         }
 
         @include m {
-            font-size: 10vw;
+            font-size: 11vw;
             line-height: 1;
         }
 
         @include l {
-            font-size: 12vw;
+            font-size: 13vw;
         }
 
         @include xxl {
-            font-size: 160px;
+            font-size: 180px;
         }
 
         .section--index & {
@@ -138,23 +142,10 @@
     &__pill {
         align-items: center;
         display: inline-flex;
-        transform-origin: 100% 100%;
-        transform: rotate(-90deg);
-        position: absolute;
-        top: 0;
-        right: 0;
-        white-space: nowrap;
         font-size: 12px;
-        justify-content: center;
-        width: 144px;
+        margin-bottom: 32px;
 
         @include m {
-            margin-right: 40px;
-            position: static;
-            top: auto;
-            left: auto;
-            transform: none;
-            max-width: none;
             width: auto;
             font-size: 16px;
         }
@@ -205,13 +196,46 @@
             margin-bottom: 40px
         }
 
+        @include xxs {
+            font-size: 30px;
+        }
+
         @include m {
             margin-bottom: 64px;
-            font-size: 48px;
+        }
+
+        @include ml {
+            font-size: 2vw;
         }
 
         @include l {
             margin-bottom: 80px;
+            font-size: 48px;
         }
+
+        // @include xxs {
+        //     font-size: 72px
+        // }
+
+        // @include xs {
+        //     font-size: 72px;
+        // }
+
+        // @include s {
+        //     font-size: 92px
+        // }
+
+        // @include m {
+        //     font-size: 11vw;
+        //     line-height: 1;
+        // }
+
+        // @include l {
+        //     font-size: 13vw;
+        // }
+
+        // @include xxl {
+        //     font-size: 180px;
+        // }
     }
 }
