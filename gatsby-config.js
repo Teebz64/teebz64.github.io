@@ -10,6 +10,14 @@ module.exports = {
     image: "images/meta/og-image.png", // Path to your image you placed in the 'static' folder
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-71779921-1",
+        pageTransitionDelay: 1000,
+        head: true
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-layout`,
@@ -34,13 +42,6 @@ module.exports = {
         display: `minimal-ui`,
         icon: `static/icons/favicon@9x.png`, // This path is relative to the root of the site.
       },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-71779921-1",
-        pageTransitionDelay: 1000,
-      }
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
