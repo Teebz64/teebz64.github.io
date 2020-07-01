@@ -45,9 +45,9 @@ class OohIconSystem extends React.PureComponent {
                 subheading='Icon System'
                 tags={['Development', 'Animation']}
             >
-                <div className="deck">
-                    <h3 className="deck__heading">An in-depth study of svg animation</h3>
-                    <p className="deck__text">I learned almost everything I know about svg DOM manipulation from this project. It was an exhaustive study in GSAP's TweenMax and TimelineMax for .svg animation in browser.</p>
+                <div className="deck deck--inner">
+                    <h3 className="deck__heading deck__heading--inner">An in-depth study of svg animation</h3>
+                    <p className="deck__text deck__text--inner">I learned almost everything I know about svg DOM manipulation from this project. It was an exhaustive study in GSAP's TweenMax and TimelineMax for .svg animation in browser.</p>
                 </div>
                 <div className="case-study__row">
                     <ul className="ois-list">
