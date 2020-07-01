@@ -39,9 +39,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-71779921-1",
-        head: true,
         pageTransitionDelay: 1000,
-        cookieDomain: "www.stevendana.com",
       }
     },
     {

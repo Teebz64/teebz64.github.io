@@ -11,18 +11,10 @@ class KnowledgeExchange extends React.PureComponent {
                 subheading='Knowledge Exchange'
                 tags={['Architecture • Design']}
             >
-                <div className="deck">
-                    <h3 className="deck__heading">A social exchange for medical professionals</h3>
-                    <p className="deck__text">Working with Humana was a memorable experience. The agency I represented at the time put my work forward on the RFP. The success of our unlikely selection resulted me leading this project from a simple marketing site to a full blown application. I was involved the whole way&mdash;architecture, scoping, documenting, designing, and development.</p>
+                <div className="deck deck--inner">
+                    <h3 className="deck__heading deck__heading--inner">A social exchange for medical professionals</h3>
+                    <p className="deck__text deck__text--inner">Working with Humana was a memorable experience. The agency I represented at the time put my work forward on the RFP. The success of our unlikely selection resulted me leading this project from a simple marketing site to a full blown application. I was involved the whole way&mdash;architecture, scoping, documenting, designing, and development.</p>
                 </div>
-                {/* <div className="callout case-study__row">
-                    <h4 className="callout__heading">
-                        The home screen
-                    </h4>
-                    <p className="callout__text">
-                        This screen was designed by analyzing the top social media networks. Main navigation items are very prominent on the left side along with the new post button and the search.
-                    </p>
-                </div> */}
                 <div className="case-study__row knowledge-exchange__row">
                     <Picture
                         path='/images/knowledge-exchange/feed-in-laptop'

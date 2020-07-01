@@ -81,3 +81,18 @@ p {
 a {
     color: $col-accent;
 }
+
+$type-augmented-fourth: (
+    1: 203.49px,
+    2: 143.91px,
+    3: 101.78px,
+    4: 71.98px,
+    5: 50.90px,
+    6: 36.00px,
+    7: 18.01px,
+    8: 12.73px
+);
+
+@function type-scale($key: '5') {
+    @return map-get($type-augmented-fourth, $key);
+}

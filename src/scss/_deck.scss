@@ -6,33 +6,40 @@
             family: $font-serif;
             size: 40px;
         }
-        margin-bottom: 12px;
+        margin-bottom: type-scale(7);
 
         @include xs {
             font-size: 52px;
+
+            &--inner {
+                font-size: 44px;
+            }
         }
         
         @include s {
-            font-size: 56px;
-            margin-bottom: 16px;
-        }
+            font-size: type-scale(4);
+            margin-bottom: type-scale(6);
 
-        @include m {
-            max-width: 75%;
-            font-size: 64px;
+            &--inner {
+                font-size: type-scale(5);
+                margin-bottom: type-scale(7);
+            }
         }
 
         @include ml {
-            font-size: 72px;
+            max-width: 75%;
+
+            &--inner {
+                //font-size: type-scale(5);
+            }
         }
 
-        @include l {
-            font-size: 6.85vw;
-            margin-bottom: 40px;
-        }
+        @include xl {
+            font-size: type-scale(3);
 
-        @include xxl {
-            font-size: 108px;
+            &--inner {
+                font-size: type-scale(4);
+            }
         }
     }
 
@@ -43,21 +50,37 @@
             weight: 200;
         }
 
-        @include s {
+        @include xs {
             font-size: 20px;
+
+            &--inner {
+
+            }
         }
 
-        @include m {
-            font-size: 24px;
+        @include s {
+            font-size: 23px;
+
+            &--inner {
+                font-size: 20px;
+            }
         }
 
-        @include l {
-            font-size: 1.9vw;
+        @include ml {
             max-width: 75%;
+            font-size: 26px;
+
+            &--inner {
+                font-size: 24px;
+            }
         }
 
-        @include xxl {
-            font-size: 32px;
+        @include xl {
+            font-size: 36px;
+
+            &--inner {
+                font-size: 26px;
+            }
         }
     }
 

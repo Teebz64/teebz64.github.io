@@ -75,49 +75,38 @@
     }
 
     &__heading {
-        font-size: 56px;
+        font-size: type-scale(4);
         font-family: $font-serif;
         margin-bottom: 8px;
         line-height: .9;
 
-        @include xxs {
-            font-size: 72px
+        @include ml {
+            font-size: type-scale(3);
+            margin-bottom: type-scale(9);
         }
 
-        @include xs {
-            font-size: 72px;
-        }
-
-        @include s {
-            font-size: 92px
-        }
-
-        @include m {
-            font-size: 11vw;
-            line-height: 1;
-        }
-
-        @include l {
-            font-size: 13vw;
-        }
-
-        @include xxl {
-            font-size: 180px;
+        @include xl {
+            font-size: type-scale(2);
+            margin-bottom: type-scale(8);
         }
 
         .section--index & {
-            font-size: 20vw;
             padding-right: 32px;
-            text-transform: uppercase;
-            @include fluid-type($bp-xxxs, $bp-m, 64px, 96px);
+            font-size: type-scale(4);
 
-            @include m {
-                font-size: 12vw;
-                text-transform: none;
+            @include s {
+                font-size: type-scale(3);
             }
 
-            @include xxl {
-                font-size: 200px;
+            @include ml {
+                font-size: type-scale(2);
+                margin-bottom: 16px;
+            }
+
+            @include xl {
+                font-size: type-scale(1);
+                text-transform: none;
+                margin-bottom: 24px;
             }
         }
 
@@ -157,19 +146,12 @@
     }
 
     &__textline {
-        font-size: 12px;
-        text-transform: lowercase;
-
-        @include m {
-            font-size: 16px;
-        }
-
         &--large {
-            font-size: 18px;
+            font-size: type-scale(8);
             margin-bottom: 8px;
 
             @include m {
-                font-size: 20px;
+                font-size: type-scale(7);
             }
         }
     }
@@ -187,55 +169,11 @@
     &__sub-heading {
         font: {
             family: $font-serif;
-            size: 24px;
-        }
-        margin-bottom: 32px;
-
-        @include xxxs {
-            font-size: 26px;
-            margin-bottom: 40px
+            size: type-scale(7);
         }
 
-        @include xxs {
-            font-size: 30px;
+        @include xl {
+            font-size: type-scale(6);
         }
-
-        @include m {
-            margin-bottom: 64px;
-        }
-
-        @include ml {
-            font-size: 2vw;
-        }
-
-        @include l {
-            margin-bottom: 80px;
-            font-size: 48px;
-        }
-
-        // @include xxs {
-        //     font-size: 72px
-        // }
-
-        // @include xs {
-        //     font-size: 72px;
-        // }
-
-        // @include s {
-        //     font-size: 92px
-        // }
-
-        // @include m {
-        //     font-size: 11vw;
-        //     line-height: 1;
-        // }
-
-        // @include l {
-        //     font-size: 13vw;
-        // }
-
-        // @include xxl {
-        //     font-size: 180px;
-        // }
     }
 }
