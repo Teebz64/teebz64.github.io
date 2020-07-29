@@ -3,7 +3,7 @@
         align-items: center;
         color: $col-gold;
         display: flex;
-        margin-bottom: 24px;
+        margin-bottom: 8px;
         justify-content: space-between;
         font-size: 12px;
         font-weight: 900;
@@ -12,40 +12,6 @@
             margin-bottom: 16px;
             justify-content: flex-start;
             font-size: 16px;
-        }
-
-        &:after {
-            animation: {
-                name: drawInX;
-                duration: .5s;
-                fill-mode: forwards;
-            };
-            background-color: $col-white;
-            display: block;
-            height: 1px;
-            margin-right: 8px;
-            width: 40px;
-            margin-left: auto;
-            transform-origin: 0% 50%;
-            opacity: 0;
-            transform: scaleX(0);
-
-            @include m {
-                margin-left: 4px;
-                width: 80px;
-                content: '';
-            }
-
-            .section:nth-child(2) & {
-                animation-delay: .18s
-            }
-        }
-
-        &--x-margin-bottom {
-
-            @include m {
-                margin-bottom: 40px;
-            }
         }
     }
 }

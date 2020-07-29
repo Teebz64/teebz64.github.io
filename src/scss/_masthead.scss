@@ -20,8 +20,8 @@
         margin-bottom: 88px;
     }
 
-    @include l {
-        margin-bottom: 124px;
+    @include xl {
+        margin-bottom: 92px;
     }
 
     &--inner {
@@ -30,9 +30,17 @@
         @include s {
             padding-top: 80px;
         }
+
+        @include m {
+            margin-bottom: 56px;
+        }
         
         @include ml {
-            padding-top: 124px;
+            padding-top: 128px;
+        }
+
+        @include l {
+            margin-bottom: 88px;
         }
     }
 
@@ -132,7 +140,7 @@
         align-items: center;
         display: inline-flex;
         font-size: 12px;
-        margin-bottom: 32px;
+        margin-bottom: 64px;
 
         @include m {
             width: auto;
@@ -169,7 +177,7 @@
     &__sub-heading {
         font: {
             family: $font-serif;
-            size: type-scale(7);
+            size: 24px;
         }
 
         @include xl {

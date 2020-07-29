@@ -10,7 +10,7 @@ class InnerNav extends React.PureComponent {
                     <div className="nav__left">
                         <Link to="/" className="nav__back">
                             < IoMdArrowBack className="nav__back-icon" />
-                            Back <span>to All Projects</span>
+                            Back<span>&nbsp;to all projects</span>
                         </Link>
                     </div>
                     <div className="nav__center">{this.props.title}</div>

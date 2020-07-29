@@ -63,7 +63,7 @@ class Masthead extends React.PureComponent {
                     </div>
                 </header>
                 {pill &&
-                    <div className="masthead__pill section--x-margin-bottom">
+                    <div className="masthead__pill">
                         {pill}
                     </div>
                 }
