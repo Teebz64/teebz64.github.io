@@ -49,13 +49,13 @@ class Loader extends React.PureComponent {
             duration: 10000,
         })
 
-        anime({
-            easing: 'easeOutExpo',
-            targets: '.deck__heading, .deck__text',
-            opacity: [0.01, 1],
-            delay: anime.stagger(2500),
-            duration: 5000,
-        })
+        // anime({
+        //     easing: 'easeOutExpo',
+        //     targets: '.deck__heading, .deck__text',
+        //     opacity: [0.01, 1],
+        //     delay: anime.stagger(2500),
+        //     duration: 5000,
+        // })
 
         setTimeout(() => {
             document.body.dispatchEvent(new Event('calc-smiley'))
