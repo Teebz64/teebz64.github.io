@@ -21,7 +21,6 @@ export default function Layout({children, location}) {
                 <Footer />
             </PageTransition>
             <TransitionGrid />
-            <Loader />
         </React.Fragment>
     )
 }

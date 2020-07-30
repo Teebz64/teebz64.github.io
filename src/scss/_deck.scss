@@ -1,5 +1,13 @@
 .deck {
-    margin-bottom: 128px;
+    margin-bottom: 64px;
+
+    @include l {
+        margin-bottom: 80px;
+    }
+
+    @include xl {
+        margin-bottom: 128px;
+    }
 
     &__heading {
         font: {
@@ -46,7 +54,7 @@
     &__text {
         font: {
             family: $font-sans;
-            size: 16px;
+            size: type-scale(7);
             weight: 200;
         }
 
@@ -76,7 +84,7 @@
         }
 
         @include xl {
-            font-size: 36px;
+            font-size: type-scale(6);
 
             &--inner {
                 font-size: 26px;

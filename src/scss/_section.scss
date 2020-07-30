@@ -5,13 +5,13 @@
         display: flex;
         margin-bottom: 8px;
         justify-content: space-between;
-        font-size: 12px;
+        font-size: type-scale(8);
         font-weight: 900;
 
         @include m {
             margin-bottom: 16px;
             justify-content: flex-start;
-            font-size: 16px;
+            font-size: type-scale(7);
         }
     }
 }

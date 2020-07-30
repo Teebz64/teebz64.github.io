@@ -29,7 +29,7 @@
 
     &__thumbnail {
         max-width: 240px;
-        width: 100%;
+        width: calc(100% - 40px);
         position: absolute;
         left: 50%;
         top: 50%;
@@ -42,7 +42,7 @@
         will-change: transform;
         opacity: .99;
 
-        @include xs {
+        @include xxxs {
             min-width: 300px;
         }
 
@@ -59,12 +59,12 @@
         &--knowledge-exchange,
         &--champion-windows,
         &--barton-malow {
-            min-width: 540px;
-            max-width: 1200px;
+            min-width: 288px;
+            max-width: 1100px;
             top: 30%;
             transform:
                 translateY(
-                    calc( -35% + ( var(--thumbnail-ty) / 2.5 ) )
+                    calc( -23% + ( var(--thumbnail-ty) / 2.5 ) )
                 )
                 translateX(-50%)
             ;
@@ -73,7 +73,7 @@
                 top: 50%;
                 transform:
                     translateY(
-                        calc(-40% + var(--thumbnail-ty))
+                        calc(-50% + var(--thumbnail-ty))
                     )
                     translateX(-50%)
                 ;
@@ -105,11 +105,11 @@
 
     &__thumbnail-container {
         overflow: hidden;
-        height: 320px;
+        height: 280px;
         position: relative;
 
         @include xs {
-            height: 480px;
+            height: 400px;
         }
 
         @include m {
@@ -119,18 +119,18 @@
 
     &__category {
         color: $col-white;
-        margin-bottom: -4px;
+        margin-bottom: 12px;
         font-size: 10px;
         position: relative;
         z-index: 5;
         opacity: var(--image-opacity);
 
         @include xxs {
-            font-size: 14px;
+            font-size: type-scale(8);
         }
 
-        @include m {
-            font-size: 16px;
+        @include s {
+            font-size: type-scale(7);
             margin-bottom: 4px;
         }
 
@@ -160,7 +160,6 @@
             text-align: left;
             margin: {
                 top: -88px;
-                left: 40px;
             }
             position: relative;
 
@@ -168,10 +167,10 @@
                 background-color: $col-purple;
                 content: '';
                 position: absolute;
-                top: -24px;
+                top: -56px;
                 bottom: 0;
-                left: -40px;
-                right: -40px;
+                left: 0px;
+                right: -56px;
                 transform: scaleX(1);
                 transform-origin: 100% 100%;
                 transition: transform .3s ease-out;
@@ -191,32 +190,43 @@
         font-family: $font-serif;
         color: $col-accent;
         //font-size: 5.25vw;
-        font-size: 34px;
+        font-size: type-scale(6);
         padding: {
             left: 0;
             right: 0;
         };
         position: relative;
-        line-height: 1.3;
+        line-height: 1.15;
         transition: opacity .2s, transform .1s;
 
-        @include xxxs {
-            font-size: 40px;
+        em {
+            font-size: type-scale(7);
         }
 
-        @include xxs {
-            @include fluid-type($bp-xxs, $bp-xs, 56px, 64px);
+        @include xxxs {
+            font-size: type-scale(5);
         }
 
         @include xs {
-            @include fluid-type($bp-xs, $bp-m, 60px, 70px);
+            font-size: type-scale(4);
+
+            em {
+                font-size: 24px;
+            }
+
         }
 
         @include m {
-            margin-left: 88px;
             opacity: var(--title-opacity);
             transform: translateX(var(--title-ty));
-            @include fluid-type($bp-m, $bp-xxl, 80px, 92px);
+        }
+
+        @include l {
+            font-size: type-scale(3);
+
+            em {
+                font-size: type-scale(6);
+            }
         }
 
         .work__main:hover & {
@@ -226,41 +236,7 @@
 
         em {
             color: $col-white;
-            font-size: 3.5vw;
             position: relative;
-
-            @include m {
-                font-size: 1.5vw;
-            }
-        }
-
-        &:before {
-            background-color: $col-accent;
-            display: block;
-            width: 8px;
-            height: 2px;
-            position: absolute;
-            top: 32px;
-            left: -8px;
-            transform:
-                translateX(var(--title-accent-ty))
-                scaleX(var(--title-accent-scale))
-            ;
-            transform-origin: 0% 50%;
-            transition: transform .2s;
-
-            @include m {
-                content: '';
-                top: 64px;
-                left: -88px;
-                width: 80px;
-                height: 2px;
-            }
-
-            .work__main:hover & {
-                opacity: 1;
-                transform: scaleX(1) translateX(var(--title-accent-ty));
-            }
         }
 
         & > div {

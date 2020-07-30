@@ -6,7 +6,7 @@
     backface-visibility: hidden;
     display: flex;
     flex-direction: column;
-    margin-bottom: 80px;
+    margin-bottom: 64px;
     opacity: var(--masthead-opacity);
     transform: translateY(var(--masthead-ty));
     transition: translate .1s;
@@ -139,12 +139,12 @@
     &__pill {
         align-items: center;
         display: inline-flex;
-        font-size: 12px;
+        font-size: type-scale(7);
         margin-bottom: 64px;
 
         @include m {
             width: auto;
-            font-size: 16px;
+            // font-size: 16px;
         }
     }
 

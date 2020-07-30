@@ -2,6 +2,7 @@ import React from "react"
 import * as THREE from 'three'
 import * as basicScroll from 'basicscroll'
 import debounce from 'lodash/debounce'
+import anime from 'animejs/lib/anime.es.js'
 
 class Icosohedron extends React.PureComponent {
 
@@ -52,6 +53,7 @@ class Icosohedron extends React.PureComponent {
             this.animate()
             this.bindEvents()
         })
+        
     }
 
     checkDevice = callback => {
@@ -115,6 +117,14 @@ class Icosohedron extends React.PureComponent {
 
         this.basicScroll.start()
         this.position()
+
+        anime({
+            easing: 'easeOutExpo',
+            targets: '.icosohedron',
+            opacity: [0, 0.8],
+            delay: 1000,
+            duration: 10000,
+        })
     }
 
     buildSmallIcosahedron = () => {
