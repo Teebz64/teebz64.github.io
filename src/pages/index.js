@@ -37,12 +37,12 @@ const work = [
     //     categories: ['Logo Design', 'Branding'],
     //     title: 'Two Bards',
     // },
-    {
-        slug: 'barton-malow',
-        thumbnail: '/images/barton-malow/laptop-homepage.png',
-        categories: ['Design', 'Development'],
-        title: 'Barton Malow',
-    },
+    // {
+    //     slug: 'barton-malow',
+    //     thumbnail: '/images/barton-malow/laptop-homepage.png',
+    //     categories: ['Design', 'Development'],
+    //     title: 'Barton Malow',
+    // },
     // {
     //     slug: 'transcend',
     //     thumbnail: '/images/transcend/alt-mark.svg',
