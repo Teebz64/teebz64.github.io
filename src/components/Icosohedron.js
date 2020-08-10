@@ -103,6 +103,7 @@ class Icosohedron extends React.PureComponent {
     }
 
     buildScene = () => {
+        // this.buildSphere()
         this.buildSmallIcosahedron()
         this.buildLargeIcosahedron()
         this.buildLights()
@@ -125,6 +126,17 @@ class Icosohedron extends React.PureComponent {
             delay: 1000,
             duration: 10000,
         })
+    }
+
+    buildSphere = () => {
+        const geometry = new THREE.SphereGeometry( 80, 8, 8 )
+
+        this.sphere = new THREE.Mesh(
+            geometry,
+            this.reflectiveMaterial
+        )
+
+        this.scene.add( this.sphere )
     }
 
     buildSmallIcosahedron = () => {
@@ -161,6 +173,9 @@ class Icosohedron extends React.PureComponent {
         this.smallIcosahedron.rotation.z += this.state.device === 'mobile'
             ? .0007
             : .003
+        // this.sphere.rotation.z += this.state.device === 'mobile'
+        //     ? .0007
+        //     : .003
 
         this.renderer.render(
             this.scene,
@@ -217,6 +232,7 @@ class Icosohedron extends React.PureComponent {
         }
 
         if (device === 'desktop') {
+            // this.sphere.position.set(0, 100, -600)
             this.smallIcosahedron.position.set( 0, 0, 0 )
             this.largeIcosahedron.position.set( 0, -100, -400 )
             this.light.position.set( 30, 30, 30 )
@@ -227,6 +243,7 @@ class Icosohedron extends React.PureComponent {
     updateMaterials = () => {
         this.largeIcosahedron.material = this.getMaterial()
         this.smallIcosahedron.material = this.getMaterial()
+        // this.sphere.material = this.getMaterial()
         // this.largeIcosahedron.material.needsUpdate = true
         // this.smallIcosahedron.material.needsUpdate = true
     }

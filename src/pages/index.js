@@ -28,7 +28,7 @@ const work = [
     {
         slug: 'ripple-cube',
         video: '/images/ripple-cube/ripplebox.export.mp4',
-        categories: ['threejs', 'experiment'],
+        categories: ['threejs', 'Experiment'],
         title: 'Ripple Cube',
     },
     // {

@@ -3,7 +3,6 @@
     display: flex;
     align-items: flex-end;
     padding-bottom: 20px;
-    overflow: hidden;
     min-height: 320px;
     position: relative;
     z-index: 50;
@@ -21,6 +20,10 @@
 
     @include l {
         min-height: 480px;
+    }
+
+    &__container {
+        overflow: hidden;
     }
 
     &__heading-container {
@@ -59,7 +62,6 @@
         background-color: $col-accent;
         color: $col-purple--dark;
         font-size: 40px;
-        overflow: hidden;
         padding: 40px 0;
         width: 100%;
         max-width: 100%;
@@ -119,35 +121,6 @@
 
         @include m {
             display: flex;
-        }
-    }
-
-    &__deco-1 {
-        flex: 0 0 25%;
-        overflow: hidden;
-
-        span {
-            width: 200%;
-            padding-bottom: 200%;
-        }
-    }
-
-    &__deco-2 {
-        flex: 0 0 25%;
-        overflow: hidden;
-
-        span {
-            width: 200%;
-            padding-bottom: 200%;
-        }
-    }
-
-    &__deco-3 {
-        flex: 0 0 50%;
-
-        span {
-            width: 100%;
-            padding-bottom: 100%;
         }
     }
 }
