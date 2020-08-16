@@ -31,12 +31,12 @@ const work = [
         categories: ['threejs', 'Experiment'],
         title: 'Ripple Cube',
     },
-    // {
-    //     slug: 'two-bards',
-    //     thumbnail: '/images/two-bards/two-bards-seal--mark-only.svg',
-    //     categories: ['Logo Design', 'Branding'],
-    //     title: 'Two Bards',
-    // },
+    {
+        slug: 'two-bards',
+        thumbnail: '/images/two-bards/two-bards-seal--mark-only.svg',
+        categories: ['Logo Design', 'Branding'],
+        title: 'Two Bards',
+    },
     // {
     //     slug: 'barton-malow',
     //     thumbnail: '/images/barton-malow/laptop-homepage.png',
