@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @font-face {
     font-family: 'Ogg';
     src: url('/fonts/Ogg-Roman.eot');
@@ -45,7 +44,7 @@
 
 $font-serif: 'Ogg';
 // $font-sans: 'Cinetype';
-$font-sans: 'inter';
+$font-sans: 'inter', 'sans-serif';
 
 body {
     font-family: $font-sans;

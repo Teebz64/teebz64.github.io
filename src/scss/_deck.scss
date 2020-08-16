@@ -16,11 +16,24 @@
         }
         margin-bottom: type-scale(7);
 
+        &--subheading {
+            font-size: 32px;
+        }
+
+        &--minor-heading {
+            font-size: 20px;
+            margin-bottom: type-scale(8);
+        }
+
         @include xs {
             font-size: 52px;
 
             &--inner {
                 font-size: 44px;
+            }
+
+            &--minor-heading {
+                font-size: type-scale(6);
             }
         }
         
@@ -32,14 +45,21 @@
                 font-size: type-scale(5);
                 margin-bottom: type-scale(7);
             }
+
+            &--subheading {
+                font-size: 40px;
+                margin-bottom: type-scale(7);
+            }
+
+            &--minor-heading {
+                font-size: 22px;
+                margin-bottom: type-scale(8);
+            }
+            
         }
 
         @include ml {
             max-width: 75%;
-
-            &--inner {
-                //font-size: type-scale(5);
-            }
         }
 
         @include xl {
@@ -47,6 +67,20 @@
 
             &--inner {
                 font-size: type-scale(4);
+            }
+
+            &--subheading {
+                font-size: type-scale(5);
+            }
+
+            &--minor-heading {
+                font: {
+                    family: $font-sans;
+                    size: 24px;
+                    weight: 500;
+                }
+
+                margin-bottom: type-scale(8);
             }
         }
     }
@@ -57,6 +91,7 @@
             size: type-scale(7);
             weight: 200;
         }
+        margin-bottom: type-scale(7);
 
         @include xs {
             font-size: 20px;
@@ -68,9 +103,14 @@
 
         @include s {
             font-size: 23px;
+            margin-bottom: type-scale(6);
 
             &--inner {
                 font-size: 20px;
+            }
+
+            &--body {
+                font-size: type-scale(7);
             }
         }
 
@@ -81,6 +121,14 @@
             &--inner {
                 font-size: 24px;
             }
+
+            &--body {
+                font-size: 20px;
+            }
+
+            &--caption {
+                max-width: 100%;
+            }
         }
 
         @include xl {
@@ -89,7 +137,19 @@
             &--inner {
                 font-size: 26px;
             }
+
+            &--body {
+                font-size: 22px;
+            }
         }
+
+        em {
+            font-style: italic;
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
     }
 
     &__heading,
@@ -97,5 +157,58 @@
         // &-fade-in {
         //     opacity: 0;
         // }
+    }
+
+    &__list {
+        &--inline {
+            display: grid;
+            grid-gap: 40px;
+            
+            &-by-3 {
+                grid-template-columns: repeat(1, 1fr);
+
+                @include s {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @include l {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            };
+
+            &-by-4 {
+                grid-template-columns: repeat(1, 1fr);
+
+                @include s {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                @include l {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+
+                img {
+                    max-width: 320px;
+
+                    @include l {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__list-image {
+        margin-bottom: 12px;
+        overflow:  hidden;
+        border-radius: $border-radius;
+
+        @include xs {
+            margin-bottom: 16px;
+        }
+
+        @include l {
+            margin-bottom: 24px;
+        }
     }
 }

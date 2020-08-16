@@ -7,7 +7,7 @@ const work = [
     {
         slug: 'knowledge-exchange',
         thumbnail: '/images/knowledge-exchange/feed-in-laptop.png',
-        categories: ['Architecture', 'Design'],
+        categories: ['Architecture', 'Design', 'UX Direction'],
         title: 'Humana:',
         subtitle: 'Knowledge Exchange'
     },
@@ -71,7 +71,7 @@ const IndexPage = () => (
         </section>
         <section className="section">
             <div className="deck">
-                <h2 className="deck__heading">Hi. I’m a <span className="underline">UX Engineer</span> &amp; <span className="underline">Product Designer</span></h2>
+                <h2 className="deck__heading">I’m a <span className="underline">UX Engineer</span> &amp; <span className="underline">Product Designer</span></h2>
                 <p className="deck__text">A creative developer that builds interfaces from architecture, design, and front-end development. When I’m not working on professional projects I’m exploring cellular automata, generative art, and lock-picking.</p>
             </div>
         </section>

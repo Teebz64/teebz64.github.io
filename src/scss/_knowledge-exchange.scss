@@ -1,5 +1,6 @@
 .knowledge-exchange {
-    &__laptop {
+    &__full {
+        border-radius: $border-radius;
         @include m {
             max-width: 80%;
             margin: 0 auto;
@@ -27,6 +28,21 @@
                 top: -20%;
                 left: 50%;
             }
+        }
+    }
+
+    &__subway-image {
+        margin: {
+            left: auto;
+            right: auto;
+        }
+
+        @include m {
+            max-width: 75%;
+        }
+
+        @include l {
+            max-width: 50%;
         }
     }
 
